@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     paths-ignore: [ "README.md" ]
-    branches: [ "master", "releases/*" ]
+    branches: [ "main", "releases/*" ]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       uses: gcarreno/setup-lazarus@v3.2.15
       with:
         lazarus-version: ${{ matrix.lazarus-versions }}
-        include-packages: "Synapse 40.1"
+        include-packages: "Jvcllaz, NiceGrid, VirtualTreeViewV5"
         with-cache: true
 
     - name: Build the Main Application (Windows)

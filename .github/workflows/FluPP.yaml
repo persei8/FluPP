@@ -1,3 +1,45 @@
-- name: Setup Lazarus environment
-  uses: gcarreno/setup-lazarus@v3.2.15
-            
+name: build-test
+
+on:
+  pull_request:
+  push:
+    paths-ignore: [ "README.md" ]
+    branches: [ "master", "releases/*" ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+        lazarus-versions: [dist, stable, 2.2.0, 2.0.12]
+
+    steps:
+    - name: Cechout source code
+      uses: actions/checkout@v3
+
+    - name: Install Lazarus
+      uses: gcarreno/setup-lazarus@v3.2.15
+      with:
+        lazarus-version: ${{ matrix.lazarus-versions }}
+        include-packages: "Synapse 40.1"
+        with-cache: true
+
+    - name: Build the Main Application (Windows)
+      if: ${{ matrix.operating-system == 'windows-latest' }}
+      run: lazbuild -B --bm=Release "src/FluPP.lpi"
+
+    - name: Build the Main Application (Ubuntu)
+      if: ${{ matrix.operating-system == 'ubuntu-latest' }}
+      run: |
+        echo Building with GTK2
+        lazbuild -B --bm=Release "src/FluPP.lpi"
+        echo Installing Qt5 Dev
+        sudo apt update
+        sudo apt install libqt5pas-dev -y
+        echo Building with Qt5
+        lazbuild -B --bm=Release --ws=qt5 "src/FluPP.lpi"
+
+    - name: Build the Main Application (macOS)
+      if: ${{ matrix.operating-system == 'macos-latest' }}
+      run: lazbuild -B --bm=Release --ws=cocoa "src/FluPP.lpi"

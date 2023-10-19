@@ -16,3 +16,9 @@ Flightlog for private pilots
 
 ## Planned
 - Printing with preview
+
+## How to compile
+### Required packages
+- Jvcllaz
+- NiceGrid
+- VirtualTreeViewV5

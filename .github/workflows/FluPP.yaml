@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
-        lazarus-versions: [dist, stable]
+        lazarus-versions: [stable]
 
     steps:
     - name: Cechout source code
@@ -58,11 +58,11 @@ jobs:
       with:
         name: Compiled Windows Binary
         path: |
-          src/FluPP.exe
+          FluPP.exe
     - name: Artifacts (macOS)
       if: ${{ matrix.operating-system == 'macos-latest' }}
       uses: actions/upload-artifact@v3
       with:
         name: Compiled Mac OS Binary
         path: |
-           src/FluPP.app
+           FluPP.app

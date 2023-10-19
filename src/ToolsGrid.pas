@@ -4,7 +4,7 @@ unit ToolsGrid;
 
 interface
 
-uses SysUtils, Classes, Types, Grid, Grids, {JvStringGrid,} DateUtils, LCLIntf, LCLType, LMessages, Messages, Graphics;
+uses SysUtils, Classes, Types, Grid, Grids, DateUtils, LCLIntf, LCLType, Graphics;
 
 const
   DeSelectRect: TGridRect = (Left:-1; Top:-1; Right:-1; Bottom:-1 );

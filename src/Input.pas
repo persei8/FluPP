@@ -8,10 +8,9 @@ unit Input;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls, Masks, ExtCtrls, Buttons, ComCtrls, Spin, CheckLst,
-  Grids, MaskEdit, {scFileDrop, gnugettext,} JvButton, DateTimePicker,
-  JvValidateEdit;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls,
+  Forms, Dialogs, StdCtrls, ExtCtrls, Buttons, ComCtrls, CheckLst,
+  Grids, MaskEdit, DateTimePicker;
 
 type
   TFInput = class(TForm)
@@ -148,10 +147,10 @@ type
     CurLabel2: TLabel;
     Label36: TLabel;
     CurLabel4: TLabel;
-    CfF: TJvValidateEdit;
-    LaF: TJvValidateEdit;
-    CfC: TJvValidateEdit;
-    EfF: TJvValidateEdit;
+    CfF: TEdit;
+    LaF: TEdit;
+    CfC: TEdit;
+    EfF: TEdit;
     CAVOK: TCheckBox;
     INTENSITY: TComboBox;
     DESCRIPTOR: TComboBox;
@@ -253,7 +252,7 @@ var
 
 implementation
 
-uses Main, Grid, Airports, InputBox, Tools, ToolsShell, ToolsGrid, ToolsIGCParse;
+uses Main, Grid, Airports, InputBox, Tools, ToolsGrid, ToolsIGCParse;
 
 {$R *.lfm}
 

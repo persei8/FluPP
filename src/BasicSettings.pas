@@ -5,9 +5,8 @@ unit BasicSettings;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, Buttons, ExtCtrls, Inifiles, registry,
-  {JvExStdCtrls,} JvButton, {JvCtrls,} Tools;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ComCtrls, Buttons, ExtCtrls, Inifiles, registry, Tools;
 
 type
   TFBasicSettings = class(TForm)

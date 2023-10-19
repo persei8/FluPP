@@ -5,9 +5,8 @@ unit StatGraph;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, StdCtrls, Buttons, ComCtrls, Grids, {JvExGrids, JvStringGrid,}
-  {JvExStdCtrls,} JvButton, {JvCtrls,} Statistics;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ExtCtrls, StdCtrls, Buttons, ComCtrls, Grids, Statistics;
 
 type
   TFStat_Graph = class(TForm)

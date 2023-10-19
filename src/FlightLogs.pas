@@ -6,7 +6,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, StdCtrls, {JvExStdCtrls,} JvButton, {JvCtrls,} ExtCtrls, Buttons;
+  Dialogs, ComCtrls, StdCtrls, ExtCtrls, Buttons;
 
 type
   TFFlightLogs = class(TForm)

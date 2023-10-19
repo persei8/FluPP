@@ -5,11 +5,8 @@ unit CalendarView;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Masks, StdCtrls, Buttons, Grids, ComCtrls, ExtCtrls,
-  {JvExGrids, JvStringGrid, JvExStdCtrls,} JvButton, {JvCtrls,}
-  JvExExtCtrls, JvComponent, JvTMTimeLine, DateUtils,
-  JvExtComponent;
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, Grids, ComCtrls, ExtCtrls, DateUtils;
 
 type
   TFCalendarView = class(TForm)
@@ -18,7 +15,7 @@ type
     GridSched: TStringGrid;
     ButtonDelete: TBitBtn;
     ButtonNew: TBitBtn;
-    JvTMTimeline: TJvTMTimeline;
+    //JvTMTimeline: TJvTMTimeline;
     ButtonExtend: TBitBtn;
     ButtonOK: TBitBtn;
     ButtonCancel: TBitBtn;
@@ -129,11 +126,11 @@ end;
 procedure TFCalendarView.UpdateTimeline;
 var i: Word;
 begin
-  JvTMTimeline.ClearImages;
-  if GridSched.Cells[0,1] <> '' then
-    for i := 1 to GridSched.RowCount-1 do
-      if isDate(GridSched.Cells[1,i])
-        then JvTMTimeline.ImageIndex[StrToDate(GridSched.Cells[1,i])] := StrToInt(GridSched.Cells[0,i]);
+  //JvTMTimeline.ClearImages;
+  //if GridSched.Cells[0,1] <> '' then
+  //  for i := 1 to GridSched.RowCount-1 do
+  //    if isDate(GridSched.Cells[1,i])
+  //      then JvTMTimeline.ImageIndex[StrToDate(GridSched.Cells[1,i])] := StrToInt(GridSched.Cells[0,i]);
 end;
 
 // ----------------------------------------------------------------
@@ -333,12 +330,12 @@ end;
 procedure TFCalendarView.JvTMTimelineClick(Sender: TObject);
 var aRow: Integer;
 begin
- if SearchInGrid(GridSched, DateToStr(JvTMTimeline.SelDate), aRow) then
- begin
-   GridSched.OnClick := nil;
-   GridSched.Row := aRow;
-   GridSched.OnClick := GridSchedClick;
- end;
+ //if SearchInGrid(GridSched, DateToStr(JvTMTimeline.SelDate), aRow) then
+ //begin
+ //  GridSched.OnClick := nil;
+ //  GridSched.Row := aRow;
+ //  GridSched.OnClick := GridSchedClick;
+ //end;
 end;
 
 // ----------------------------------------------------------------
@@ -346,11 +343,11 @@ end;
 // ----------------------------------------------------------------
 procedure TFCalendarView.GridSchedClick(Sender: TObject);
 begin
-  if GridSched.Cells[0,1] = '' then Exit;
-  try
-    JvTMTimeline.Date := Trunc(StrToDate(GridSched.Cells[1,GridSched.Row]) - 3);
-    JvTMTimeline.SelDate := StrToDate(GridSched.Cells[1,GridSched.Row]);
-  except end;
+  //if GridSched.Cells[0,1] = '' then Exit;
+  //try
+  //  JvTMTimeline.Date := Trunc(StrToDate(GridSched.Cells[1,GridSched.Row]) - 3);
+  //  JvTMTimeline.SelDate := StrToDate(GridSched.Cells[1,GridSched.Row]);
+  //except end;
 end;
 
 // ----------------------------------------------------------------

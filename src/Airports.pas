@@ -5,9 +5,8 @@ unit Airports;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, StdCtrls, Masks, Buttons, Grids, ComCtrls, MaskEdit, {JvExGrids,
-  JvStringGrid, gnugettext, JvExStdCtrls,} JvButton{, JvCtrls};
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ExtCtrls, StdCtrls, Buttons, Grids, ComCtrls, MaskEdit;
 
 type
   TFAirports = class(TForm)

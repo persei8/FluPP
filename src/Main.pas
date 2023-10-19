@@ -5,13 +5,10 @@ unit Main;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
-  ToolWin, SButton, ExtCtrls, {JvStringGrid, gnugettext,}
-  {JvImageList, JvExStdCtrls,} JvButton, {JvCtrls, JvExControls,} JvComponent,
-  {XPMan, JvZlibMultiple,} Grid, ActnList,
-  {XPStyleActnCtrls, ActnMan, ActnMenus, ActnCtrls,} ImgList, Tools,
-  {JvExGrids,} DateUtils, DOM, XMLRead, Zipper, LazLogger;
+  SButton, ExtCtrls, JvButton, Grid, ActnList, ImgList, Tools,
+  DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator;
 
 const
   {$I FluPP.inc}
@@ -22,6 +19,55 @@ type
 
   TFMain = class(TForm)
     ActionManager: TActionList;
+    KatAdd: TMenuItem;
+    KatRem: TMenuItem;
+    MainMenu: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem10: TMenuItem;
+    MenuItem11: TMenuItem;
+    MenuItem12: TMenuItem;
+    MenuItem13: TMenuItem;
+    MenuItem14: TMenuItem;
+    MenuItem15: TMenuItem;
+    MenuItem16: TMenuItem;
+    MenuItem17: TMenuItem;
+    MenuItem18: TMenuItem;
+    MenuItem19: TMenuItem;
+    MenuItem20: TMenuItem;
+    MenuItem21: TMenuItem;
+    MenuItem22: TMenuItem;
+    MenuItem23: TMenuItem;
+    MenuItem24: TMenuItem;
+    MenuItem25: TMenuItem;
+    MenuItem26: TMenuItem;
+    MenuItem27: TMenuItem;
+    MenuItem28: TMenuItem;
+    MenuItem29: TMenuItem;
+    N1: TMenuItem;
+    N5: TMenuItem;
+    PopupMenu: TPopupMenu;
+    PUFiles: TMenuItem;
+    PUFlightEdit: TMenuItem;
+    PUFlightNew: TMenuItem;
+    PUFlugEinfuegen: TMenuItem;
+    PUFlugloeschen: TMenuItem;
+    PUGoogleEarth: TMenuItem;
+    PUGoogleMap: TMenuItem;
+    PUKategorieZuordnen: TMenuItem;
+    PUloeschrueck: TMenuItem;
+    PUSepFiles: TMenuItem;
+    Separator4: TMenuItem;
+    Separator3: TMenuItem;
+    Separator2: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
+    Separator1: TMenuItem;
     OpenDialog: TOpenDialog;
     SaveDialog: TSaveDialog;
     StartTimer: TTimer;
@@ -58,8 +104,6 @@ type
     ActionInfo: TAction;
     StatusBar1: TStatusBar;
     ActionBasicSettings: TAction;
-    //XPManifest: TXPManifest;
-    //JvZlib: TJvZlibMultiple;
     ActionFlightLogs: TAction;
     ActionFileImport: TAction;
     ActionHelpOnline: TAction;
@@ -76,7 +120,6 @@ type
     ActionExportGoogleMap: TAction;
     ActionExportGoogleEarth: TAction;
     ActionResetColumns: TAction;
-    ToolBar1: TToolBar;
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
     ToolButton3: TToolButton;
@@ -119,7 +162,6 @@ type
     procedure GridSchedDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure ActionFileExportExecute(Sender: TObject);
-    procedure JvZlibProgress(Sender: TObject; Position, Total: Integer);
     procedure ActionExportGoogleMapExecute(Sender: TObject);
     procedure ActionExportGoogleEarthExecute(Sender: TObject);
     procedure ActionResetColumnsExecute(Sender: TObject);
@@ -129,10 +171,12 @@ type
     procedure LoadFluFile;
     procedure SaveFile(SaveFileName: String);
     procedure LoadDefaultGenSettings;
-    procedure LoadDefaultSettings(Grid: TFGrid);
+    procedure LoadDefaultSettings(Grid: TFGrid);      overload;
+    procedure LoadDefaultSettings(FlightLog: TFlightLog); overload;
   public
     procedure CreateNewWindow(Name, GridCols: String); overload;
     procedure CreateNewWindow(Name: String); overload;
+    procedure CreateNewFlightLog(Name: String);
     function SpeichernAbfrage: Boolean;
     procedure InsertData;
     procedure onHint(Sender: TObject);
@@ -290,6 +334,31 @@ begin
 end;
 
 // ----------------------------------------------------------------
+// Load default Settings
+// ----------------------------------------------------------------
+procedure TFMain.LoadDefaultSettings(FlightLog: TFlightLog);
+begin
+  with FlightLog do
+  begin
+    Settings.Values['BFStarts'] := '0';
+    Settings.Values['BFTime'] := '00000:00';
+    Settings.Values['LicenseSince'] := '  .  .    ';
+    Settings.Values['IDPrefix'] := '';
+    Settings.Values['DistUnit'] := 'nm';
+    Settings.Values['License'] := '';
+    Settings.Values['Numeration'] := '0'; // Continuous
+    Settings.Values['ShowFlightTime'] := 'False';
+    Settings.Values['ShowBlockTime'] := 'True';
+    Settings.Values['ShowStartType'] := 'False';
+    Settings.Values['DefaultTime'] := '0'; // BlockTime
+    Settings.Values['DefPosition'] := '0'; // Pilot
+
+    Settings.Values['DisallowChange'] := '0';
+    Settings.Values['AllowLastEdit'] := '0';
+  end;
+end;
+
+// ----------------------------------------------------------------
 // Load airport database
 // ----------------------------------------------------------------
 procedure TFMain.ReadAirportData;
@@ -399,7 +468,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.CreateNewWindow(Name, GridCols: String);
 begin
-  CreateNewWindow(Name);
+  CreateNewFlightLog(Name);
   ReadTStrings(GridCols, GridActiveChild.GridCols);
   GridActiveChild.Grid.ColCount := GridActiveChild.GridCols.Count;
   GridActiveChild.NameCols;
@@ -424,6 +493,24 @@ begin
   end;
 
   LoadDefaultSettings(GridActiveChild);
+end;
+
+// ----------------------------------------------------------------
+// create fligtlog grid
+// ----------------------------------------------------------------
+procedure TFMain.CreateNewFlightLog(Name: String);
+var
+  Flightlog: TFlightLog;
+begin
+  Flightlog := TFlightLog.Create;
+
+  with Flightlog do
+  begin
+    Grid.ColCount := NumberOfGridRows + 1;
+    setColWidth(DefaultColWidth);
+  end;
+
+  LoadDefaultSettings(Flightlog);
 end;
 
 // ----------------------------------------------------------------
@@ -1247,18 +1334,6 @@ begin
     end;
     Canvas.FillRect(Rect);
     DrawText(Canvas.Handle, PChar(Cells[ACol, ARow]), StrLen(PChar(Cells[ACol, ARow])), Rect, DT_LEFT);
-  end;
-end;
-
-// ----------------------------------------------------------------
-// JvZlib ProgressBar
-// ----------------------------------------------------------------
-procedure TFMain.JvZlibProgress(Sender: TObject; Position, Total: Integer);
-begin
-  if Assigned(ProgressBar) then
-  begin
-    ProgressBar.Max := Total;
-    ProgressBar.Position := Position;
   end;
 end;
 

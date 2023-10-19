@@ -4,7 +4,7 @@ unit ToolsLicense;
 
 interface
 
-uses DOM, XMLRead, SysUtils, Dialogs{, gnugettext};
+uses DOM, XMLRead, SysUtils, Dialogs;
 
 const
   ValueTypeStarts = ',Starts,FStarts,WStarts,EStarts,';

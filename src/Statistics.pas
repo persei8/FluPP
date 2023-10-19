@@ -5,10 +5,9 @@ unit Statistics;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, Masks, DateTimePicker,
-  CheckLst, Grids, Math, ImgList, StrUtils, {JvExStdCtrls,}
-  JvButton{, JvCtrls};
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls,
+  Forms, Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, DateTimePicker,
+  CheckLst, Grids, Math, ImgList, StrUtils;
 
 type TTrendType = (ttYear, ttMonth, ttWeek, ttNone);
 

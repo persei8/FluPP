@@ -5,9 +5,8 @@ unit InputBox;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Masks, Buttons, ExtCtrls, {gnugettext, JvExStdCtrls,}
-  JvButton{, JvCtrls};
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, ExtCtrls;
 
 type
   TFInputBox = class(TForm)

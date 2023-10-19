@@ -5,10 +5,8 @@ unit Print;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, Buttons, ExtCtrls, ComCtrls, {PrintDrv,} Masks, inifiles,
-   Printers, CheckLst, MaskEdit, {JvExStdCtrls,} JvButton,
-  {JvCtrls,} TypInfo;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, Buttons, ExtCtrls, ComCtrls, inifiles, Printers, CheckLst, MaskEdit, TypInfo;
 
 const
   numFixedCols = 22;

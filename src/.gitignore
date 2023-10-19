@@ -31,3 +31,6 @@ lib/
 
 # Lazarus backup files
 *.~*
+
+# Lazarus translation files
+*.lrj

@@ -1,7 +1,7 @@
 object FAirports: TFAirports
-  Left = 3918
+  Left = 1103
   Height = 550
-  Top = -668
+  Top = 489
   Width = 353
   BorderStyle = bsDialog
   Caption = 'Airports'
@@ -74,9 +74,9 @@ object FAirports: TFAirports
   end
   object Label4: TLabel
     Left = 4
-    Height = 13
+    Height = 16
     Top = 428
-    Width = 84
+    Width = 96
     Caption = 'Search for airport:'
     ParentColor = False
   end
@@ -115,25 +115,25 @@ object FAirports: TFAirports
     TabOrder = 1
     object Label2: TLabel
       Left = 12
-      Height = 13
+      Height = 16
       Top = 0
-      Width = 59
+      Width = 70
       Caption = 'Airport name'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 12
-      Height = 13
+      Height = 16
       Top = 39
-      Width = 53
+      Width = 57
       Caption = 'ICAO Code'
       ParentColor = False
     end
     object Label1: TLabel
       Left = 170
-      Height = 13
+      Height = 16
       Top = 0
-      Width = 40
+      Width = 46
       Caption = 'Position:'
       ParentColor = False
     end
@@ -172,7 +172,7 @@ object FAirports: TFAirports
     end
     object EditName: TEdit
       Left = 17
-      Height = 21
+      Height = 28
       Hint = 'Name of the airport'
       Top = 16
       Width = 121
@@ -180,7 +180,7 @@ object FAirports: TFAirports
     end
     object EditICAO: TEdit
       Left = 17
-      Height = 21
+      Height = 28
       Hint = 'ICAO Code'
       Top = 55
       Width = 121
@@ -188,7 +188,7 @@ object FAirports: TFAirports
     end
     object MEBreit: TMaskEdit
       Left = 202
-      Height = 21
+      Height = 28
       Hint = 'Latitude'
       Top = 16
       Width = 62
@@ -200,9 +200,9 @@ object FAirports: TFAirports
     end
     object RBBreitN: TRadioButton
       Left = 167
-      Height = 19
+      Height = 21
       Top = 14
-      Width = 28
+      Width = 32
       Caption = 'N'
       Checked = True
       TabOrder = 6
@@ -210,9 +210,9 @@ object FAirports: TFAirports
     end
     object RBBreitS: TRadioButton
       Left = 167
-      Height = 19
+      Height = 21
       Top = 27
-      Width = 27
+      Width = 30
       Caption = 'S'
       TabOrder = 7
     end
@@ -227,9 +227,9 @@ object FAirports: TFAirports
       TabOrder = 8
       object RBLaengO: TRadioButton
         Left = 0
-        Height = 19
+        Height = 21
         Top = 3
-        Width = 28
+        Width = 33
         Caption = 'O'
         Checked = True
         TabOrder = 0
@@ -237,16 +237,16 @@ object FAirports: TFAirports
       end
       object RBLaengW: TRadioButton
         Left = 0
-        Height = 19
+        Height = 21
         Top = 14
-        Width = 31
+        Width = 34
         Caption = 'W'
         TabOrder = 1
       end
     end
     object MELaeng: TMaskEdit
       Left = 202
-      Height = 21
+      Height = 28
       Hint = 'Longitude'
       Top = 55
       Width = 60
@@ -285,7 +285,7 @@ object FAirports: TFAirports
   object Panel1: TPanel
     Left = 0
     Height = 40
-    Top = 487
+    Top = 489
     Width = 353
     Align = alBottom
     BevelInner = bvLowered
@@ -319,8 +319,8 @@ object FAirports: TFAirports
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 527
+    Height = 21
+    Top = 529
     Width = 353
     Panels = <    
       item
@@ -341,17 +341,17 @@ object FAirports: TFAirports
     TabOrder = 5
     object RBName: TRadioButton
       Left = 184
-      Height = 19
+      Height = 21
       Top = 0
-      Width = 110
+      Width = 132
       Caption = 'Inherit airport name'
       TabOrder = 0
     end
     object RBKennung: TRadioButton
       Left = 8
-      Height = 19
+      Height = 21
       Top = 0
-      Width = 104
+      Width = 118
       Caption = 'Inherit ICAO code'
       Checked = True
       TabOrder = 1
@@ -360,7 +360,7 @@ object FAirports: TFAirports
   end
   object EditFind: TEdit
     Left = 97
-    Height = 21
+    Height = 28
     Hint = 'Name of the airport'
     Top = 424
     Width = 250

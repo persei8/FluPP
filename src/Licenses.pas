@@ -5,9 +5,9 @@ unit Licenses;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ComCtrls, StdCtrls, Buttons, ExtCtrls, Masks, Grids, ImgList, VirtualTrees,
-  DOM, XMLRead,{JvExStdCtrls,} JvButton, {JvCtrls,} DateUtils;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ComCtrls, StdCtrls, Buttons, ExtCtrls, Grids, ImgList, VirtualTrees,
+  DOM, XMLRead, DateUtils;
 
 type TTreeNodeType = (License, Condition, MedCondition, Currency, Validation, Medical);
 

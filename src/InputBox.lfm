@@ -1,7 +1,7 @@
 object FInputBox: TFInputBox
-  Left = 2733
+  Left = 1180
   Height = 121
-  Top = -243
+  Top = 703
   Width = 200
   BorderStyle = bsDialog
   Caption = 'Time category'

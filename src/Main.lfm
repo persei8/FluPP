@@ -1,17 +1,18 @@
 object FMain: TFMain
-  Left = 479
+  Left = 593
   Height = 544
-  Top = 329
+  Top = 535
   Width = 1141
   Caption = 'FluPP'
-  ClientHeight = 544
+  ClientHeight = 515
   ClientWidth = 1141
   Color = clBtnFace
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
-  FormStyle = fsMDIForm
+  FormStyle = fsStayOnTop
   KeyPreview = True
+  Menu = MainMenu
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poMainFormCenter
@@ -20,7 +21,7 @@ object FMain: TFMain
   Visible = True
   object ActionToolBar: TToolBar
     Left = 0
-    Height = 34
+    Height = 48
     Top = 0
     Width = 1141
     ButtonHeight = 30
@@ -67,8 +68,8 @@ object FMain: TFMain
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 521
+    Height = 21
+    Top = 494
     Width = 1141
     Panels = <    
       item
@@ -133,14 +134,6 @@ object FMain: TFMain
       )
     end
   end
-  object ToolBar1: TToolBar
-    Left = 0
-    Height = 26
-    Top = 34
-    Width = 1141
-    Caption = 'ToolBar1'
-    TabOrder = 4
-  end
   object OpenDialog: TOpenDialog
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist]
     Left = 10
@@ -161,8 +154,8 @@ object FMain: TFMain
   end
   object ActionManager: TActionList
     Images = ImageList
-    Left = 9
-    Top = 163
+    Left = 128
+    Top = 65
     object ActionFileNew: TAction
       Category = 'File'
       Caption = 'New...'
@@ -439,8 +432,8 @@ object FMain: TFMain
     end
   end
   object ImageList: TImageList
-    Left = 9
-    Top = 195
+    Left = 128
+    Top = 120
     Bitmap = {
       4C7A220000001000000010000000721A00000000000078DAED9D799C14E599C7
       2731BB0BBBAEC1FD234E5C76D70116327137D9C9B5CEAAFB3193CD6A26318993
@@ -2277,5 +2270,161 @@ object FMain: TFMain
       D6CCCA3924AF1F0BBBFE24CC9A78D21836D28EFFD05FCACFB1B16E8DE6D2BE86
       7DAC32BFEC735DB5174A7BE2B1ED63AABAD5FF01A3DDE6BE
     }
+  end
+  object MainMenu: TMainMenu
+    Images = ImageList
+    Left = 128
+    Top = 184
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+      object MenuItem2: TMenuItem
+        Action = ActionFileNew
+      end
+      object MenuItem3: TMenuItem
+        Action = ActionFileOpen
+      end
+      object MenuItem4: TMenuItem
+        Action = ActionFileSave
+      end
+      object MenuItem5: TMenuItem
+        Action = ActionFileSaveAs
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem9: TMenuItem
+        Action = ActionFileImport
+      end
+      object MenuItem10: TMenuItem
+        Action = ActionFileExport
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem12: TMenuItem
+        Action = ActionSettings
+      end
+      object MenuItem11: TMenuItem
+        Action = ActionBasicSettings
+      end
+      object MenuItem13: TMenuItem
+        Action = ActionFlightLogs
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem6: TMenuItem
+        Action = ActionClose
+      end
+      object MenuItem7: TMenuItem
+        Action = ActionExit
+      end
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Flight'
+      object MenuItem14: TMenuItem
+        Action = ActionFlightNew
+      end
+      object MenuItem15: TMenuItem
+        Action = ActionFlightEdit
+      end
+      object MenuItem16: TMenuItem
+        Action = ActionFlightInsert
+      end
+      object Separator4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem17: TMenuItem
+        Action = ActionFlightDelete
+      end
+      object MenuItem18: TMenuItem
+        Action = ActionFlightDeleteUndo
+      end
+    end
+    object MenuItem19: TMenuItem
+      Caption = 'Tools'
+      object MenuItem20: TMenuItem
+        Action = ActionScheduler
+      end
+      object MenuItem21: TMenuItem
+        Action = ActionNinetyDays
+      end
+      object MenuItem22: TMenuItem
+        Action = ActionStatistic
+      end
+      object MenuItem23: TMenuItem
+        Action = ActionLicense
+      end
+      object MenuItem24: TMenuItem
+        Action = ActionTrainBaro
+      end
+      object MenuItem25: TMenuItem
+        Action = ActionAirports
+      end
+      object MenuItem26: TMenuItem
+        Action = ActionSortFlights
+      end
+    end
+    object MenuItem27: TMenuItem
+      Caption = 'Help'
+      object MenuItem28: TMenuItem
+        Action = ActionInfo
+      end
+      object MenuItem29: TMenuItem
+        Action = ActionHelpOnline
+      end
+    end
+  end
+  object PopupMenu: TPopupMenu
+    Images = ImageList
+    AutoPopup = False
+    Left = 272
+    Top = 65
+    object PUFlightNew: TMenuItem
+      Action = ActionFlightNew
+    end
+    object PUFlightEdit: TMenuItem
+      Action = ActionFlightEdit
+      Default = True
+    end
+    object PUFlugEinfuegen: TMenuItem
+      Action = ActionFlightInsert
+    end
+    object PUFlugloeschen: TMenuItem
+      Action = ActionFlightDelete
+    end
+    object PUloeschrueck: TMenuItem
+      Action = ActionFlightDeleteUndo
+    end
+    object N5: TMenuItem
+      Caption = '-'
+    end
+    object PUKategorieZuordnen: TMenuItem
+      Caption = 'Categories'
+      object KatAdd: TMenuItem
+        Caption = 'Add'
+        ImageIndex = 18
+      end
+      object KatRem: TMenuItem
+        Caption = 'Remove'
+        ImageIndex = 19
+      end
+    end
+    object PUSepFiles: TMenuItem
+      Caption = '-'
+    end
+    object PUFiles: TMenuItem
+      Caption = 'Files'
+      Hint = 'Attached files'
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object PUGoogleMap: TMenuItem
+      Action = ActionExportGoogleMap
+    end
+    object PUGoogleEarth: TMenuItem
+      Action = ActionExportGoogleEarth
+    end
   end
 end

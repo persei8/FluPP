@@ -5,9 +5,8 @@ unit CalendarAdd;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics,
-  Controls, Forms, Dialogs, StdCtrls, JvButton, Buttons, ExtCtrls, ComCtrls,
-  DateTimePicker;
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, DateTimePicker;
 
 type
   TFCalendarAdd = class(TForm)

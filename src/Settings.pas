@@ -5,11 +5,9 @@ unit Settings;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ComCtrls, StdCtrls, Buttons, ExtCtrls, Masks, Inifiles, CheckLst,
-  {gnugettext,} {JvExStdCtrls,} JvButton, {JvCtrls,} ToolsLicense, DOM, XMLRead,
-  Grids, ValEdit, VirtualTrees, StrUtils, {JvEdit,} JvValidateEdit,
-  Menus, MaskEdit;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ComCtrls, StdCtrls, Buttons, ExtCtrls, CheckLst, ToolsLicense, DOM, XMLRead,
+  Grids, ValEdit, VirtualTrees,  Menus, MaskEdit;
 
 type
   PTreeData = ^TTreeData;
@@ -125,8 +123,8 @@ type
     Label10: TLabel;
     CalcByBT: TRadioButton;
     CalcByFT: TRadioButton;
-    CpF: TJvValidateEdit;
-    CpH: TJvValidateEdit;
+    CpF: TEdit;
+    CpH: TEdit;
     GroupBoxSpez: TGroupBox;
     Cat: TComboBox;
     Cls: TComboBox;
@@ -335,8 +333,8 @@ begin
   for i := 0 to GroupBoxCosts.ControlCount-1 do begin
     if TObject(GroupBoxCosts.Controls[i]) is TRadioButton then
       TRadioButton(GroupBoxCosts.Controls[i]).Enabled := false;
-    if TObject(GroupBoxCosts.Controls[i]) is TJvValidateEdit then
-      TJvValidateEdit(GroupBoxCosts.Controls[i]).Enabled := false;
+    if TObject(GroupBoxCosts.Controls[i]) is TEdit then
+      TEdit(GroupBoxCosts.Controls[i]).Enabled := false;
   end;
 
   for i := 0 to GroupBoxCosts.ControlCount-1 do begin
@@ -1363,7 +1361,7 @@ end;
 procedure TFSettings.AcCostsEditExit(Sender: TObject);
 begin
   if AircraftList.ItemIndex < 0 then exit;
-  SetStringObject(ACAircrafts_S[LBFlu.Itemindex], ACAircrafts_S[LBFlu.Itemindex][AircraftList.ItemIndex], TJvValidateEdit(Sender).Name, TJvValidateEdit(Sender).Text);
+  SetStringObject(ACAircrafts_S[LBFlu.Itemindex], ACAircrafts_S[LBFlu.Itemindex][AircraftList.ItemIndex], TEdit(Sender).Name, TEdit(Sender).Text);
 end;
 
 procedure TFSettings.AcCostsComboExit(Sender: TObject);
@@ -1397,10 +1395,10 @@ begin
       AcCostsCalcByExit(GroupBoxCosts.Controls[i])
     end;
 
-    if TObject(GroupBoxCosts.Controls[i]) is TJvValidateEdit then begin
-      TJvValidateEdit(GroupBoxCosts.Controls[i]).Text := GetStringObject(ACAircrafts_S[LBFlu.Itemindex], ACAircrafts_S[LBFlu.Itemindex][AircraftList.ItemIndex], TJvValidateEdit(GroupBoxCosts.Controls[i]).Name);
+    if TObject(GroupBoxCosts.Controls[i]) is TEdit then begin
+      TEdit(GroupBoxCosts.Controls[i]).Text := GetStringObject(ACAircrafts_S[LBFlu.Itemindex], ACAircrafts_S[LBFlu.Itemindex][AircraftList.ItemIndex], TEdit(GroupBoxCosts.Controls[i]).Name);
 
-      TJvValidateEdit(GroupBoxCosts.Controls[i]).Enabled := true;
+      TEdit(GroupBoxCosts.Controls[i]).Enabled := true;
       AcCostsEditExit(GroupBoxCosts.Controls[i]);
     end;
   end;

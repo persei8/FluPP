@@ -4,7 +4,7 @@ unit Import;
 
 interface
 
-uses Classes, StrUtils, SysUtils, Dialogs,  Forms, DOM, XMLRead;
+uses Classes, SysUtils, Dialogs,  Forms, DOM, XMLRead;
 
 procedure OpenFlpFile7(XML : TXMLDocument); // ZIP, XML-File (FliPS & FileVersion = 7)
 procedure OpenFluFile1(XML : TXMLDocument); // ZIP, XML-File (FluPP | FileVersion = 1)

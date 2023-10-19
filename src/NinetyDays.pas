@@ -5,10 +5,8 @@ unit NinetyDays;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, Buttons, ExtCtrls,
-  Grids, {JvExGrids, JvStringGrid,} {JvExStdCtrls,} JvButton,
-  {JvCtrls,} DateUtils;
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, Buttons, ExtCtrls, Grids, DateUtils;
 
 type
   TNinetyDays = array of record

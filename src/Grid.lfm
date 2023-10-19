@@ -1,7 +1,7 @@
 object FGrid: TFGrid
-  Left = 2759
+  Left = 901
   Height = 490
-  Top = -285
+  Top = 519
   Width = 758
   HorzScrollBar.Visible = False
   BorderStyle = bsNone
@@ -12,7 +12,7 @@ object FGrid: TFGrid
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
-  FormStyle = fsMDIChild
+  FormStyle = fsStayOnTop
   KeyPreview = True
   OnActivate = FormActivate
   OnCreate = FormCreate
@@ -40,8 +40,8 @@ object FGrid: TFGrid
   object PopupMenu: TPopupMenu
     Images = FMain.ImageList
     AutoPopup = False
-    Left = 128
-    Top = 416
+    Left = 264
+    Top = 280
     object PUFlightNew: TMenuItem
       Action = FMain.ActionFlightNew
     end

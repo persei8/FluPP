@@ -5,9 +5,8 @@ unit TrainBaro;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, ComCtrls, StdCtrls, Buttons, Grids,
-  {JvExStdCtrls,} JvButton{, JvCtrls};
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, ComCtrls, StdCtrls, Buttons, Grids;
 
 type
   TFTrainBaro = class(TForm)

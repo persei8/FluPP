@@ -7,7 +7,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
-  SButton, ExtCtrls, JvButton, Grid, ActnList, ImgList, Tools,
+  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
   DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator;
 
 const

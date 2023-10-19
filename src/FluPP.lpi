@@ -76,16 +76,7 @@
         <PackageName Value="virtualtreeview_package"/>
       </Item>
       <Item>
-        <PackageName Value="JvCustomLazR"/>
-      </Item>
-      <Item>
         <PackageName Value="DateTimeCtrls"/>
-      </Item>
-      <Item>
-        <PackageName Value="JvStdCtrlsLazR"/>
-      </Item>
-      <Item>
-        <PackageName Value="JvCoreLazR"/>
       </Item>
       <Item>
         <PackageName Value="LCL"/>

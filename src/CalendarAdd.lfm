@@ -1,0 +1,186 @@
+object FCalendarAdd: TFCalendarAdd
+  Left = 3464
+  Height = 220
+  Top = -282
+  Width = 304
+  Caption = 'Add Event/Schedule'
+  ClientHeight = 220
+  ClientWidth = 304
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 179
+    Width = 304
+    Align = alBottom
+    BevelInner = bvLowered
+    ClientHeight = 41
+    ClientWidth = 304
+    TabOrder = 0
+    object ButtonCancel: TBitBtn
+      Left = 176
+      Height = 25
+      Hint = 'Abort'
+      Top = 6
+      Width = 82
+      Anchors = []
+      Cancel = True
+      Kind = bkCancel
+      ModalResult = 2
+      Images = FMain.ImageList
+      TabOrder = 1
+    end
+    object ButtonOK: TBitBtn
+      Left = 47
+      Height = 25
+      Hint = 'Accept data'
+      Top = 6
+      Width = 77
+      Anchors = []
+      Caption = 'OK'
+      Default = True
+      ModalResult = 1
+      Images = FMain.ImageList
+      ImageIndex = 22
+      OnClick = ButtonOKClick
+      TabOrder = 0
+    end
+  end
+  object PageControl: TPageControl
+    Left = 0
+    Height = 179
+    Top = 0
+    Width = 304
+    ActivePage = tsEvent
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object tsEvent: TTabSheet
+      Caption = 'Event'
+      ClientHeight = 153
+      ClientWidth = 296
+      object Label1: TLabel
+        Left = 8
+        Height = 13
+        Top = 24
+        Width = 23
+        Caption = 'Date'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 112
+        Height = 13
+        Top = 8
+        Width = 50
+        Caption = 'Floght Log'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 112
+        Height = 13
+        Top = 56
+        Width = 28
+        Caption = 'Event'
+        ParentColor = False
+      end
+      object DtpEvent: TDateTimePicker
+        Left = 8
+        Height = 21
+        Top = 40
+        Width = 79
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 39054
+        Time = 0.265504664348555
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object cbFlightLog: TComboBox
+        Left = 112
+        Height = 21
+        Top = 24
+        Width = 120
+        ItemHeight = 13
+        OnChange = cbFlightLogChange
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object cbEvent: TComboBox
+        Left = 112
+        Height = 21
+        Top = 72
+        Width = 120
+        ItemHeight = 13
+        TabOrder = 2
+      end
+    end
+    object tsSchedule: TTabSheet
+      Caption = 'Schedule'
+      ClientHeight = 153
+      ClientWidth = 296
+      ImageIndex = 1
+      object Label2: TLabel
+        Left = 8
+        Height = 13
+        Top = 24
+        Width = 23
+        Caption = 'Date'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 112
+        Height = 13
+        Top = 24
+        Width = 53
+        Caption = 'Description'
+        ParentColor = False
+      end
+      object DtpSchedule: TDateTimePicker
+        Left = 8
+        Height = 21
+        Top = 40
+        Width = 79
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 39054
+        Time = 0.265504664348555
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object EditDesc: TEdit
+        Left = 112
+        Height = 21
+        Top = 40
+        Width = 120
+        TabOrder = 1
+      end
+    end
+  end
+end

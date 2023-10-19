@@ -1,0 +1,109 @@
+object FFlightLogs: TFFlightLogs
+  Left = 2936
+  Height = 223
+  Top = -295
+  Width = 212
+  BorderStyle = bsDialog
+  Caption = 'Manage flight logs'
+  ClientHeight = 223
+  ClientWidth = 212
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Label12: TLabel
+    Left = 0
+    Height = 28
+    Top = 155
+    Width = 212
+    Align = alBottom
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'You can add or remove fllight logs here.'
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 183
+    Width = 212
+    Align = alBottom
+    BevelInner = bvLowered
+    ClientHeight = 40
+    ClientWidth = 212
+    TabOrder = 0
+    object ButtonOK: TBitBtn
+      Left = 65
+      Height = 25
+      Top = 7
+      Width = 79
+      Anchors = [akTop]
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      Images = FMain.ImageList
+      OnClick = ButtonOKClick
+      TabOrder = 0
+    end
+  end
+  object ButtonNew: TBitBtn
+    Left = 67
+    Height = 25
+    Hint = 'add'
+    Top = 126
+    Width = 25
+    Images = FMain.ImageList
+    ImageIndex = 18
+    OnClick = ButtonNewClick
+    TabOrder = 1
+  end
+  object ButtonDelete: TBitBtn
+    Left = 94
+    Height = 25
+    Hint = 'remove'
+    Top = 126
+    Width = 25
+    Images = FMain.ImageList
+    ImageIndex = 19
+    OnClick = ButtonDeleteClick
+    TabOrder = 2
+  end
+  object ButtonEdit: TBitBtn
+    Left = 121
+    Height = 25
+    Hint = 'edit'
+    Top = 126
+    Width = 25
+    Images = FMain.ImageList
+    ImageIndex = 14
+    OnClick = ButtonEditClick
+    TabOrder = 3
+  end
+  object LBFlu: TListBox
+    Left = 0
+    Height = 120
+    Hint = 'Select flight log'
+    Top = 0
+    Width = 212
+    Align = alTop
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ItemHeight = 23
+    OnDrawItem = LBFluDrawItem
+    ParentFont = False
+    Style = lbOwnerDrawFixed
+    TabOrder = 4
+  end
+end

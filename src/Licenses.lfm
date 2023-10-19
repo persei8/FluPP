@@ -1,0 +1,128 @@
+object FLicenses: TFLicenses
+  Left = 3494
+  Height = 534
+  Top = -441
+  Width = 535
+  BorderStyle = bsDialog
+  Caption = 'Licence extension'
+  ClientHeight = 534
+  ClientWidth = 535
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 4
+    Top = 382
+    Width = 535
+    Align = alTop
+    ResizeAnchor = akTop
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 471
+    Width = 535
+    Align = alBottom
+    BevelInner = bvLowered
+    ClientHeight = 40
+    ClientWidth = 535
+    TabOrder = 0
+    object ButtonExit: TBitBtn
+      Left = 279
+      Height = 25
+      Top = 6
+      Width = 75
+      Cancel = True
+      Caption = 'Exit'
+      ModalResult = 3
+      Images = FMain.ImageList
+      ImageIndex = 8
+      TabOrder = 0
+    end
+    object ButtonSettings: TBitBtn
+      Left = 177
+      Height = 25
+      Top = 6
+      Width = 93
+      Caption = 'Settings'
+      ModalResult = 3
+      Images = FMain.ImageList
+      ImageIndex = 26
+      OnClick = ButtonSettingsClick
+      TabOrder = 1
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 511
+    Width = 535
+    Panels = <    
+      item
+        Alignment = taCenter
+        Bevel = pbNone
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object VST: TVirtualStringTree
+    Left = 0
+    Height = 382
+    Top = 0
+    Width = 535
+    Align = alTop
+    Header.AutoSizeIndex = 0
+    Header.Columns = <>
+    Header.Font.Color = clWindowText
+    Header.Font.Height = -11
+    Header.Font.Name = 'MS Sans Serif'
+    Header.Height = 20
+    Header.MainColumn = -1
+    Header.Options = [hoColumnResize, hoDrag, hoVisible]
+    Header.Style = hsPlates
+    Images = ImageListLicenses
+    TabOrder = 2
+    TreeOptions.PaintOptions = [toHideFocusRect, toShowButtons, toShowDropmark, toShowRoot, toShowTreeLines, toThemeAware, toUseBlendedImages]
+    TreeOptions.SelectionOptions = [toFullRowSelect]
+    OnFocusChanged = VSTFocusChanged
+    OnFreeNode = VSTFreeNode
+    OnGetText = VSTGetText
+    OnPaintText = VSTPaintText
+    OnGetImageIndex = VSTGetImageIndex
+  end
+  object MemoDesc: TMemo
+    Left = 0
+    Height = 85
+    Top = 386
+    Width = 535
+    Align = alClient
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object ImageListLicenses: TImageList
+    Left = 408
+    Top = 480
+    Bitmap = {
+      4C7A030000001000000010000000E10000000000000078DAD595310EC3200C45
+      39BC8FC0C87918B946474646DA5025A5048CBF69D436929348E6FD8F0D24C6FC
+      E395B331949F4F2ECFE56830E695276AF3EFEC39CF8D91B09C86941DD589B063
+      0D8C5FF1EFCF5FA63166E71AA39A251A5CBF32CC73F9D9DEE3EAC3D6F0CA636C
+      F2124B4A7E67357CCDA27CC39201F8ABD9D15A48592AF7AC9A73DDCF5D03A8B7
+      E45A0DC2FA75D250F4BAA701AD53A381B2B5869475CE95EF011A87D7E31DBD7A
+      7C8C711A292596F7DEB331E37FD1FFB6E0DF6A7CA3FE10C2111AFF8DA943EADF
+      FA4AF89937C76BF7BFB5163E7B1BF3A95FF01D8DD61A57
+    }
+  end
+end

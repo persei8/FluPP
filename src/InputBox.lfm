@@ -1,0 +1,55 @@
+object FInputBox: TFInputBox
+  Left = 2733
+  Height = 121
+  Top = -243
+  Width = 200
+  BorderStyle = bsDialog
+  Caption = 'Time category'
+  ClientHeight = 121
+  ClientWidth = 200
+  Color = clBtnFace
+  Constraints.MinWidth = 200
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 80
+    Width = 200
+    Align = alBottom
+    BevelInner = bvLowered
+    ClientHeight = 41
+    ClientWidth = 200
+    TabOrder = 0
+    object ButtonCancel: TBitBtn
+      Left = 101
+      Height = 25
+      Hint = 'Abort'
+      Top = 6
+      Width = 82
+      Anchors = []
+      Cancel = True
+      Kind = bkCancel
+      ModalResult = 2
+      Images = FMain.ImageList
+      TabOrder = 1
+    end
+    object ButtonOK: TBitBtn
+      Left = 17
+      Height = 25
+      Hint = 'Accept data'
+      Top = 6
+      Width = 77
+      Anchors = []
+      Caption = 'OK'
+      Default = True
+      ModalResult = 1
+      Images = FMain.ImageList
+      ImageIndex = 22
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,1907 @@
+object FStatistics: TFStatistics
+  Left = 2766
+  Height = 556
+  Top = -247
+  Width = 924
+  VertScrollBar.Tracking = True
+  BorderStyle = bsDialog
+  Caption = 'Statistic'
+  ClientHeight = 556
+  ClientWidth = 924
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 533
+    Width = 924
+    Panels = <    
+      item
+        Alignment = taCenter
+        Bevel = pbNone
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 493
+    Width = 924
+    Align = alBottom
+    BevelInner = bvLowered
+    ClientHeight = 40
+    ClientWidth = 924
+    TabOrder = 0
+    object BitBtn1: TBitBtn
+      Left = 438
+      Height = 25
+      Top = 6
+      Width = 71
+      Cancel = True
+      Caption = 'Exit'
+      ModalResult = 3
+      Images = FMain.ImageList
+      ImageIndex = 8
+      TabOrder = 0
+    end
+  end
+  object PageControlStat: TPageControl
+    Left = 0
+    Height = 493
+    Top = 0
+    Width = 924
+    ActivePage = TsStart
+    Align = alClient
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 2
+    object TsStart: TTabSheet
+      Caption = 'Start'
+      ClientHeight = 467
+      ClientWidth = 916
+      ImageIndex = 3
+      object BitBtn2: TBitBtn
+        Left = 406
+        Height = 41
+        Top = 224
+        Width = 105
+        Caption = 'Start'
+        Default = True
+        Images = FMain.ImageList
+        ImageIndex = 22
+        OnClick = ButtonStatStartClick
+        TabOrder = 0
+      end
+      object PanelFoundFlights: TPanel
+        Left = 323
+        Height = 58
+        Top = 319
+        Width = 269
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        ClientHeight = 58
+        ClientWidth = 269
+        TabOrder = 1
+        object Label26: TLabel
+          Left = 10
+          Height = 13
+          Top = 4
+          Width = 63
+          Caption = 'Found flights:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label21: TLabel
+          Left = 10
+          Height = 13
+          Top = 20
+          Width = 22
+          Caption = 'First:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelFrom: TLabel
+          Left = 253
+          Height = 13
+          Top = 20
+          Width = 3
+          Alignment = taRightJustify
+          Caption = '-'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label22: TLabel
+          Left = 10
+          Height = 13
+          Top = 36
+          Width = 23
+          Caption = 'Last:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelTo: TLabel
+          Left = 253
+          Height = 13
+          Top = 36
+          Width = 3
+          Alignment = taRightJustify
+          Caption = '-'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelFoundFlights: TLabel
+          Left = 98
+          Height = 13
+          Top = 4
+          Width = 3
+          Caption = '-'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelCalcTime: TLabel
+          Left = 170
+          Height = 13
+          Top = 4
+          Width = 57
+          AutoSize = False
+          Caption = 'LabelCalcTime'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label15: TLabel
+          Left = 154
+          Height = 13
+          Top = 4
+          Width = 11
+          Caption = 'in:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object RGDistUnit: TRadioGroup
+        Left = 529
+        Height = 69
+        Top = 56
+        Width = 80
+        AutoFill = True
+        Caption = 'Units'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 51
+        ClientWidth = 76
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        ItemIndex = 0
+        Items.Strings = (
+          'km'
+          'nm'
+          'miles'
+        )
+        ParentFont = False
+        TabOrder = 2
+      end
+      object RGDefaultTime: TRadioGroup
+        Left = 529
+        Height = 58
+        Top = 128
+        Width = 81
+        AutoFill = True
+        Caption = 'Default Time'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 40
+        ClientWidth = 77
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        ItemIndex = 0
+        Items.Strings = (
+          'Block'
+          'Flight'
+        )
+        ParentFont = False
+        TabOrder = 3
+      end
+      object GroupBox15: TGroupBox
+        Left = 81
+        Height = 130
+        Top = 56
+        Width = 185
+        Caption = 'Flight log'
+        ClientHeight = 112
+        ClientWidth = 181
+        TabOrder = 4
+        object LBFlu: TListBox
+          Left = 5
+          Height = 103
+          Hint = 'Select flight log. Hold ''CTRL'' for multiple selection'
+          Top = 6
+          Width = 171
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'MS Sans Serif'
+          ItemHeight = 0
+          MultiSelect = True
+          OnClick = LBFluClick
+          ParentFont = False
+          TabOrder = 0
+        end
+      end
+      object GroupBox16: TGroupBox
+        Left = 274
+        Height = 130
+        Top = 56
+        Width = 248
+        Caption = 'Filter'
+        ClientHeight = 112
+        ClientWidth = 244
+        TabOrder = 5
+        object Bevel18: TBevel
+          Left = 103
+          Height = 73
+          Top = 16
+          Width = 8
+          Shape = bsRightLine
+        end
+        object Label4: TLabel
+          Left = 118
+          Height = 13
+          Top = 64
+          Width = 16
+          Caption = 'To:'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 113
+          Height = 13
+          Top = 32
+          Width = 26
+          Caption = 'From:'
+          ParentColor = False
+        end
+        object PanelSchein: TPanel
+          Left = 142
+          Height = 57
+          Top = 19
+          Width = 82
+          BevelOuter = bvNone
+          TabOrder = 0
+          Visible = False
+        end
+        object PanelJahre: TPanel
+          Left = 150
+          Height = 57
+          Top = 27
+          Width = 82
+          BevelOuter = bvNone
+          ClientHeight = 57
+          ClientWidth = 82
+          TabOrder = 1
+          object CBJFrom: TComboBox
+            Left = 0
+            Height = 21
+            Top = 0
+            Width = 80
+            ItemHeight = 13
+            Items.Strings = (
+              'Beginning'
+            )
+            OnChange = CBJFromChange
+            TabOrder = 0
+          end
+          object CBJTo: TComboBox
+            Left = 0
+            Height = 21
+            Top = 30
+            Width = 80
+            ItemHeight = 13
+            Items.Strings = (
+              'End'
+            )
+            OnChange = CBJToChange
+            TabOrder = 1
+          end
+        end
+        object PanelStarts: TPanel
+          Left = 150
+          Height = 57
+          Top = 26
+          Width = 82
+          BevelOuter = bvNone
+          ClientHeight = 57
+          ClientWidth = 82
+          TabOrder = 2
+          Visible = False
+          object CBStFrom: TEdit
+            Left = 0
+            Height = 21
+            Top = 0
+            Width = 80
+            TabOrder = 0
+          end
+          object CBStTo: TEdit
+            Left = 0
+            Height = 21
+            Top = 31
+            Width = 80
+            TabOrder = 1
+          end
+        end
+        object RBJahre: TRadioButton
+          Left = 18
+          Height = 19
+          Top = 14
+          Width = 47
+          Caption = 'Years'
+          Checked = True
+          OnClick = RBClick
+          TabOrder = 3
+          TabStop = True
+        end
+        object RBStarts: TRadioButton
+          Left = 18
+          Height = 19
+          Top = 34
+          Width = 47
+          Caption = 'Starts'
+          OnClick = RBClick
+          TabOrder = 4
+        end
+        object RBSchein: TRadioButton
+          Left = 18
+          Height = 19
+          Top = 74
+          Width = 84
+          Caption = 'Since licence'
+          OnClick = RBClick
+          TabOrder = 5
+        end
+        object RBDatum: TRadioButton
+          Left = 18
+          Height = 19
+          Top = 54
+          Width = 43
+          Caption = 'Date'
+          OnClick = RBClick
+          TabOrder = 6
+        end
+        object PanelDatum: TPanel
+          Left = 150
+          Height = 57
+          Top = 27
+          Width = 82
+          BevelOuter = bvNone
+          ClientHeight = 57
+          ClientWidth = 82
+          TabOrder = 7
+          Visible = False
+          object CBDateFrom: TDateTimePicker
+            Left = 0
+            Height = 21
+            Top = 0
+            Width = 79
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            TabOrder = 0
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            Date = 38315
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+            OnExit = CBDateExit
+          end
+          object CBDateTo: TDateTimePicker
+            Left = 0
+            Height = 21
+            Top = 30
+            Width = 79
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            TabOrder = 1
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            Date = 38315
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+            OnExit = CBDateExit
+          end
+        end
+      end
+      object GroupBox17: TGroupBox
+        Left = 617
+        Height = 130
+        Top = 56
+        Width = 217
+        Caption = 'Category'
+        ClientHeight = 112
+        ClientWidth = 213
+        TabOrder = 6
+        object Label24: TLabel
+          Left = 162
+          Height = 13
+          Top = 0
+          Width = 24
+          Caption = '= not'
+          ParentColor = False
+        end
+        object CLBKat: TCheckListBox
+          Left = 5
+          Height = 91
+          Hint = 'Filter category'
+          Top = 18
+          Width = 200
+          AllowGrayed = True
+          Columns = 1
+          ItemHeight = 0
+          OnClickCheck = CLBKatClickCheck
+          Sorted = True
+          TabOrder = 0
+        end
+        object Panel4: TPanel
+          Left = 58
+          Height = 19
+          Top = 0
+          Width = 86
+          BevelInner = bvRaised
+          BevelOuter = bvLowered
+          ClientHeight = 19
+          ClientWidth = 86
+          TabOrder = 1
+          object RBKatAnd: TRadioButton
+            Left = 0
+            Height = 19
+            Top = 0
+            Width = 38
+            Caption = 'and'
+            Checked = True
+            TabOrder = 0
+            TabStop = True
+          end
+          object RBKatOr: TRadioButton
+            Left = 40
+            Height = 19
+            Top = 0
+            Width = 29
+            Caption = 'or'
+            TabOrder = 1
+          end
+        end
+        object CheckBox1: TCheckBox
+          Left = 147
+          Height = 19
+          Top = 0
+          Width = 20
+          Enabled = False
+          State = cbGrayed
+          TabOrder = 2
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'General'
+      ClientHeight = 467
+      ClientWidth = 916
+      ImageIndex = 1
+      object GroupBox1: TGroupBox
+        Left = 60
+        Height = 133
+        Top = 25
+        Width = 200
+        Caption = 'Time'
+        ClientHeight = 115
+        ClientWidth = 196
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 8
+          Height = 13
+          Top = 20
+          Width = 43
+          Caption = 'Solo time'
+          ParentColor = False
+        end
+        object LabelAlleine: TLabel
+          Left = 103
+          Height = 13
+          Top = 21
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 8
+          Height = 13
+          Top = 36
+          Width = 59
+          Caption = 'With copilot:'
+          ParentColor = False
+        end
+        object LabelBegleiter: TLabel
+          Left = 103
+          Height = 13
+          Top = 36
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 8
+          Height = 13
+          Top = 88
+          Width = 34
+          Caption = 'Total:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelGesamt: TLabel
+          Left = 103
+          Height = 13
+          Top = 88
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label9: TLabel
+          Left = 8
+          Height = 13
+          Top = 68
+          Width = 90
+          Caption = 'Average flight time:'
+          ParentColor = False
+        end
+        object LabelDurchn: TLabel
+          Left = 103
+          Height = 13
+          Top = 68
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          ParentColor = False
+        end
+        object LabelGesamt2: TLabel
+          Left = 103
+          Height = 13
+          Hint = 'Flight time including flights before FluPP'
+          Top = 101
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '(0:00)'
+          Font.Color = clWindowText
+          Font.Height = -8
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label17: TLabel
+          Left = 8
+          Height = 13
+          Top = 4
+          Width = 20
+          Caption = 'PIC:'
+          ParentColor = False
+        end
+        object LabelPIC: TLabel
+          Left = 103
+          Height = 13
+          Top = 4
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          ParentColor = False
+        end
+        object Label39: TLabel
+          Left = 8
+          Height = 13
+          Top = 52
+          Width = 82
+          Caption = 'With passengers:'
+          ParentColor = False
+        end
+        object LabelPassenger: TLabel
+          Left = 103
+          Height = 13
+          Top = 52
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0:00'
+          ParentColor = False
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 60
+        Height = 139
+        Top = 167
+        Width = 200
+        Caption = 'Flights'
+        ClientHeight = 121
+        ClientWidth = 196
+        TabOrder = 1
+        object Label5: TLabel
+          Left = 8
+          Height = 13
+          Top = 4
+          Width = 57
+          Caption = 'Winch start:'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 8
+          Height = 13
+          Top = 20
+          Width = 35
+          Caption = 'Air tow:'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 8
+          Height = 13
+          Top = 36
+          Width = 41
+          Caption = 'Selfstart:'
+          ParentColor = False
+        end
+        object LabelWinde: TLabel
+          Left = 103
+          Height = 13
+          Top = 4
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object LabelFSch: TLabel
+          Left = 103
+          Height = 13
+          Top = 20
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object LabelEigen: TLabel
+          Left = 103
+          Height = 13
+          Top = 36
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object Label10: TLabel
+          Left = 8
+          Height = 13
+          Top = 93
+          Width = 42
+          Caption = 'Flights:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelGenFlights: TLabel
+          Left = 103
+          Height = 13
+          Top = 93
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelFluege2: TLabel
+          Left = 103
+          Height = 13
+          Hint = 'Flights including flights before FluPP'
+          Top = 107
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '(0)'
+          Font.Color = clWindowText
+          Font.Height = -8
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label19: TLabel
+          Left = 8
+          Height = 13
+          Top = 52
+          Width = 62
+          Caption = 'Car tow start:'
+          ParentColor = False
+        end
+        object LabelAuto: TLabel
+          Left = 103
+          Height = 13
+          Top = 52
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object LabelGummi: TLabel
+          Left = 103
+          Height = 13
+          Top = 68
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object Label35: TLabel
+          Left = 8
+          Height = 13
+          Top = 68
+          Width = 62
+          Caption = 'Rubberband:'
+          ParentColor = False
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 476
+        Height = 399
+        Top = 25
+        Width = 250
+        Caption = 'Categories'
+        ClientHeight = 381
+        ClientWidth = 246
+        TabOrder = 2
+        object CBKatGen: TComboBox
+          Left = 7
+          Height = 21
+          Hint = 'Choose category'
+          Top = 4
+          Width = 230
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'Categories'
+            'Time categories'
+            'Contest categories'
+          )
+          OnChange = CBKatGenChange
+          ParentFont = False
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Categories'
+        end
+        object GridKatG: TStringGrid
+          Left = 7
+          Height = 348
+          Top = 31
+          Width = 230
+          BorderStyle = bsNone
+          ColCount = 3
+          DefaultColWidth = 50
+          DefaultDrawing = False
+          DefaultRowHeight = 17
+          FixedCols = 0
+          FixedRows = 0
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          GridLineWidth = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
+          ParentFont = False
+          ParentShowHint = False
+          RowCount = 1
+          ScrollBars = ssVertical
+          TabOrder = 1
+          OnDrawCell = GridKatDrawCell
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 268
+        Height = 106
+        Top = 25
+        Width = 200
+        Caption = 'Costs'
+        ClientHeight = 88
+        ClientWidth = 196
+        TabOrder = 3
+        object Label51: TLabel
+          Left = 8
+          Height = 13
+          Top = 72
+          Width = 34
+          Caption = 'Total:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label52: TLabel
+          Left = 8
+          Height = 13
+          Top = 4
+          Width = 36
+          Caption = 'Aircraft:'
+          ParentColor = False
+        end
+        object Label53: TLabel
+          Left = 8
+          Height = 13
+          Top = 20
+          Width = 27
+          Caption = 'Crew:'
+          ParentColor = False
+        end
+        object Label54: TLabel
+          Left = 8
+          Height = 13
+          Top = 36
+          Width = 46
+          Caption = 'Landings:'
+          ParentColor = False
+        end
+        object Label55: TLabel
+          Left = 8
+          Height = 13
+          Top = 52
+          Width = 44
+          Caption = 'Earnings:'
+          ParentColor = False
+        end
+        object TCSum: TLabel
+          Left = 102
+          Height = 13
+          Top = 72
+          Width = 89
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          Color = clBtnFace
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+          Transparent = False
+        end
+        object TCEfF: TLabel
+          Left = 101
+          Height = 13
+          Top = 49
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object TCLaF: TLabel
+          Left = 101
+          Height = 13
+          Top = 34
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object TCCfC: TLabel
+          Left = 101
+          Height = 13
+          Top = 19
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+        object TCCfF: TLabel
+          Left = 101
+          Height = 13
+          Top = 4
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 61
+        Height = 114
+        Top = 311
+        Width = 200
+        Caption = 'Misc'
+        ClientHeight = 96
+        ClientWidth = 196
+        TabOrder = 4
+        object Label31: TLabel
+          Left = 8
+          Height = 13
+          Top = 57
+          Width = 55
+          Caption = 'Distance:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelGStrecke: TLabel
+          Left = 102
+          Height = 13
+          Top = 57
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0 km'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelGDGeschw: TLabel
+          Left = 102
+          Height = 13
+          Top = 73
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0 km/h'
+          ParentColor = False
+        end
+        object Label33: TLabel
+          Left = 8
+          Height = 13
+          Top = 73
+          Width = 43
+          Caption = 'Ø-speed:'
+          ParentColor = False
+        end
+        object Label25: TLabel
+          Left = 8
+          Height = 13
+          Top = 9
+          Width = 70
+          Caption = 'Passengers:'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelPassengers: TLabel
+          Left = 102
+          Height = 13
+          Top = 9
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label36: TLabel
+          Left = 8
+          Height = 13
+          Top = 25
+          Width = 69
+          Caption = 'Ø-Passengers:'
+          ParentColor = False
+        end
+        object LabelAvPassengers: TLabel
+          Left = 102
+          Height = 13
+          Top = 26
+          Width = 90
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '0'
+          ParentColor = False
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 268
+        Height = 58
+        Top = 367
+        Width = 200
+        Caption = 'Trend'
+        ClientHeight = 40
+        ClientWidth = 196
+        TabOrder = 5
+        object ButtonGraphGesamt: TBitBtn
+          Left = 109
+          Height = 30
+          Hint = 'Graph of all flights'
+          Top = 5
+          Width = 30
+          Enabled = False
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333300030003
+            0003333377737773777333333333333333333FFFFFFFFFFFFFFF770000000000
+            0000777777777777777733039993BBB3CCC3337F737F737F737F37039993BBB3
+            CCC3377F737F737F737F33039993BBB3CCC33F7F737F737F737F77079997BBB7
+            CCC77777737773777377330399930003CCC3337F737F7773737F370399933333
+            CCC3377F737F3333737F330399933333CCC33F7F737FFFFF737F770700077777
+            CCC77777777777777377330333333333CCC3337F33333333737F370333333333
+            0003377F33333333777333033333333333333F7FFFFFFFFFFFFF770777777777
+            7777777777777777777733333333333333333333333333333333
+          }
+          NumGlyphs = 2
+          OnClick = ButtonJVClick
+          TabOrder = 0
+        end
+        object ButtonTabGesamt: TBitBtn
+          Left = 149
+          Height = 30
+          Hint = 'Table of all flights'
+          Top = 5
+          Width = 30
+          Enabled = False
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            04000000000000010000120B0000120B00001000000000000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+            33333FFFFFFFFFFFFFFF000000000000000077777777777777770FFFFFFFFFFF
+            FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+            FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+            FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+            FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+            FFF07FFFFFFFFFFFFFF70CCCCCCCCCCCCCC07777777777777777088CCCCCCCCC
+            C8807FF7777777777FF700000000000000007777777777777777333333333333
+            3333333333333333333333333333333333333333333333333333
+          }
+          NumGlyphs = 2
+          OnClick = ButtonJVClick
+          TabOrder = 1
+        end
+        object CBTrendGen: TComboBox
+          Left = 12
+          Height = 21
+          Hint = 'Choose category'
+          Top = 9
+          Width = 86
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'Year'
+            'Month'
+            'Week'
+          )
+          OnChange = CBKatDetailChange
+          ParentFont = False
+          Style = csDropDownList
+          TabOrder = 2
+          Text = 'Year'
+        end
+      end
+      object GroupBox14: TGroupBox
+        Left = 268
+        Height = 225
+        Top = 136
+        Width = 200
+        Caption = 'Top Lists'
+        ClientHeight = 207
+        ClientWidth = 196
+        TabOrder = 6
+        object CBTopListGen: TComboBox
+          Left = 5
+          Height = 21
+          Hint = 'Choose category'
+          Top = 4
+          Width = 183
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'Flights'
+            'Flight duration'
+            'Distance'
+            'Contest'
+          )
+          OnChange = CBKatDetailChange
+          ParentFont = False
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Flights'
+        end
+        object GridTopG: TStringGrid
+          Left = 5
+          Height = 171
+          Top = 32
+          Width = 183
+          Align = alCustom
+          BorderStyle = bsNone
+          ColCount = 3
+          DefaultColWidth = 50
+          DefaultDrawing = False
+          DefaultRowHeight = 17
+          FixedCols = 0
+          FixedRows = 0
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          GridLineWidth = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
+          ParentFont = False
+          ParentShowHint = False
+          RowCount = 1
+          ScrollBars = ssVertical
+          TabOrder = 1
+          OnDrawCell = GridKatDrawCell
+        end
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Details'
+      ClientHeight = 467
+      ClientWidth = 916
+      object Panel5: TPanel
+        Left = 0
+        Height = 467
+        Top = 0
+        Width = 225
+        Align = alLeft
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        ClientHeight = 467
+        ClientWidth = 225
+        TabOrder = 0
+        object SGDetail: TStringGrid
+          Left = 3
+          Height = 418
+          Hint = 'Detailed selection. Choose dataset for details'
+          Top = 43
+          Width = 215
+          BorderStyle = bsNone
+          ColCount = 18
+          DefaultRowHeight = 17
+          FixedCols = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
+          RowCount = 2
+          ScrollBars = ssVertical
+          TabOrder = 0
+          OnSelectCell = SGDetailSelectCell
+        end
+        object CBDetail: TComboBox
+          Left = 3
+          Height = 21
+          Hint = 'Choose category'
+          Top = 11
+          Width = 215
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'Aircraft type'
+            'Aircraft id'
+            'Pilot'
+            'Passenger'
+            'Start'
+            'Landing'
+          )
+          OnChange = DetailChange
+          Style = csDropDownList
+          TabOrder = 1
+          Text = 'Aircraft type'
+        end
+      end
+      object Panel3: TPanel
+        Left = 225
+        Height = 467
+        Top = 0
+        Width = 691
+        Align = alClient
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        ClientHeight = 467
+        ClientWidth = 691
+        TabOrder = 1
+        object Bevel13: TBevel
+          Left = 2
+          Height = 31
+          Top = 2
+          Width = 687
+          Align = alTop
+          Shape = bsBottomLine
+        end
+        object Label14: TLabel
+          Left = 243
+          Height = 22
+          Top = 4
+          Width = 101
+          Caption = 'Details for:'
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object LabelSName: TLabel
+          Left = 354
+          Height = 22
+          Top = 4
+          Width = 6
+          Caption = '-'
+          Font.Color = clNavy
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object GroupBox6: TGroupBox
+          Left = 222
+          Height = 58
+          Top = 366
+          Width = 200
+          Caption = 'Trend'
+          ClientHeight = 40
+          ClientWidth = 196
+          TabOrder = 0
+          object ButtonTabDetail: TBitBtn
+            Left = 151
+            Height = 30
+            Hint = 'Table of selected detailed category'
+            Top = 4
+            Width = 30
+            Enabled = False
+            Glyph.Data = {
+              76010000424D7601000000000000760000002800000020000000100000000100
+              04000000000000010000120B0000120B00001000000000000000000000000000
+              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+              33333FFFFFFFFFFFFFFF000000000000000077777777777777770FFFFFFFFFFF
+              FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+              FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+              FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+              FFF07F3FF3FF3FF3FFF70F00F00F00F000F07F773773773777370FFFFFFFFFFF
+              FFF07FFFFFFFFFFFFFF70CCCCCCCCCCCCCC07777777777777777088CCCCCCCCC
+              C8807FF7777777777FF700000000000000007777777777777777333333333333
+              3333333333333333333333333333333333333333333333333333
+            }
+            NumGlyphs = 2
+            OnClick = ButtonJVClick
+            TabOrder = 0
+          end
+          object ButtonGraphDetail: TBitBtn
+            Left = 111
+            Height = 30
+            Hint = 'graph of selected detailed category'
+            Top = 4
+            Width = 30
+            Enabled = False
+            Glyph.Data = {
+              76010000424D7601000000000000760000002800000020000000100000000100
+              04000000000000010000120B0000120B00001000000000000000000000000000
+              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333300030003
+              0003333377737773777333333333333333333FFFFFFFFFFFFFFF770000000000
+              0000777777777777777733039993BBB3CCC3337F737F737F737F37039993BBB3
+              CCC3377F737F737F737F33039993BBB3CCC33F7F737F737F737F77079997BBB7
+              CCC77777737773777377330399930003CCC3337F737F7773737F370399933333
+              CCC3377F737F3333737F330399933333CCC33F7F737FFFFF737F770700077777
+              CCC77777777777777377330333333333CCC3337F33333333737F370333333333
+              0003377F33333333777333033333333333333F7FFFFFFFFFFFFF770777777777
+              7777777777777777777733333333333333333333333333333333
+            }
+            NumGlyphs = 2
+            OnClick = ButtonJVClick
+            TabOrder = 1
+          end
+          object CBTrendDetail: TComboBox
+            Left = 12
+            Height = 21
+            Hint = 'Choose category'
+            Top = 9
+            Width = 86
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            ItemHeight = 13
+            ItemIndex = 0
+            Items.Strings = (
+              'Year'
+              'Month'
+              'Week'
+            )
+            OnChange = CBKatDetailChange
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 2
+            Text = 'Year'
+          end
+        end
+        object GroupBox8: TGroupBox
+          Left = 14
+          Height = 137
+          Top = 153
+          Width = 200
+          Caption = 'Flights'
+          ClientHeight = 119
+          ClientWidth = 196
+          TabOrder = 1
+          object Label27: TLabel
+            Left = 8
+            Height = 13
+            Top = 42
+            Width = 59
+            Caption = 'Winch starts'
+            ParentColor = False
+          end
+          object Label28: TLabel
+            Left = 8
+            Height = 13
+            Top = 57
+            Width = 40
+            Caption = 'Air tows:'
+            ParentColor = False
+          end
+          object LabelSW: TLabel
+            Left = 103
+            Height = 13
+            Top = 42
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object Label29: TLabel
+            Left = 8
+            Height = 13
+            Top = 72
+            Width = 49
+            Caption = 'Self starts:'
+            ParentColor = False
+          end
+          object LabelSF: TLabel
+            Left = 103
+            Height = 13
+            Top = 57
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object LabelSE: TLabel
+            Left = 103
+            Height = 13
+            Top = 72
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object Label18: TLabel
+            Left = 8
+            Height = 13
+            Top = 87
+            Width = 62
+            Caption = 'Car tow start:'
+            ParentColor = False
+          end
+          object LabelSA: TLabel
+            Left = 103
+            Height = 13
+            Top = 87
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object LabelSG: TLabel
+            Left = 103
+            Height = 13
+            Top = 102
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object Label20: TLabel
+            Left = 8
+            Height = 13
+            Top = 102
+            Width = 62
+            Caption = 'Rubberband:'
+            ParentColor = False
+          end
+          object Label12: TLabel
+            Left = 8
+            Height = 13
+            Top = 6
+            Width = 51
+            Caption = '% of starts:'
+            ParentColor = False
+          end
+          object LabelSGesStart: TLabel
+            Left = 103
+            Height = 13
+            Top = 6
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0.00 %'
+            ParentColor = False
+          end
+        end
+        object GroupBox9: TGroupBox
+          Left = 14
+          Height = 105
+          Top = 44
+          Width = 200
+          Caption = 'Time'
+          ClientHeight = 87
+          ClientWidth = 196
+          TabOrder = 2
+          object Label11: TLabel
+            Left = 8
+            Height = 13
+            Top = 4
+            Width = 90
+            Caption = 'Average flight time:'
+            ParentColor = False
+          end
+          object Label13: TLabel
+            Left = 8
+            Height = 13
+            Top = 20
+            Width = 70
+            Caption = '% of flight time:'
+            ParentColor = False
+          end
+          object LabelSDurchn: TLabel
+            Left = 103
+            Height = 13
+            Top = 4
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0:00'
+            ParentColor = False
+          end
+          object LabelSGesZeit: TLabel
+            Left = 103
+            Height = 13
+            Top = 20
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0.00 %'
+            ParentColor = False
+          end
+        end
+        object GroupBox10: TGroupBox
+          Left = 222
+          Height = 105
+          Top = 44
+          Width = 200
+          Caption = 'Costs'
+          ClientHeight = 87
+          ClientWidth = 196
+          TabOrder = 3
+          object Label42: TLabel
+            Left = 8
+            Height = 13
+            Top = 52
+            Width = 44
+            Caption = 'Earnings:'
+            ParentColor = False
+          end
+          object Label43: TLabel
+            Left = 8
+            Height = 13
+            Top = 36
+            Width = 46
+            Caption = 'Landings:'
+            ParentColor = False
+          end
+          object Label44: TLabel
+            Left = 8
+            Height = 13
+            Top = 20
+            Width = 27
+            Caption = 'Crew:'
+            ParentColor = False
+          end
+          object Label45: TLabel
+            Left = 8
+            Height = 13
+            Top = 4
+            Width = 36
+            Caption = 'Aircraft:'
+            ParentColor = False
+          end
+          object SCCfF: TLabel
+            Left = 103
+            Height = 13
+            Top = 4
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object SCCfC: TLabel
+            Left = 103
+            Height = 13
+            Top = 20
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object SCLaF: TLabel
+            Left = 103
+            Height = 13
+            Top = 36
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object SCEfF: TLabel
+            Left = 103
+            Height = 13
+            Top = 52
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object SCSum: TLabel
+            Left = 103
+            Height = 13
+            Top = 72
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            Color = clBtnFace
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            ParentColor = False
+            ParentFont = False
+            Transparent = False
+          end
+          object Label40: TLabel
+            Left = 8
+            Height = 13
+            Top = 72
+            Width = 69
+            Caption = 'Total Costs:'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object GroupBox11: TGroupBox
+          Left = 14
+          Height = 129
+          Top = 295
+          Width = 200
+          Caption = 'Misc'
+          ClientHeight = 111
+          ClientWidth = 196
+          TabOrder = 4
+          object Label30: TLabel
+            Left = 8
+            Height = 13
+            Top = 12
+            Width = 45
+            Caption = 'Distance:'
+            ParentColor = False
+          end
+          object LabelSStrecke: TLabel
+            Left = 103
+            Height = 13
+            Top = 12
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0 km'
+            ParentColor = False
+          end
+          object Label32: TLabel
+            Left = 8
+            Height = 13
+            Top = 28
+            Width = 45
+            Caption = 'Ø-Speed:'
+            ParentColor = False
+          end
+          object LabelSDGeschw: TLabel
+            Left = 103
+            Height = 13
+            Top = 28
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0 km/h'
+            ParentColor = False
+          end
+          object Label34: TLabel
+            Left = 8
+            Height = 13
+            Top = 44
+            Width = 58
+            Caption = 'Passengers:'
+            ParentColor = False
+          end
+          object Label38: TLabel
+            Left = 8
+            Height = 13
+            Top = 60
+            Width = 69
+            Caption = 'Ø-Passengers:'
+            ParentColor = False
+          end
+          object LabelSDPassengers: TLabel
+            Left = 103
+            Height = 13
+            Top = 44
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object LabelSDAvPassengers: TLabel
+            Left = 103
+            Height = 13
+            Top = 60
+            Width = 90
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '0'
+            ParentColor = False
+          end
+          object LastStart: TLabel
+            Left = 50
+            Height = 13
+            Top = 86
+            Width = 93
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = 'Last Start'
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object GroupBox12: TGroupBox
+          Left = 430
+          Height = 380
+          Top = 44
+          Width = 250
+          Caption = 'Categories'
+          ClientHeight = 362
+          ClientWidth = 246
+          TabOrder = 5
+          object CBKatDetail: TComboBox
+            Left = 7
+            Height = 21
+            Hint = 'Choose category'
+            Top = 4
+            Width = 230
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            ItemHeight = 13
+            ItemIndex = 0
+            Items.Strings = (
+              'Categories'
+              'Time categories'
+              'Contest categories'
+            )
+            OnChange = CBKatDetailChange
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 0
+            Text = 'Categories'
+          end
+          object GridKatDetail: TStringGrid
+            Left = 7
+            Height = 320
+            Top = 32
+            Width = 230
+            Align = alCustom
+            BorderStyle = bsNone
+            ColCount = 3
+            DefaultColWidth = 50
+            DefaultDrawing = False
+            DefaultRowHeight = 17
+            FixedCols = 0
+            FixedRows = 0
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            GridLineWidth = 0
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
+            ParentFont = False
+            ParentShowHint = False
+            RowCount = 1
+            ScrollBars = ssVertical
+            TabOrder = 1
+            OnDrawCell = GridKatDrawCell
+          end
+        end
+        object GroupBox13: TGroupBox
+          Left = 222
+          Height = 201
+          Top = 158
+          Width = 200
+          Caption = 'Top Lists'
+          ClientHeight = 183
+          ClientWidth = 196
+          TabOrder = 6
+          object CBTopListDetail: TComboBox
+            Left = 5
+            Height = 21
+            Hint = 'Choose category'
+            Top = 4
+            Width = 183
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            ItemHeight = 13
+            ItemIndex = 0
+            Items.Strings = (
+              'Flights'
+              'Flight duration'
+              'Distance'
+              'Contest'
+            )
+            OnChange = CBKatDetailChange
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 0
+            Text = 'Flights'
+          end
+          object GridTopDetail: TStringGrid
+            Left = 5
+            Height = 147
+            Top = 32
+            Width = 183
+            Align = alCustom
+            BorderStyle = bsNone
+            ColCount = 3
+            DefaultColWidth = 50
+            DefaultDrawing = False
+            DefaultRowHeight = 17
+            FixedCols = 0
+            FixedRows = 0
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            GridLineWidth = 0
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
+            ParentFont = False
+            ParentShowHint = False
+            RowCount = 1
+            ScrollBars = ssVertical
+            TabOrder = 1
+            OnDrawCell = GridKatDrawCell
+          end
+        end
+      end
+    end
+  end
+end

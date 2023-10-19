@@ -58,7 +58,7 @@ jobs:
       with:
         name: Compiled Windows Binary
         path: |
-          FluPP.exe
+          src\lib\x86_64-win64\FluPP.exe
     - name: Artifacts (macOS)
       if: ${{ matrix.operating-system == 'macos-latest' }}
       uses: actions/upload-artifact@v3

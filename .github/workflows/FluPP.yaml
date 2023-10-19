@@ -1,0 +1,3 @@
+- name: Setup Lazarus environment
+  uses: gcarreno/setup-lazarus@v3.2.15
+            

@@ -120,7 +120,7 @@ var
 
 implementation
 
-uses Settings, Main, Grid, BasicSettings, Grids, Tools, ToolsGrid;
+uses Settings, Main, BasicSettings, Grids, Tools, ToolsGrid;
 
 {$R *.lfm}
 
@@ -159,7 +159,7 @@ begin
   CLBKat.Clear;
   CTiCheckListBox.Clear;
   ConCheckListBox.Clear;
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     LBFlu.Items.Add(GridChild(i).caption);
     for j := 0 to GridChild(i).ACCategories.Count-1 do
@@ -307,14 +307,14 @@ begin
   Scheine := '';
 
   { Temp. Schein 'Print' erstellen und ausfüllen mit gewählten Scheinen}
-  try FMain.CreateNewWindow('Print','< Schein >');
+  try FMain.CreateNewFlightLog('Print','< Schein >');
     GridActiveChild.GridCols.Delimiter := ';';
     GridActiveChild.GridCols.QuoteChar := '"';
     GridActiveChild.GridCols.DelimitedText := '"Num";"Dat";"ATy";"AId";"Pi1";"Pi2";"ToS";"StT";"LaT";"FlT";"StB";"LaB";"BlT";"NoL";"StL";"LaL";"Rem";"Dst";"Cat";"Via";"CTi";"Con";"Rem";"Del"';
 
     GridActiveChild.Grid.ColCount := GridActiveChild.GridCols.Count;
 
-    for SNr := 0 to FMain.MDIChildCount-1 do
+    for SNr := 0 to FMain.FlightLogList.Count-1 do
     if (GridChild(SNr).Caption <> 'Print') and (LBFlu.Selected[SNr]) then
     if GridChild(SNr).Data['Num',1] <> '' then
     begin
@@ -470,7 +470,7 @@ begin
           end;
         end;
       end; { for i := 1 to GridChild(SNr).Grid.RowCount-1 do }
-    end; { for SNr := 0 to FMain.MDIChildCount-1 do }
+    end; { for SNr := 0 to FMain.FlightLogList.Count-1 do }
 
 
     { Abbrechen wenn KEINE Datensätze }
@@ -901,7 +901,7 @@ begin
   if LBFlu.SelCount = 1 then AddYears(LBFlu.ItemIndex);
   { else
   begin
-    for SNr := 0 to FMain.MDIChildCount do
+    for SNr := 0 to FMain.FlightLogList.Count do
      if SNr < LBFlu.Items.Count then
      if LBFlu.Selected[SNr] then
      begin

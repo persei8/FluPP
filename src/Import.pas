@@ -17,7 +17,7 @@ procedure ImportCSV(FileName: String);
 
 implementation
 
-uses Grid, Main, Tools, ToolsGrid, ToolsShell;
+uses Main, Tools, ToolsGrid, ToolsShell;
 
 //*******************************************************
 // Standard XML procedures
@@ -282,7 +282,7 @@ begin
 
     { Flight logs }
     repeat
-      FMain.CreateNewWindow(copy(RowData,2,length(RowData)-2));
+      FMain.CreateNewFlightLog(copy(RowData,2,length(RowData)-2));
       repeat
         Readln(aFile,RowData);
         getSettLine(RowData,TmpCat,Data);
@@ -359,7 +359,7 @@ begin
     AircraftType.Free;
   end;
 
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     GridChild(i).ReCalcGridNr;
     GridChild(i).Grid.FixedCols := 1;
@@ -368,7 +368,7 @@ begin
     GridChild(i).NameCols;
   end;
 
-  FMain.MDIChildren[FMain.MDIChildCount-1].show;
+  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   GridActiveChild.ReCalcGridTime;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
@@ -443,14 +443,14 @@ var
 {----------}
   procedure CreateFlightlog(RowText: String);
   begin
-    if FMain.MDIChildCount <> 0 then
+    if FMain.FlightLogList.Count <> 0 then
     begin
       GridActiveChild.NameCols;
       GridActiveChild.Grid.RowCount := Row;
       GridActiveChild.Grid.FixedCols := 1;
       GridActiveChild.Grid.Row := GridActiveChild.Grid.RowCount-1;
     end;
-    FMain.CreateNewWindow(copy(RowText,2,pos(';',RowText)-2));
+    FMain.CreateNewFlightLog(copy(RowText,2,pos(';',RowText)-2));
   end;
 {----------}
   procedure GetSettLine(RowText: String; var TmpCat, Data: String);
@@ -574,13 +574,13 @@ begin
   GridActiveChild.NameCols;
   GridActiveChild.ReCalcGridTime;
   GridActiveChild.ReCalcGridNr;
-  FMain.MDIChildren[FMain.MDIChildCount-1].show;
+  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
 
   { DF4 -> DF5 }
   
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   for Row := 1 to GridChild(i).Grid.RowCount-1 do
   begin
     GridChild(i).Data['Cat',Row] := ReplaceString(GridChild(i).Data['Cat',Row],',','/');
@@ -590,7 +590,7 @@ begin
     GridChild(i).Data['Con',Row] := ReplaceString(GridChild(i).Data['Con',Row],',','/');
   end;
 
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     GridChild(i).Settings.Values['ShowBlockTime'] := 'False';
     GridChild(i).Settings.Values['ShowFlightTime'] := 'True';
@@ -709,14 +709,14 @@ begin
     Readln(AFile,RowText);
     if length(RowText) > 2 then If RowText[1] = ':' then // ":" = new Flightlog
     begin
-      if FMain.MDIChildCount <> 0 then
+      if FMain.FlightLogList.Count <> 0 then
       begin
         GridActiveChild.Grid.RowCount := Row;
         GridActiveChild.Grid.Row := GridActiveChild.Grid.RowCount-1;
         GridActiveChild.ReCalcGridNr;
       end;
       FType := copy(RowText,pos(';',RowText)+1,length(RowText)-1);
-      FMain.CreateNewWindow(copy(RowText,2,pos(';',RowText)-2));
+      FMain.CreateNewFlightLog(copy(RowText,2,pos(';',RowText)-2));
 
       GridActiveChild.GridCols.Delimiter := ';';
       GridActiveChild.GridCols.QuoteChar := '"';
@@ -819,7 +819,7 @@ begin
 
   GridActiveChild.Grid.RowCount := Row;
 
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   for Row := 1 to GridChild(i).Grid.RowCount-1 do
   begin
     GridChild(i).Data['Cat',Row] := ReplaceString(GridChild(i).Data['Cat',Row],',','/');
@@ -834,11 +834,11 @@ begin
 
   GridActiveChild.ReCalcGridTime;
   GridActiveChild.ReCalcGridNr;
-  FMain.MDIChildren[FMain.MDIChildCount-1].show;
+  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
 
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
     if GridChild(i).GridCols.IndexOf('ToS') = -1 then
     begin
       GridChild(i).GridCols.Add('ToS');

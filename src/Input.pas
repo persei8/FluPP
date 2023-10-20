@@ -252,7 +252,7 @@ var
 
 implementation
 
-uses Main, Grid, Airports, InputBox, Tools, ToolsGrid, ToolsIGCParse;
+uses Main, Airports, InputBox, Tools, ToolsGrid, ToolsIGCParse;
 
 {$R *.lfm}
 
@@ -474,7 +474,6 @@ begin
     else LabelFlugNr.caption := InttoStr(Strtoint(GridActiveChild.Settings.Values['BFStarts'])+1);
   end
   else LabelFlugNr.caption := InttoStr(Strtoint(GridActiveChild.Settings.Values['BFStarts'])+1);
-  LabelFlbArt.caption := GridActiveChild.caption;
   DTPDate.Date := now;
   CBAircraftID.Text := GridActiveChild.Settings.Values['IDPrefix'];
 

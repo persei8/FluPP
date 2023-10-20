@@ -28,7 +28,7 @@ type
 
 implementation
 
-uses Main, Grid;
+uses Main;
 
 // ----------------------------------------------------------------
 // parse IGCFile

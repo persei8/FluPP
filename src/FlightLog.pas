@@ -40,6 +40,7 @@ type
     Undo: Array of String;
     SButton: TFSButton;
     Grid: TStringGrid;
+    Caption: String;
     constructor Create;
     destructor Destroy;
     property Data[Name: String; Row: Word]: String read GetData write SetData;

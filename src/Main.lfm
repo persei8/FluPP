@@ -1,7 +1,7 @@
 object FMain: TFMain
-  Left = 593
+  Left = 27
   Height = 544
-  Top = 535
+  Top = 547
   Width = 1141
   Caption = 'FluPP'
   ClientHeight = 515
@@ -65,7 +65,17 @@ object FMain: TFMain
     Top = 0
     Width = 61
     BevelOuter = bvNone
+    ClientHeight = 52
+    ClientWidth = 61
     TabOrder = 2
+    object Panel1: TPanel
+      Left = 8
+      Height = 50
+      Top = 8
+      Width = 170
+      Caption = 'Panel1'
+      TabOrder = 0
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -133,6 +143,15 @@ object FMain: TFMain
         50
       )
     end
+  end
+  object PanelFlightLog: TPanel
+    Left = 0
+    Height = 440
+    Top = 54
+    Width = 1141
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 4
   end
   object OpenDialog: TOpenDialog
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist]

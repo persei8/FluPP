@@ -41,7 +41,7 @@ implementation
 
 {$R *.lfm}
 
-uses Grid, Main, Tools, ToolsGrid;
+uses Main, Tools, ToolsGrid;
 
 // ----------------------------------------------------------------
 // Form create
@@ -60,7 +60,7 @@ var
 begin
   { Scheine }
   LBFlu.Items.Clear;
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
     LBFlu.Items.Add(GridChild(i).caption);
   LBFlu.ItemIndex := 0;
   LBFlu.Columns := LBFlu.Count;
@@ -100,7 +100,7 @@ const
   tbSegH = tbDHeight div 3;
 begin
   FlightTime := '0:00'; Flights := 0;
-  for GridIdx := 0 to FMain.MDIChildCount-1 do
+  for GridIdx := 0 to FMain.FlightLogList.Count-1 do
   if LBFlu.Selected[GridIdx] then
   if GridChild(GridIdx).Grid.Cells[0,1] <> '' then
   begin

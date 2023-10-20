@@ -100,7 +100,7 @@ begin
 
   { Load Schedules }
   LoadSchedule(Schedules, SchImageIdxUsr);
-  for GridIdx := 0 to FMain.MdiChildCount-1 do
+  for GridIdx := 0 to FMain.FlightLogList.Count-1 do
   begin
     LoadSchedule(GridChild(GridIdx).LicenseDates, SchImageIdxLic);
     LoadSchedule(GridChild(GridIdx).Events, SchImageIdxEvt);
@@ -144,7 +144,7 @@ begin
   Schedules.Clear;
   Medicals.Clear;
   SchedValidity.Clear;
-  for GridIdx := 0 to FMain.MdiChildCount-1 do
+  for GridIdx := 0 to FMain.FlightLogList.Count-1 do
   begin
     GridChild(GridIdx).LicenseDates.Clear;
     GridChild(GridIdx).Events.Clear;

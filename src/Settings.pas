@@ -263,27 +263,27 @@ var
   TreeData: TTreeData;
 begin
   LBFlu.Items.Clear;
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
     LBFlu.Items.Add(GridChild(i).caption);
   LBFlu.ItemIndex := 0;
   LBFlu.Columns := LBFlu.Count;
   LBFlu.Visible := False; 
 
-  SetLength(ACAircrafts_S,FMain.MDIChildCount);
-  SetLength(ACPilots_S,FMain.MDIChildCount);
-  SetLength(ACAirports_S,FMain.MDIChildCount);
-  SetLength(ACCategories_S,FMain.MDIChildCount);
-  SetLength(ACTimeCat_S,FMain.MDIChildCount);
-  SetLength(ACContestCat_S,FMain.MDIChildCount);
-  SetLength(Settings_S,FMain.MDIChildCount);
+  SetLength(ACAircrafts_S,FMain.FlightLogList.Count);
+  SetLength(ACPilots_S,FMain.FlightLogList.Count);
+  SetLength(ACAirports_S,FMain.FlightLogList.Count);
+  SetLength(ACCategories_S,FMain.FlightLogList.Count);
+  SetLength(ACTimeCat_S,FMain.FlightLogList.Count);
+  SetLength(ACContestCat_S,FMain.FlightLogList.Count);
+  SetLength(Settings_S,FMain.FlightLogList.Count);
 
-  SetLength(LicenseCategories_S,FMain.MDIChildCount);
-  SetLength(LicenseTimeCat_S,FMain.MDIChildCount);
-  SetLength(LicenseDates_S,FMain.MDIChildCount);
-  SetLength(AccLicenses_S,FMain.MDIChildCount);
-  SetLength(OptConditions_S,FMain.MDIChildCount);
+  SetLength(LicenseCategories_S,FMain.FlightLogList.Count);
+  SetLength(LicenseTimeCat_S,FMain.FlightLogList.Count);
+  SetLength(LicenseDates_S,FMain.FlightLogList.Count);
+  SetLength(AccLicenses_S,FMain.FlightLogList.Count);
+  SetLength(OptConditions_S,FMain.FlightLogList.Count);
 
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     ACAircrafts_S[i] := TStringList.Create;
     ACPilots_S[i] := TStringList.Create;
@@ -303,7 +303,7 @@ begin
   Medicals_S := TStringList.Create;
 
   { StringLists }
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     ACAircrafts_S[i].Assign(GridChild(i).ACAircrafts);
     ACPilots_S[i].Assign(GridChild(i).ACPilots);
@@ -454,7 +454,7 @@ begin
   VLEExit(Self);
   
   { StringLists }
-  for j := 0 to FMain.MDIChildCount -1 do
+  for j := 0 to FMain.FlightLogList.Count -1 do
   begin
     GridChild(j).ACAircrafts.Assign(ACAircrafts_S[j]);
     GridChild(j).ACPilots.Assign(ACPilots_S[j]);
@@ -471,7 +471,7 @@ begin
   end;
 
   { Settings }
-  for j := 0 to FMain.MDIChildCount -1 do
+  for j := 0 to FMain.FlightLogList.Count -1 do
   begin
     { Convert units }
     if GridChild(j).Settings.Values['DistUnit'] <> Settings_S[j].Values['DistUnit'] then
@@ -527,7 +527,7 @@ begin
   TabSheetCosts.TabVisible := False;
 
   PanelFligtLogs.Visible := False;
-  LBFlu.ItemIndex := 0;
+  //LBFlu.ItemIndex := 0;
 
   ShowModal;
 end;

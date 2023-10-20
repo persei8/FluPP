@@ -61,7 +61,7 @@ var
   i: Word;
 begin
   cbFlightLog.Items.Clear;
-  for i := 0 to FMain.MdiChildCount -1 do
+  for i := 0 to FMain.FlightLogList.Count -1 do
     cbFlightLog.Items.Add(GridChild(i).Caption);
   cbFlightLogChange(Self);
 end;

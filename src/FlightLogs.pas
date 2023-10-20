@@ -5,7 +5,7 @@ unit FlightLogs;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, ExtCtrls, Buttons;
 
 type
@@ -66,9 +66,9 @@ var
   i: word;
 begin
   LBFlu.Items.Clear;
-  if FMain.MDIChildCount > 0 then
+  if FMain.FlightLogList.Count > 0 then
   begin
-    for i := 0 to FMain.MDIChildCount-1 do
+    for i := 0 to FMain.FlightLogList.Count-1 do
       LBFlu.Items.Add(GridChild(i).caption);
     LBFlu.ItemIndex := 0;
   end;
@@ -78,14 +78,14 @@ end;
 // Add flight log
 // ----------------------------------------------------------------
 procedure TFFlightLogs.ButtonNewClick(Sender: TObject);
-var InputStr: String;
+  var InputStr: String;
 begin
   if InputQuery(('Please enter flight log name'), ('Name'), InputStr) then
   begin
     if LBFlu.Items.IndexOf(InputStr) > -1 then
       MessageDlg(format(('The name already exists!'), [InputStr]),mtInformation,[mbOK],0)
     else
-      FMain.CreateNewWindow(InputStr, DefaultTableCols);
+      FMain.CreateNewFlightLog(InputStr, DefaultTableCols);
     RefreshLBFlu;
   end;
 end;
@@ -131,7 +131,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFFlightLogs.ButtonOKClick(Sender: TObject);
 begin
-  if FMain.MDIChildCount = 0 then
+  if FMain.FlightLogList.Count = 0 then
   begin
     MessageDlg(('Please create at least one flightlog'),mtError,[mbOK],0);
     ModalResult := mrNone;
@@ -144,7 +144,7 @@ end;
 procedure TFFlightLogs.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  if FMain.MDIChildCount = 0 then
+  if FMain.FlightLogList.Count = 0 then
   begin
     MessageDlg(('Please create at least one flightlog'),mtError,[mbOK],0);
     Action := caNone;

@@ -7,16 +7,8 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
-<<<<<<< HEAD
-  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools, Contnrs,
-  DateUtils, DOM, XMLRead, Zipper, LazLogger, DefaultTranslator, FlightLog;
-=======
-  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
+  SButton, ExtCtrls, ActnList, ImgList, Tools,
   DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator, fgl;
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
 
 const
   {$I FluPP.inc}
@@ -56,6 +48,8 @@ type
     MenuItem29: TMenuItem;
     N1: TMenuItem;
     N5: TMenuItem;
+    Panel1: TPanel;
+    PanelFlightLog: TPanel;
     PopupMenu: TPopupMenu;
     PUFiles: TMenuItem;
     PUFlightEdit: TMenuItem;
@@ -180,12 +174,12 @@ type
     procedure LoadFluFile;
     procedure SaveFile(SaveFileName: String);
     procedure LoadDefaultGenSettings;
-    procedure LoadDefaultSettings(Grid: TFGrid);      overload;
-    procedure LoadDefaultSettings(FlightLog: TFlightLog); overload;
+    procedure LoadDefaultSettings(FlightLog: TFlightLog);
   public
-    procedure CreateNewWindow(Name, GridCols: String); overload;
-    procedure CreateNewWindow(Name: String); overload;
-    procedure CreateNewFlightLog(Name: String);
+    FlightLogList: TFlightLogList;
+    ActiveFlightLog: TFlightLog;
+    procedure CreateNewFlightLog(Name, GridCols: String); overload;
+    procedure CreateNewFlightLog(Name: String); overload;
     function SpeichernAbfrage: Boolean;
     procedure InsertData;
     procedure onHint(Sender: TObject);
@@ -208,15 +202,6 @@ var
   SchedValidity: TStringList;
   FluFileName: String;
   FlpTempDir: String;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  FlighLogList: TObjectList;
-=======
-  FlightLogList: TFlightLog;
->>>>>>> main
-=======
-  FlightLogList: TFlightLog;
->>>>>>> main
 
 implementation
 
@@ -271,6 +256,8 @@ begin
   SchedValidity := TStringList.Create;
   AirportData := TAirportList.Create;
 
+  FlightLogList := TFlightLogList.create;
+
   with GridSched do
   begin
     ColWidths[0] := 47;
@@ -324,31 +311,6 @@ procedure TFMain.LoadDefaultGenSettings;
 begin
   GenSettings.Values['WarningMonth'] := '2';
   GenSettings.Values['ExportICal'] := '0';
-end;
-
-// ----------------------------------------------------------------
-// Load default Settings
-// ----------------------------------------------------------------
-procedure TFMain.LoadDefaultSettings(Grid: TFGrid);
-begin
-  with Grid do
-  begin
-    Settings.Values['BFStarts'] := '0';
-    Settings.Values['BFTime'] := '00000:00';
-    Settings.Values['LicenseSince'] := '  .  .    ';
-    Settings.Values['IDPrefix'] := '';
-    Settings.Values['DistUnit'] := 'nm';
-    Settings.Values['License'] := '';
-    Settings.Values['Numeration'] := '0'; // Continuous
-    Settings.Values['ShowFlightTime'] := 'False';
-    Settings.Values['ShowBlockTime'] := 'True';
-    Settings.Values['ShowStartType'] := 'False';
-    Settings.Values['DefaultTime'] := '0'; // BlockTime
-    Settings.Values['DefPosition'] := '0'; // Pilot
-
-    Settings.Values['DisallowChange'] := '0';
-    Settings.Values['AllowLastEdit'] := '0';
-  end;
 end;
 
 // ----------------------------------------------------------------
@@ -484,33 +446,13 @@ end;
 // ----------------------------------------------------------------
 // Create new flight log MDI-child
 // ----------------------------------------------------------------
-procedure TFMain.CreateNewWindow(Name, GridCols: String);
+procedure TFMain.CreateNewFlightLog(Name, GridCols: String);
 begin
   CreateNewFlightLog(Name);
-  ReadTStrings(GridCols, GridActiveChild.GridCols);
-  GridActiveChild.Grid.ColCount := GridActiveChild.GridCols.Count;
-  GridActiveChild.NameCols;
-  SetLength(GridActiveChild.Undo, GridActiveChild.GridCols.Count);
-end;
-
-// ----------------------------------------------------------------
-// create new mdi-window
-// ----------------------------------------------------------------
-procedure TFMain.CreateNewWindow(Name: String);
-var
-  ChWindow: TFGrid;
-begin
-  ChWindow := TFGrid.create(self);
-  ChWindow.Caption := Name;
-
-  with GridActiveChild do
-  begin
-    Grid.ColCount := NumberOfGridRows + 1;
-    setColWidth(DefaultColWidth);
-    WindowState := wsMaximized;
-  end;
-
-  LoadDefaultSettings(GridActiveChild);
+  ReadTStrings(GridCols, ActiveFlightLog.GridCols);
+  ActiveFlightLog.Grid.ColCount := ActiveFlightLog.GridCols.Count;
+  ActiveFlightLog.NameCols;
+  SetLength(ActiveFlightLog.Undo, ActiveFlightLog.GridCols.Count);
 end;
 
 // ----------------------------------------------------------------
@@ -521,6 +463,11 @@ var
   Flightlog: TFlightLog;
 begin
   Flightlog := TFlightLog.Create;
+  ActiveFlightLog := Flightlog;
+  Flightlog.Caption := Name;
+  Flightlog.Grid := TStringGrid.Create(PanelFlightLog);
+  Flightlog.Grid.Parent := PanelFlightLog;
+  Flightlog.Grid.Align := alClient;
   FlightlogList.Add(Flightlog);
 
   with Flightlog do
@@ -539,16 +486,16 @@ procedure TFMain.UpdateButtonState;
 var State, GridAssigned: Boolean;
 begin
   State := False;
-  if Assigned(TFGrid(ActiveMDIChild)) then
-    if (GridActiveChild.Data['Dat',1] <> '') then
+  if Assigned(ActiveFlightLog) then
+    if (ActiveFlightLog.Data['Dat',1] <> '') then
       State := True;
 
   { Undo }
   ActionFlightDeleteUndo.Enabled := False;
   if State then
   begin
-    if length(GridActiveChild.Undo) > 0 then
-      if GridActiveChild.Undo[1] <> '' then
+    if length(ActiveFlightLog.Undo) > 0 then
+      if ActiveFlightLog.Undo[1] <> '' then
         ActionFlightDeleteUndo.Enabled := True;
   end;
 
@@ -560,19 +507,19 @@ begin
   ActionExportGoogleMap.Enabled := State;
   ActionExportGoogleEarth.Enabled := State;
 
-  if Assigned(TFGrid(ActiveMDIChild)) then
+  if Assigned(ActiveFlightLog) then
   begin
-    GridActiveChild.PUFlightEdit.Enabled := State;
-    GridActiveChild.PUFlugEinfuegen.Enabled := State;
-    GridActiveChild.PUFlugloeschen.Enabled := State;
-    GridActiveChild.PUKategorieZuordnen.Enabled := State;
-
-    ActionFlightEdit.Enabled := FInput.CanEdit(State);
-    GridActiveChild.PUFlightEdit.Enabled := FInput.CanEdit(State);
+    //ActiveFlightLog.PUFlightEdit.Enabled := State;
+    //ActiveFlightLog.PUFlugEinfuegen.Enabled := State;
+    //ActiveFlightLog.PUFlugloeschen.Enabled := State;
+    //ActiveFlightLog.PUKategorieZuordnen.Enabled := State;
+    //
+    //ActionFlightEdit.Enabled := FInput.CanEdit(State);
+    //ActiveFlightLog.PUFlightEdit.Enabled := FInput.CanEdit(State);
   end;
 
   { Enable when flight log available }
-  GridAssigned := Assigned(TFGrid(ActiveMDIChild));
+  GridAssigned := Assigned(ActiveFlightLog);
   ActionFileSave.Enabled := GridAssigned;
   ActionFileSaveAs.Enabled := GridAssigned;
   ActionFileImport.Enabled := GridAssigned;
@@ -611,7 +558,7 @@ procedure TFMain.ExitClick(Sender: TObject);
 var
   IniFile: TIniFile;
 begin
-  if MdiChildCount = 0 then
+  if FlightLogList.Count = 0 then
     Application.Terminate
   else
     if SpeichernAbfrage then
@@ -649,11 +596,11 @@ procedure TFMain.CloseClick(Sender: TObject);
 var
   i: Integer;
 begin
-  if MdiChildCount <= 0 then exit;
+  if FlightLogList.Count <= 0 then exit;
   if (Sender <> ActionFileNew) then
     if not SpeichernAbfrage then Exit;
 
-  for i:= MdiChildCount - 1 downto 0 do
+  for i:= FlightLogList.Count - 1 downto 0 do
     GridChild(i).Free;
 
   FileUtil.DeleteDirectory(FlpTempDir, False);
@@ -740,8 +687,8 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.InsertData;
 begin
-  GridActiveChild.ReCalcGridTime;
-  GridActiveChild.ReCalcGridNr;
+  ActiveFlightLog.ReCalcGridTime;
+  ActiveFlightLog.ReCalcGridNr;
   UpdateButtonState;
   UpdateSButtons;
 end;
@@ -842,7 +789,7 @@ begin
     XML.Free;
   end;
 
-  for i := 0 to MDIChildCount-1 do
+  for i := 0 to FlightLogList.Count-1 do
   begin
     GridChild(i).ReCalcGridNr;
     GridChild(i).Grid.FixedCols := 1;
@@ -851,8 +798,8 @@ begin
     GridChild(i).NameCols;
   end;
 
-  MDIChildren[MDIChildCount-1].show;
-  GridActiveChild.ReCalcGridTime;
+  MDIChildren[FlightLogList.Count-1].show;
+  ActiveFlightLog.ReCalcGridTime;
 
   UpdateButtonState;
   CreateSButtons;
@@ -1118,8 +1065,8 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.SortAllFlightsClick(Sender: TObject);
 begin
-  SortGridByCols([GridActiveChild.GridCols.IndexOf('Dat'),GridActiveChild.GridCols.IndexOf('StB'),GridActiveChild.GridCols.IndexOf('StT')], GridActiveChild.Grid);
-  GridActiveChild.ReCalcGridNr;
+  SortGridByCols([ActiveFlightLog.GridCols.IndexOf('Dat'),ActiveFlightLog.GridCols.IndexOf('StB'),ActiveFlightLog.GridCols.IndexOf('StT')], ActiveFlightLog.Grid);
+  ActiveFlightLog.ReCalcGridNr;
 end;
 
 // ----------------------------------------------------------------
@@ -1127,7 +1074,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightEdit(Sender: TObject);
 begin
-  FInput.Change(GridActiveChild.Grid.Row);
+  FInput.Change(ActiveFlightLog.Grid.Row);
 end;
 
 // ----------------------------------------------------------------
@@ -1135,12 +1082,12 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightNew(Sender: TObject);
 begin
-  if GridActiveChild.Grid.Cells[0,1] = '' then
+  if ActiveFlightLog.Grid.Cells[0,1] = '' then
     FInput.Neu(1)
   else
   begin
-    //TODO GridActiveChild.Grid.InsertRow(GridActiveChild.Grid.RowCount);
-    FInput.Neu(GridActiveChild.Grid.RowCount-1);
+    //TODO ActiveFlightLog.Grid.InsertRow(ActiveFlightLog.Grid.RowCount);
+    FInput.Neu(ActiveFlightLog.Grid.RowCount-1);
   end;
 end;
 
@@ -1149,9 +1096,9 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightInsert(Sender: TObject);
 begin
-  //TODO GridActiveChild.Grid.InsertRow(GridActiveChild.Grid.Row);
-  FInput.Neu(GridActiveChild.Grid.Row);
-  GridActiveChild.ReCalcGridNr;
+  //TODO ActiveFlightLog.Grid.InsertRow(ActiveFlightLog.Grid.Row);
+  FInput.Neu(ActiveFlightLog.Grid.Row);
+  ActiveFlightLog.ReCalcGridNr;
 end;
 
 // ----------------------------------------------------------------
@@ -1159,7 +1106,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightDelete(Sender: TObject);
 begin
-  GridActiveChild.PUFlugloeschenClick(Self);
+  ActiveFlightLog.PUFlugloeschenClick(Self);
 end;
 
 // ----------------------------------------------------------------
@@ -1167,7 +1114,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightDeleteUndo(Sender: TObject);
 begin
-  GridActiveChild.PUloeschrueckClick(Self);
+  ActiveFlightLog.PUloeschrueckClick(Self);
 end;
 
 // ----------------------------------------------------------------
@@ -1177,11 +1124,11 @@ procedure TFMain.CreateSButtons;
 var
   i: Word;
 begin
-  for i:= 0 to MdiChildCount -1 do
+  for i:= 0 to FlightLogList.Count -1 do
   begin
     if not Assigned(GridChild(i).SButton) then
     begin
-      GridChild(i).SButton := TFSButton.create(GridChild(i));
+      GridChild(i).SButton := TFSButton.Create(FMain);
       GridChild(i).SButton.Parent := PanelSButtons;
 
       GridChild(i).SButton.Top := 2;
@@ -1197,7 +1144,7 @@ begin
     GridChild(i).SButton.LabelHeading.Caption := GridChild(i).Caption;
     UpdateSButtons;
   end;
-  if MdiChildCount > 0 then PanelSButtons.width := MdiChildCount*94+4;
+  if FlightLogList.Count > 0 then PanelSButtons.width := FlightLogList.Count*94+4;
   ActivateSButton;
   UpdateSButtons;
 end;
@@ -1209,13 +1156,13 @@ procedure TFMain.ActivateSButton;
 var
   i: Word;
 begin
-  if MdiChildCount <= 0 then Exit;
-  for i:= 0 to MdiChildCount -1 do
+  if FlightLogList.Count <= 0 then Exit;
+  for i:= 0 to FlightLogList.Count -1 do
     if Assigned(GridChild(i).SButton) then
       GridChild(i).SButton.Color := clBtnFace;
 
-  if Assigned(GridActiveChild.SButton) then
-    GridActiveChild.SButton.Color := clFOrange;
+  if Assigned(ActiveFlightLog.SButton) then
+    ActiveFlightLog.SButton.Color := clFOrange;
 end;
 
 // ----------------------------------------------------------------
@@ -1227,7 +1174,7 @@ var
   TotalPoints : Real;
   Flights, GridIdx, Row: Word;
 begin
-  for GridIdx := 0 to MdiChildCount -1 do
+  for GridIdx := 0 to FlightLogList.Count -1 do
     if Assigned(GridChild(GridIdx).SButton) then
       with GridChild(GridIdx).SButton do
       begin
@@ -1304,7 +1251,7 @@ var
   GridIdx: Integer;
 begin
   Exit;
-  if MdiChildCount <= 0 then Exit;
+  if FlightLogList.Count <= 0 then Exit;
   GridSched.RowCount := 1;
   GridSched.Clear;
 
@@ -1317,7 +1264,7 @@ begin
 
   { Load Schedules }
   LoadSchedule(Schedules);
-  for GridIdx := 0 to MdiChildCount-1 do begin
+  for GridIdx := 0 to FlightLogList.Count-1 do begin
     LoadSchedule(GridChild(GridIdx).LicenseDates);
     LoadSchedule(GridChild(GridIdx).Events);
   end;

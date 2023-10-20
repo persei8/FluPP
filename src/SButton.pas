@@ -29,7 +29,7 @@ type
 
 implementation
 
-uses Main, Licenses, Grid;
+uses Main, Licenses;
 
 {$R *.lfm}
 
@@ -58,7 +58,7 @@ begin
     BevelSB.Shape := bsFrame;
     PanelSB.Top := 2;
     PanelSB.Left := 2;
-    TFGrid(Self.Owner).Show;
+    //TODO TFGrid(Self.Owner).Show;
   end;
 end;
 

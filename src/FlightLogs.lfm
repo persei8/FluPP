@@ -1,7 +1,7 @@
 object FFlightLogs: TFFlightLogs
-  Left = 2936
+  Left = 1273
   Height = 223
-  Top = -295
+  Top = 772
   Width = 212
   BorderStyle = bsDialog
   Caption = 'Manage flight logs'
@@ -105,5 +105,6 @@ object FFlightLogs: TFFlightLogs
     ParentFont = False
     Style = lbOwnerDrawFixed
     TabOrder = 4
+    TopIndex = -1
   end
 end

@@ -259,8 +259,8 @@ begin
     SchedValidity.Clear;
     LicFileList := TStringList.Create;
 
-    if FMain.MDIChildCount = 0 then Exit;
-    for Flb := 0 to FMain.MDIChildCount-1 do
+    if FMain.FlightLogList.Count = 0 then Exit;
+    for Flb := 0 to FMain.FlightLogList.Count-1 do
     begin
       readTStrings(GridChild(Flb).Settings.Values['License'], LicFileList);
       if LicFileList.Count > 0 then
@@ -558,7 +558,7 @@ begin
   Time := '00:00';
   Starts := 0;
 
-  for Flb := 0 to FMain.MDIChildCount-1 do
+  for Flb := 0 to FMain.FlightLogList.Count-1 do
   begin
     { AccLicenses }
     IsAccLicense := False;
@@ -606,7 +606,7 @@ begin
   Starts := 0;
   Time := '00:00';
 
-  for Flb := 0 to FMain.MDIChildCount-1 do
+  for Flb := 0 to FMain.FlightLogList.Count-1 do
   begin
     { AccLicenses }
     IsAccLicense := False;

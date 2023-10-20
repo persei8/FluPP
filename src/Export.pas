@@ -93,7 +93,7 @@ begin
   //  writeObjStrings(Root, 'Schedules', Schedules);
   //
   //  { Settings }
-  //  for GridIdx := 0 to FMain.MDIChildCount-1 do
+  //  for GridIdx := 0 to FMain.FlightLogList.Count-1 do
   //  begin
   //    FLElem := Root.Items.Add('FlightLog');
   //    with FLElem do
@@ -189,7 +189,7 @@ begin
   ScheduleList := TSTringList.Create;
   try
     ScheduleList.AddStrings(Schedules);
-    for GridIdx := 0 to FMain.MdiChildCount-1 do
+    for GridIdx := 0 to FMain.FlightLogList.Count-1 do
       ScheduleList.AddStrings(GridChild(GridIdx).LicenseDates);
     ScheduleList.AddStrings(Medicals);
 

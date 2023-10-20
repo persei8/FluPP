@@ -40,7 +40,7 @@ var
 
 implementation
 
-uses Main, Grid, Settings, Tools, ToolsGrid;
+uses Main, Settings, Tools, ToolsGrid;
 
 {$R *.lfm}
 
@@ -103,7 +103,7 @@ begin
   GridNinetyDaysLic.Selection := DeSelectRect;
   GridNinetyDaysFlz.Selection := DeSelectRect;
 
-  for i:= 0 to FMain.MdiChildCount - 1 do
+  for i:= 0 to FMain.FlightLogList.Count - 1 do
   begin
     SetLength(License, i+1);
     License[i].Typ := GridChild(i).Caption;

@@ -4,13 +4,13 @@ unit ToolsGrid;
 
 interface
 
-uses SysUtils, Classes, Types, Grid, Grids, DateUtils, LCLIntf, LCLType, Graphics;
+uses SysUtils, Classes, Types, Grids, DateUtils, LCLIntf, LCLType, Graphics, FlightLog;
 
 const
   DeSelectRect: TGridRect = (Left:-1; Top:-1; Right:-1; Bottom:-1 );
 
-function GridChild(Flb: Word): TFGrid;
-function GridActiveChild: TFGrid;
+function GridChild(Flb: Word): TFlightLog;
+function GridActiveChild: TFlightLog;
 function CalcTime(GridIdx: Word; StartTime: String; NrFrom, NrTo: Word; DefaultTime: Byte = 2): String;
 function CalcFlights(GridIdx: Word; Flights: Word; NrFrom: Word; NrTo: Word): Word;
 procedure SortGridByCols(ColOrder: array of Integer; Grid: TStringGrid);
@@ -26,17 +26,20 @@ uses Main, Tools;
 // ----------------------------------------------------------------
 // Gridchild
 // ----------------------------------------------------------------
-function GridChild(Flb: Word): TFGrid;
+function GridChild(Flb: Word): TFlightLog;
 begin
-  Result := TFGrid(FMain.MDIChildren[Flb]);
+  if Flb < FMain.FlightLogList.Count then
+    Result := FMain.FlightLogList[Flb]
+  else
+    Result := FMain.ActiveFlightLog;
 end;
 
 // ----------------------------------------------------------------
 // Active GridChild
 // ----------------------------------------------------------------
-function GridActiveChild: TFGrid;
+function GridActiveChild: TFlightLog;
 begin
-  Result := TFGrid(FMain.ActiveMDIChild);
+  Result := FMain.ActiveFlightLog;
 end;
 
 // ----------------------------------------------------------------
@@ -70,17 +73,17 @@ begin
     begin
       if TmpDefaultTime = 0 then
       begin
-        if TFGrid(FMain.MDIChildren[GridIdx]).Data['BlT',i] <> '' then
-          Time := TFGrid(FMain.MDIChildren[GridIdx]).Data['BlT', i]
+        if FMain.FlightLogList[GridIdx].Data['BlT',i] <> '' then
+          Time := FMain.FlightLogList[GridIdx].Data['BlT', i]
         else
-          Time := TFGrid(FMain.MDIChildren[GridIdx]).Data['FlT', i];
+          Time := FMain.FlightLogList[GridIdx].Data['FlT', i];
       end
       else
       begin
-        if TFGrid(FMain.MDIChildren[GridIdx]).Data['FlT',i] <> '' then
-          Time := TFGrid(FMain.MDIChildren[GridIdx]).Data['FlT', i]
+        if FMain.FlightLogList[GridIdx].Data['FlT',i] <> '' then
+          Time := FMain.FlightLogList[GridIdx].Data['FlT', i]
         else
-          Time := TFGrid(FMain.MDIChildren[GridIdx]).Data['BlT', i];
+          Time := FMain.FlightLogList[GridIdx].Data['BlT', i];
       end;
 
       Hours := '0'; Minutes := ''; j := 1;
@@ -114,7 +117,7 @@ begin
   Result := Flights;
   for i := NrFrom to NrTo do
   begin
-    inc(Result,StrtoInt(TFGrid(FMain.MDIChildren[GridIdx]).Data['NoL',i]));
+    inc(Result,StrtoInt(FMain.FlightLogList[GridIdx].Data['NoL',i]));
   end;
 end;
 

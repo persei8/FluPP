@@ -258,7 +258,7 @@ var
 
 implementation
 
-uses Main, Settings, Grid, StatGraph, Tools, ToolsGrid;
+uses Main, Settings, StatGraph, Tools, ToolsGrid;
 
 {$R *.lfm}
 
@@ -382,7 +382,7 @@ begin
   { add categories }
   LBFlu.Items.Clear;
   CLBKat.Clear;
-  for i := 0 to FMain.MDIChildCount-1 do
+  for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     LBFlu.Items.Add(GridChild(i).Caption);
     if GridChild(i).ACCategories.Count > 0 then
@@ -476,7 +476,7 @@ begin
   if LBFlu.SelCount = 1 then AddYears(LBFlu.ItemIndex);
   { else
   begin
-    for GridIdx := 0 to FMain.MDIChildCount do
+    for GridIdx := 0 to FMain.FlightLogList.Count do
      if GridIdx < LBFlu.Items.Count then
      if LBFlu.Selected[GridIdx] then
      begin
@@ -879,7 +879,7 @@ begin
 
     //SetLength(TrendData,0);
     Years := 0;
-    for GridIdx := 0 to FMain.MDIChildCount do if GridIdx < LBFlu.Items.Count then
+    for GridIdx := 0 to FMain.FlightLogList.Count do if GridIdx < LBFlu.Items.Count then
     if LBFlu.Selected[GridIdx] then
     if GridChild(GridIdx).Data['Num',1] <> '' then
     begin
@@ -921,12 +921,12 @@ begin
     ProgressBar.Height := PanelFoundFlights.Height;
     ProgressBar.Max := 0;
     ProgressBar.Step := 1;
-    for GridIdx := 0 to FMain.MDIChildCount do if GridIdx < LBFlu.Items.Count then
+    for GridIdx := 0 to FMain.FlightLogList.Count do if GridIdx < LBFlu.Items.Count then
       if LBFlu.Selected[GridIdx] then
         ProgressBar.Max := ProgressBar.Max + GridChild(GridIdx).Grid.RowCount-1;
 
   { loop over all flight logs }
-    for GridIdx := 0 to FMain.MDIChildCount do if GridIdx < LBFlu.Items.Count then
+    for GridIdx := 0 to FMain.FlightLogList.Count do if GridIdx < LBFlu.Items.Count then
     begin
       GSNr := GridIdx;
       if LBFlu.Selected[GridIdx] then

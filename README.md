@@ -19,6 +19,5 @@ Flightlog for private pilots
 
 ## How to compile
 ### Required packages
-- Jvcllaz
 - NiceGrid
 - VirtualTreeViewV5

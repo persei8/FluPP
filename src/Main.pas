@@ -7,11 +7,19 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
+<<<<<<< HEAD
   SButton, ExtCtrls, Grid, ActnList, ImgList, Tools, Contnrs,
   DateUtils, DOM, XMLRead, Zipper, LazLogger, DefaultTranslator, FlightLog;
+=======
+  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
+  DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator, fgl;
+>>>>>>> main
 
 const
   {$I FluPP.inc}
+
+type
+  TFlightLogList = TFPGObjectList<TFlightLog>;
 
 type
 
@@ -197,7 +205,11 @@ var
   SchedValidity: TStringList;
   FluFileName: String;
   FlpTempDir: String;
+<<<<<<< HEAD
   FlighLogList: TObjectList;
+=======
+  FlightLogList: TFlightLog;
+>>>>>>> main
 
 implementation
 

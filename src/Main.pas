@@ -13,6 +13,9 @@ uses
 =======
   SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
   DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator, fgl;
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 
 const
@@ -206,7 +209,11 @@ var
   FluFileName: String;
   FlpTempDir: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FlighLogList: TObjectList;
+=======
+  FlightLogList: TFlightLog;
+>>>>>>> main
 =======
   FlightLogList: TFlightLog;
 >>>>>>> main

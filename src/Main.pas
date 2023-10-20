@@ -8,10 +8,13 @@ uses
   LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
   SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
-  DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator;
+  DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator, fgl;
 
 const
   {$I FluPP.inc}
+
+type
+  TFlightLogList = TFPGObjectList<TFlightLog>;
 
 type
 
@@ -199,6 +202,7 @@ var
   SchedValidity: TStringList;
   FluFileName: String;
   FlpTempDir: String;
+  FlightLogList: TFlightLog;
 
 implementation
 

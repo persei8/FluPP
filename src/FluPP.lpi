@@ -28,7 +28,8 @@
         <CompilerOptions>
           <Version Value="11"/>
           <SearchPaths>
-            <UnitOutputDirectory Value="../bin/$(TargetCPU)-$(TargetOS)/release"/>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="../bin/$(TargetCPU)-$(TargetOS)-$(LCLWidgetType)/release"/>
           </SearchPaths>
           <Parsing>
             <SyntaxOptions>
@@ -242,7 +243,7 @@
     <Version Value="11"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <UnitOutputDirectory Value="../bin/$(TargetCPU)-$(TargetOS)/debug"/>
+      <UnitOutputDirectory Value="../bin/$(TargetCPU)-$(TargetOS)-$(LCLWidgetType)/debug"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>

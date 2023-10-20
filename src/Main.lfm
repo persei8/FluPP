@@ -21,40 +21,41 @@ object FMain: TFMain
   Visible = True
   object ActionToolBar: TToolBar
     Left = 0
-    Height = 48
+    Height = 54
     Top = 0
     Width = 1141
     ButtonHeight = 30
     ButtonWidth = 30
     Caption = 'Main'
+    EdgeBorders = []
     Images = ImageList
     ImagesWidth = 32
     TabOrder = 0
     object ToolButton1: TToolButton
       Left = 37
-      Top = 2
+      Top = 0
       Action = ActionFileOpen
     end
     object ToolButton2: TToolButton
       Left = 1
-      Top = 2
+      Top = 0
       Action = ActionFileNew
     end
     object ToolButton3: TToolButton
       Left = 109
       Height = 30
-      Top = 2
+      Top = 0
       Caption = 'ToolButton3'
       Style = tbsSeparator
     end
     object ToolButton4: TToolButton
       Left = 73
-      Top = 2
+      Top = 0
       Action = ActionFileSave
     end
     object ToolButton5: TToolButton
       Left = 117
-      Top = 2
+      Top = 0
       Action = ActionStatistic
     end
   end
@@ -96,8 +97,7 @@ object FMain: TFMain
     Height = 48
     Top = 2
     Width = 164
-    BevelInner = bvRaised
-    BevelOuter = bvLowered
+    BevelOuter = bvNone
     ClientHeight = 48
     ClientWidth = 164
     TabOrder = 3

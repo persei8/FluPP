@@ -7,8 +7,8 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, FileUtil, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, ComCtrls, StdCtrls, Buttons, IniFiles, Grids,
-  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools,
-  DateUtils, DOM, XMLRead, Zipper, LazLogger, FlightLog, DefaultTranslator;
+  SButton, ExtCtrls, Grid, ActnList, ImgList, Tools, Contnrs,
+  DateUtils, DOM, XMLRead, Zipper, LazLogger, DefaultTranslator, FlightLog;
 
 const
   {$I FluPP.inc}
@@ -71,10 +71,8 @@ type
     OpenDialog: TOpenDialog;
     SaveDialog: TSaveDialog;
     StartTimer: TTimer;
-    //ActionManager: TActionManager;
     ActionExit: TAction;
     ActionToolBar: TToolBar;
-    //ActionMainMenuBar: TActionMainMenuBar;
     ActionFileNew: TAction;
     ActionFileOpen: TAction;
     ActionFileSave: TAction;
@@ -199,6 +197,7 @@ var
   SchedValidity: TStringList;
   FluFileName: String;
   FlpTempDir: String;
+  FlighLogList: TObjectList;
 
 implementation
 
@@ -503,6 +502,7 @@ var
   Flightlog: TFlightLog;
 begin
   Flightlog := TFlightLog.Create;
+  FlightlogList.Add(Flightlog);
 
   with Flightlog do
   begin

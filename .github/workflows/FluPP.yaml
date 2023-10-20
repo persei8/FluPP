@@ -30,6 +30,14 @@ jobs:
       if: ${{ matrix.operating-system == 'windows-latest' }}
       run: lazbuild -B --bm=Release "src/FluPP.lpi"
 
+    - name: Artifacts (Windows)
+      if: ${{ matrix.operating-system == 'windows-latest' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: Compiled Windows Binary
+        path: |
+          bin\x86_64-win64\release\FluPP.exe
+
     - name: Build the Main Application (Ubuntu)
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
       run: |
@@ -41,28 +49,33 @@ jobs:
         echo Building with Qt5
         lazbuild -B --bm=Release --ws=qt5 "src/FluPP.lpi"
 
-    - name: Build the Main Application (macOS)
-      if: ${{ matrix.operating-system == 'macos-latest' }}
-      run: lazbuild -B --bm=Release --ws=cocoa "src/FluPP.lpi"
-      
-    - name: Artifacts (Linux)
+    - name: Artifacts (Linux gtk2)
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
       uses: actions/upload-artifact@v3
       with:
         name: Compiled Linux Binary
         path: |
-          FluPP
-    - name: Artifacts (Windows)
-      if: ${{ matrix.operating-system == 'windows-latest' }}
+          bin/x86_64-linux-gtk2/release/FluPP
+
+    - name: Artifacts (Linux qt)
+      if: ${{ matrix.operating-system == 'ubuntu-latest' }}
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Windows Binary
+        name: Compiled Linux Binary
         path: |
-          src\lib\x86_64-win64\FluPP.exe
+          bin/x86_64-linux-qt/release/FluPP
+
+    - name: Build the Main Application (macOS)
+      if: ${{ matrix.operating-system == 'macos-latest' }}
+      run: lazbuild -B --bm=Release --ws=cocoa "src/FluPP.lpi"
+
     - name: Artifacts (macOS)
       if: ${{ matrix.operating-system == 'macos-latest' }}
       uses: actions/upload-artifact@v3
       with:
         name: Compiled Mac OS Binary
         path: |
-           FluPP.app
+           bin/x86_64-darwin/release/FluPP
+
+
+

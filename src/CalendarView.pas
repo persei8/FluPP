@@ -200,7 +200,7 @@ begin
     if FCalendarAdd.ShowModal = mrOK then
     begin
       if GridSched.Cells[1,1] <> '' then
-        //TODO GridSched.InsertRow(GridSched.RowCount);
+        GridSched.InsertColRow(False, GridSched.RowCount);
       { Event }
       if FCalendarAdd.PageControl.ActivePageIndex = 0 then
       begin
@@ -238,7 +238,7 @@ begin
     Exit;
   end;
   if (GridSched.RowCount > 2) then
-    //TODO GridSched.RemoveRow(GridSched.Row)
+    GridSched.DeleteRow(GridSched.Row)
   else
     GridSched.Clear;
   UpdateTimeline;

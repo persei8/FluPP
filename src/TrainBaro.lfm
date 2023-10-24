@@ -1,15 +1,16 @@
 object FTrainBaro: TFTrainBaro
-  Left = 3566
-  Height = 514
-  Top = -407
-  Width = 506
+  Left = 1991
+  Height = 578
+  Top = 0
+  Width = 569
   BorderStyle = bsDialog
   Caption = 'Training Barometer'
-  ClientHeight = 514
-  ClientWidth = 506
+  ClientHeight = 578
+  ClientWidth = 569
   Color = clBtnFace
+  DesignTimePPI = 108
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'MS Sans Serif'
   OnClose = FormClose
   OnCreate = FormCreate
@@ -17,75 +18,75 @@ object FTrainBaro: TFTrainBaro
   Position = poMainFormCenter
   LCLVersion = '2.2.6.0'
   object Bevel1: TBevel
-    Left = 165
-    Height = 265
-    Top = 88
-    Width = 334
+    Left = 186
+    Height = 298
+    Top = 99
+    Width = 376
     Shape = bsFrame
   end
   object Bevel2: TBevel
     Left = 3
-    Height = 395
-    Top = 28
-    Width = 157
+    Height = 444
+    Top = 32
+    Width = 177
     Shape = bsFrame
   end
   object DrawArea: TImage
-    Left = 9
-    Height = 371
-    Top = 48
-    Width = 145
+    Left = 10
+    Height = 417
+    Top = 54
+    Width = 163
   end
   object Label1: TLabel
-    Left = 7
-    Height = 13
-    Top = 32
-    Width = 27
+    Left = 8
+    Height = 17
+    Top = 36
+    Width = 33
     Caption = 'Starts'
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 125
-    Height = 13
-    Top = 32
-    Width = 28
+    Left = 141
+    Height = 17
+    Top = 36
+    Width = 34
     Alignment = taRightJustify
     Caption = 'Hours'
     ParentColor = False
   end
   object Label3: TLabel
-    Left = 27
-    Height = 16
-    Top = 7
-    Width = 107
+    Left = 30
+    Height = 22
+    Top = 8
+    Width = 135
     Caption = 'In the last 6 month:'
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     ParentColor = False
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 247
-    Height = 13
-    Top = 358
-    Width = 245
+    Left = 278
+    Height = 17
+    Top = 403
+    Width = 289
     Alignment = taRightJustify
     Caption = 'Source: Office for aviation safety, German Aeroclub '
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     ParentColor = False
     ParentFont = False
   end
   object LabelText: TLabel
-    Left = 172
-    Height = 249
-    Top = 96
-    Width = 318
+    Left = 194
+    Height = 280
+    Top = 108
+    Width = 358
     AutoSize = False
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     ParentColor = False
     ParentFont = False
@@ -93,19 +94,19 @@ object FTrainBaro: TFTrainBaro
   end
   object Panel1: TPanel
     Left = 0
-    Height = 40
-    Top = 474
-    Width = 506
+    Height = 45
+    Top = 533
+    Width = 569
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 40
-    ClientWidth = 506
+    ClientHeight = 45
+    ClientWidth = 569
     TabOrder = 0
     object BitBtn1: TBitBtn
-      Left = 212
-      Height = 25
-      Top = 6
-      Width = 75
+      Left = 238
+      Height = 28
+      Top = 7
+      Width = 84
       Cancel = True
       Caption = 'Exit'
       ModalResult = 3
@@ -116,34 +117,35 @@ object FTrainBaro: TFTrainBaro
   end
   object PanelFligtLogs: TPanel
     Left = 0
-    Height = 40
-    Top = 434
-    Width = 506
+    Height = 45
+    Top = 488
+    Width = 569
     Align = alBottom
     BevelInner = bvRaised
     BevelOuter = bvLowered
-    ClientHeight = 40
-    ClientWidth = 506
+    ClientHeight = 45
+    ClientWidth = 569
     TabOrder = 1
     object LBFlu: TListBox
       Left = 4
-      Height = 27
+      Height = 30
       Hint = 'Select flight log'
       Top = 4
-      Width = 494
+      Width = 556
       Anchors = [akTop, akLeft, akRight]
       Color = clBtnFace
       Columns = 2
       Font.Color = clBlack
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
-      ItemHeight = 31
+      ItemHeight = 35
       OnClick = LBFluClick
       OnDrawItem = LBFluDrawItem
       ParentFont = False
       Style = lbOwnerDrawFixed
       TabOrder = 0
+      TopIndex = -1
     end
   end
 end

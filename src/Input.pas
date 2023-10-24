@@ -352,7 +352,7 @@ begin
   Application.OnHint := FMain.onHint;
   if GridActiveChild.Grid.RowCount > 2 then
   begin
-//TODO    if (Status = 'Neu') and (ModalResult = mrCancel) then GridActiveChild.Grid.RemoveRow(InputRow);
+    if (Status = 'Neu') and (ModalResult = mrCancel) then GridActiveChild.Grid.DeleteRow(InputRow);
     GridActiveChild.ReCalcGridNr;
   end;
 end;
@@ -599,7 +599,7 @@ begin
   if (GridActiveChild.data['Via',InputRow][i] = '/')
     or (i = length(GridActiveChild.data['Via',InputRow])) then
   begin
-//TODO    GridVia.InsertRow(GridVia.RowCount-1);
+    GridVia.InsertColRow(False, GridVia.RowCount-1);
     GridVia.Cells[1,GridVia.RowCount-2] := TempStr;
     TempStr := '';
   end
@@ -767,7 +767,7 @@ begin
   end;
   SaveData;
   FMain.InsertData;
-//TODO  GridActiveChild.Grid.InsertRow(InputRow+1);
+  GridActiveChild.Grid.InsertColRow(False, InputRow+1);
   inc(InputRow);
 
   ResetInput;
@@ -1373,7 +1373,7 @@ begin
     MessageDlg(('Airport not found in the database'+#10#13+
       'The distance cannot be calculated'),mtInformation,[mbOK],0);
   end;
-  //TODO GridVia.InsertRow(GridVia.RowCount-1);
+  GridVia.InsertColRow(False, GridVia.RowCount-1);
   GridVia.Cells[1,GridVia.RowCount-2] := CBViaOrt.Text;
   RenumberVia;
   CalcViaDist;
@@ -1386,7 +1386,7 @@ end;
 procedure TFInput.ButtonWPRemClick(Sender: TObject);
 begin
   if (GridVia.Row > 1) and (GridVia.Row < GridVia.RowCount -1) then
-    //TODO GridVia.RemoveRow(GridVia.Row);
+    GridVia.DeleteRow(GridVia.Row);
   RenumberVia;
   CalcViaDist;
   CalcAvSpeed;

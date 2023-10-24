@@ -481,8 +481,8 @@ begin
 
     { Sortieren }
     SortGridByCols(
-      [GridActiveChild.GridCols.IndexOf('Dat'), GridActiveChild.GridCols.IndexOf('StT')], GridActiveChild.Grid
-    ); GridActiveChild.ReCalcGridNr;
+      [GridActiveChild.GridCols.IndexOf('Dat'), GridActiveChild.GridCols.IndexOf('StT')], GridActiveChild.Grid);
+    GridActiveChild.ReCalcGridNr;
 
 
     { Drucken }

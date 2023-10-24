@@ -1,16 +1,17 @@
 object FSettings: TFSettings
-  Left = 1024
-  Height = 537
-  Top = 541
-  Width = 567
+  Left = 915
+  Height = 604
+  Top = 403
+  Width = 638
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Settings'
-  ClientHeight = 537
-  ClientWidth = 567
+  ClientHeight = 604
+  ClientWidth = 638
   Color = clBtnFace
+  DesignTimePPI = 108
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'MS Sans Serif'
   OnClose = FormClose
   OnCreate = FormCreate
@@ -19,32 +20,32 @@ object FSettings: TFSettings
   LCLVersion = '2.2.6.0'
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 21
-    Top = 516
-    Width = 567
+    Height = 24
+    Top = 580
+    Width = 638
     Panels = <    
       item
         Alignment = taCenter
         Bevel = pbNone
-        Width = 50
+        Width = 56
       end>
     SimplePanel = False
   end
   object Panel1: TPanel
     Left = 0
-    Height = 40
-    Top = 476
-    Width = 567
+    Height = 45
+    Top = 535
+    Width = 638
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 40
-    ClientWidth = 567
+    ClientHeight = 45
+    ClientWidth = 638
     TabOrder = 2
     object ButtonNext: TBitBtn
-      Left = 399
-      Height = 25
-      Top = 7
-      Width = 80
+      Left = 449
+      Height = 28
+      Top = 8
+      Width = 90
       Anchors = [akTop, akRight]
       Caption = 'Next'
       Images = FMain.ImageList
@@ -53,10 +54,10 @@ object FSettings: TFSettings
       TabOrder = 2
     end
     object ButtonOK: TBitBtn
-      Left = 172
-      Height = 25
-      Top = 7
-      Width = 80
+      Left = 194
+      Height = 28
+      Top = 8
+      Width = 90
       Default = True
       Kind = bkOK
       ModalResult = 1
@@ -65,10 +66,10 @@ object FSettings: TFSettings
       TabOrder = 0
     end
     object ButtonExit: TBitBtn
-      Left = 256
-      Height = 25
-      Top = 7
-      Width = 80
+      Left = 288
+      Height = 28
+      Top = 8
+      Width = 90
       Cancel = True
       Caption = 'Abort'
       Kind = bkCancel
@@ -79,9 +80,9 @@ object FSettings: TFSettings
   end
   object PageControl: TPageControl
     Left = 0
-    Height = 345
+    Height = 388
     Top = 0
-    Width = 567
+    Width = 638
     ActivePage = TabSheetGeneral
     Align = alTop
     HotTrack = True
@@ -91,135 +92,135 @@ object FSettings: TFSettings
     Options = [nboMultiLine]
     object TabSheetGeneral: TTabSheet
       Caption = 'General'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 3
       OnHide = TabSheetGeneralHide
       OnShow = TabSheetGeneralShow
       object GroupBox17: TGroupBox
-        Left = 43
-        Height = 177
-        Top = 70
-        Width = 417
-        ClientHeight = 175
-        ClientWidth = 415
+        Left = 48
+        Height = 199
+        Top = 79
+        Width = 469
+        ClientHeight = 197
+        ClientWidth = 467
         TabOrder = 0
         object GroupBox4: TGroupBox
-          Left = 11
-          Height = 144
+          Left = 12
+          Height = 162
           Top = 2
-          Width = 190
+          Width = 214
           Caption = 'Personal data'
-          ClientHeight = 127
-          ClientWidth = 188
+          ClientHeight = 144
+          ClientWidth = 212
           TabOrder = 0
           object Label3: TLabel
-            Left = 19
-            Height = 16
-            Top = 48
-            Width = 33
+            Left = 21
+            Height = 17
+            Top = 54
+            Width = 37
             Alignment = taRightJustify
             Caption = 'Name:'
             ParentColor = False
           end
           object Label4: TLabel
-            Left = 15
-            Height = 16
-            Top = 75
-            Width = 37
+            Left = 17
+            Height = 17
+            Top = 84
+            Width = 42
             Alignment = taRightJustify
             Caption = 'Adress:'
             ParentColor = False
           end
           object Label5: TLabel
-            Left = 30
-            Height = 16
-            Top = 102
-            Width = 23
+            Left = 34
+            Height = 17
+            Top = 115
+            Width = 24
             Alignment = taRightJustify
             Caption = 'City:'
             ParentColor = False
           end
           object Label7: TLabel
-            Left = 27
-            Height = 16
-            Top = 7
+            Left = 30
+            Height = 17
+            Top = 8
             Width = 27
             Alignment = taRightJustify
             Caption = 'Pilot:'
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             ParentColor = False
             ParentFont = False
           end
           object Label19: TLabel
-            Left = 62
-            Height = 16
-            Top = 29
-            Width = 121
+            Left = 70
+            Height = 17
+            Top = 33
+            Width = 127
             Alignment = taCenter
             Caption = '(Default entry for pilot)'
             Font.Color = clNavy
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             ParentColor = False
             ParentFont = False
           end
           object GEName: TEdit
-            Left = 55
-            Height = 28
-            Top = 47
-            Width = 121
+            Left = 62
+            Height = 29
+            Top = 53
+            Width = 136
             TabOrder = 1
           end
           object GERoad: TEdit
-            Left = 55
-            Height = 28
-            Top = 73
-            Width = 121
+            Left = 62
+            Height = 29
+            Top = 82
+            Width = 136
             TabOrder = 2
           end
           object GELocation: TEdit
-            Left = 55
-            Height = 28
-            Top = 100
-            Width = 121
+            Left = 62
+            Height = 29
+            Top = 112
+            Width = 136
             TabOrder = 3
           end
           object GEPilotName: TEdit
-            Left = 55
-            Height = 28
+            Left = 62
+            Height = 29
             Hint = 'Enter pilot name'
-            Top = 5
-            Width = 121
+            Top = 6
+            Width = 136
             TabOrder = 0
           end
         end
         object GroupBox7: TGroupBox
-          Left = 211
-          Height = 69
+          Left = 237
+          Height = 78
           Top = 2
-          Width = 190
+          Width = 214
           Caption = 'Warning'
-          ClientHeight = 52
-          ClientWidth = 188
+          ClientHeight = 60
+          ClientWidth = 212
           TabOrder = 1
           object Label21: TLabel
-            Left = 5
-            Height = 51
+            Left = 6
+            Height = 57
             Top = 0
-            Width = 128
+            Width = 144
             AutoSize = False
             Caption = 'months warning before licence or medical extension:'
             ParentColor = False
             WordWrap = True
           end
           object GEWarningMonth: TMaskEdit
-            Left = 142
-            Height = 28
-            Top = 7
-            Width = 32
+            Left = 160
+            Height = 29
+            Top = 8
+            Width = 36
             MaxLength = 1
             TabOrder = 0
             EditMask = '!0;1; '
@@ -228,19 +229,19 @@ object FSettings: TFSettings
           end
         end
         object GroupBox11: TGroupBox
-          Left = 211
-          Height = 52
-          Top = 94
-          Width = 190
+          Left = 237
+          Height = 58
+          Top = 106
+          Width = 214
           Caption = 'General'
-          ClientHeight = 35
-          ClientWidth = 188
+          ClientHeight = 40
+          ClientWidth = 212
           TabOrder = 2
           object CBExportICal: TCheckBox
-            Left = 6
+            Left = 7
             Height = 21
             Top = 1
-            Width = 112
+            Width = 117
             Caption = 'Export iCalendar'
             TabOrder = 0
           end
@@ -249,22 +250,22 @@ object FSettings: TFSettings
     end
     object TabSheetFlightLog: TTabSheet
       Caption = 'Flight Log'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 5
       object GroupBox12: TGroupBox
-        Left = 43
-        Height = 233
-        Top = 42
-        Width = 418
-        ClientHeight = 231
-        ClientWidth = 416
+        Left = 48
+        Height = 262
+        Top = 47
+        Width = 470
+        ClientHeight = 260
+        ClientWidth = 468
         TabOrder = 0
         object RGNumeration: TRadioGroup
-          Left = 271
-          Height = 55
+          Left = 305
+          Height = 62
           Top = 1
-          Width = 128
+          Width = 144
           AutoFill = True
           Caption = 'Numbering'
           ChildSizing.LeftRightSpacing = 6
@@ -274,8 +275,8 @@ object FSettings: TFSettings
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 38
-          ClientWidth = 126
+          ClientHeight = 39
+          ClientWidth = 142
           ItemIndex = 0
           Items.Strings = (
             'Continuous'
@@ -285,38 +286,38 @@ object FSettings: TFSettings
           TabOrder = 2
         end
         object GroupBox1: TGroupBox
-          Left = 135
-          Height = 55
+          Left = 152
+          Height = 62
           Top = 2
-          Width = 127
+          Width = 143
           Caption = 'General'
-          ClientHeight = 38
-          ClientWidth = 125
+          ClientHeight = 60
+          ClientWidth = 141
           TabOrder = 1
           OnExit = GEExit
           object Label31: TLabel
-            Left = 6
-            Height = 16
+            Left = 7
+            Height = 17
             Top = 1
-            Width = 48
+            Width = 51
             Caption = 'ID prefix:'
             ParentColor = False
           end
           object GEKPrae: TEdit
-            Left = 6
-            Height = 28
+            Left = 7
+            Height = 29
             Hint = 'Part of aircraft id always staying identical'
-            Top = 14
-            Width = 113
+            Top = 16
+            Width = 127
             OnExit = GEExit
             TabOrder = 0
           end
         end
         object RGDistUnit: TRadioGroup
-          Left = 15
-          Height = 70
-          Top = 66
-          Width = 108
+          Left = 17
+          Height = 79
+          Top = 74
+          Width = 122
           AutoFill = True
           Caption = 'Unit'
           ChildSizing.LeftRightSpacing = 6
@@ -326,8 +327,8 @@ object FSettings: TFSettings
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 53
-          ClientWidth = 106
+          ClientHeight = 56
+          ClientWidth = 120
           ItemIndex = 0
           Items.Strings = (
             'km'
@@ -338,68 +339,68 @@ object FSettings: TFSettings
           TabOrder = 3
         end
         object GroupBox6: TGroupBox
-          Left = 135
-          Height = 70
-          Top = 66
-          Width = 264
+          Left = 152
+          Height = 79
+          Top = 74
+          Width = 297
           Caption = 'Input'
-          ClientHeight = 53
-          ClientWidth = 262
+          ClientHeight = 77
+          ClientWidth = 295
           TabOrder = 4
           OnExit = GEExit
           object Bevel6: TBevel
-            Left = 94
-            Height = 9
-            Top = 25
-            Width = 11
+            Left = 106
+            Height = 10
+            Top = 28
+            Width = 12
             Shape = bsTopLine
           end
           object Bevel7: TBevel
-            Left = 94
-            Height = 9
-            Top = 42
-            Width = 11
+            Left = 106
+            Height = 10
+            Top = 47
+            Width = 12
             Shape = bsTopLine
           end
           object CBStartType: TCheckBox
-            Left = 6
+            Left = 7
             Height = 21
             Top = 1
-            Width = 90
+            Width = 93
             Caption = 'Type of start'
             TabOrder = 0
           end
           object CBBlockTime: TCheckBox
-            Left = 6
+            Left = 7
             Height = 21
-            Top = 18
-            Width = 78
+            Top = 20
+            Width = 82
             Caption = 'Block time'
             OnClick = CBTimeClick
             TabOrder = 1
           end
           object CBFlightTime: TCheckBox
-            Left = 6
+            Left = 7
             Height = 21
-            Top = 35
-            Width = 80
+            Top = 39
+            Width = 82
             Caption = 'Flight time'
             OnClick = CBTimeClick
             TabOrder = 2
           end
           object GroupBox8: TGroupBox
-            Left = 103
-            Height = 43
-            Top = 10
-            Width = 77
-            ClientHeight = 41
-            ClientWidth = 75
+            Left = 116
+            Height = 48
+            Top = 11
+            Width = 87
+            ClientHeight = 46
+            ClientWidth = 85
             TabOrder = 3
             object LabelDefTime: TLabel
-              Left = 16
-              Height = 16
+              Left = 18
+              Height = 17
               Top = 2
-              Width = 38
+              Width = 41
               Caption = 'Default'
               ParentColor = False
             end
@@ -413,7 +414,7 @@ object FSettings: TFSettings
             object RBDefTimeFlight: TRadioButton
               Left = 0
               Height = 21
-              Top = 10
+              Top = 11
               Width = 21
               Checked = True
               TabOrder = 1
@@ -422,10 +423,10 @@ object FSettings: TFSettings
           end
         end
         object RGDefPosition: TRadioGroup
-          Left = 15
-          Height = 55
+          Left = 17
+          Height = 62
           Top = 2
-          Width = 108
+          Width = 122
           AutoFill = True
           Caption = 'Default position'
           ChildSizing.LeftRightSpacing = 6
@@ -435,8 +436,8 @@ object FSettings: TFSettings
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 38
-          ClientWidth = 106
+          ClientHeight = 39
+          ClientWidth = 120
           ItemIndex = 0
           Items.Strings = (
             'Pilot'
@@ -446,32 +447,32 @@ object FSettings: TFSettings
           TabOrder = 0
         end
         object GroupBox16: TGroupBox
-          Left = 15
-          Height = 55
-          Top = 146
-          Width = 384
+          Left = 17
+          Height = 62
+          Top = 164
+          Width = 432
           Caption = 'JAR-FCL (History)'
-          ClientHeight = 38
-          ClientWidth = 382
+          ClientHeight = 39
+          ClientWidth = 430
           Color = clBtnFace
           ParentBackground = False
           ParentColor = False
           TabOrder = 5
           OnExit = GEExit
           object DisallowChange: TCheckBox
-            Left = 6
+            Left = 7
             Height = 21
             Top = 1
-            Width = 217
+            Width = 230
             Caption = 'Disallow change / deletion (strikeout)'
             OnClick = DisallowChangeClick
             TabOrder = 0
           end
           object AllowLastEdit: TCheckBox
-            Left = 24
+            Left = 27
             Height = 21
-            Top = 17
-            Width = 203
+            Top = 19
+            Width = 214
             Caption = 'except changing of last visible row'
             TabOrder = 1
           end
@@ -480,20 +481,20 @@ object FSettings: TFSettings
     end
     object TabSheetLicenses: TTabSheet
       Caption = 'Licences'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 2
       object LabelGetAirports: TLabel
         Cursor = crHandPoint
-        Left = 59
-        Height = 13
-        Top = 302
-        Width = 385
+        Left = 66
+        Height = 15
+        Top = 340
+        Width = 433
         Alignment = taCenter
         AutoSize = False
         Caption = 'Get more licenses'
         Font.Color = clNavy
-        Font.Height = -11
+        Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsUnderline]
         ParentColor = False
@@ -501,44 +502,44 @@ object FSettings: TFSettings
         OnClick = LabelGetAirportsClick
       end
       object GroupBox2: TGroupBox
-        Left = 203
-        Height = 75
+        Left = 228
+        Height = 84
         Top = 0
-        Width = 177
+        Width = 199
         Caption = 'Flight data before FliPS'
-        ClientHeight = 58
-        ClientWidth = 175
+        ClientHeight = 82
+        ClientWidth = 197
         TabOrder = 1
         object Label8: TLabel
-          Left = 7
-          Height = 16
-          Top = 9
-          Width = 51
+          Left = 8
+          Height = 17
+          Top = 10
+          Width = 53
           Caption = 'Landings:'
           ParentColor = False
         end
         object Label9: TLabel
-          Left = 9
-          Height = 16
-          Top = 36
-          Width = 61
+          Left = 10
+          Height = 17
+          Top = 40
+          Width = 64
           Caption = 'Flight Time:'
           ParentColor = False
         end
         object GEStarts: TEdit
-          Left = 93
-          Height = 28
-          Top = 6
-          Width = 60
+          Left = 105
+          Height = 29
+          Top = 7
+          Width = 68
           OnExit = GEExit
           TabOrder = 0
           Text = '0'
         end
         object GEStunden: TMaskEdit
-          Left = 93
-          Height = 28
-          Top = 33
-          Width = 60
+          Left = 105
+          Height = 29
+          Top = 37
+          Width = 68
           MaxLength = 8
           ParentBiDiMode = False
           TabOrder = 1
@@ -549,22 +550,22 @@ object FSettings: TFSettings
         end
       end
       object GroupBox9: TGroupBox
-        Left = 5
-        Height = 217
-        Top = 80
-        Width = 498
+        Left = 6
+        Height = 244
+        Top = 90
+        Width = 560
         Caption = 'Licences'
-        ClientHeight = 200
-        ClientWidth = 496
+        ClientHeight = 221
+        ClientWidth = 558
         TabOrder = 2
         object PageControlLicenses: TPageControl
-          Left = 166
-          Height = 180
-          Top = 7
-          Width = 323
+          Left = 187
+          Height = 202
+          Top = 8
+          Width = 363
           ActivePage = TSLInfo
           Font.Color = clWindowText
-          Font.Height = -11
+          Font.Height = -12
           Font.Name = 'MS Sans Serif'
           MultiLine = True
           ParentFont = False
@@ -574,42 +575,42 @@ object FSettings: TFSettings
           Options = [nboMultiLine]
           object TSLInfo: TTabSheet
             Caption = 'Info'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             ImageIndex = 5
             object MemoLicInfo: TMemo
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
               ReadOnly = True
               TabOrder = 0
             end
           end
           object TSLDate: TTabSheet
             Caption = 'Date'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             object Label12: TLabel
-              Left = 18
-              Height = 26
-              Top = 112
-              Width = 273
+              Left = 20
+              Height = 29
+              Top = 126
+              Width = 307
               AutoSize = False
               Caption = 'Here you can enter dates'
               Font.Color = clNavy
-              Font.Height = -11
+              Font.Height = -12
               Font.Name = 'MS Sans Serif'
               ParentColor = False
               ParentFont = False
               WordWrap = True
             end
             object VLEDate: TValueListEditor
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
-              DefaultColWidth = 130
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
+              DefaultColWidth = 146
               FixedCols = 0
               RowCount = 2
               TabOrder = 0
@@ -620,36 +621,36 @@ object FSettings: TFSettings
                 'Date (Valid to)'
               )
               ColWidths = (
-                130
-                136
+                146
+                154
               )
             end
           end
           object TSLCat: TTabSheet
             Caption = 'Categories'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             ImageIndex = 1
             object Label2: TLabel
-              Left = 18
-              Height = 26
-              Top = 112
-              Width = 273
+              Left = 20
+              Height = 29
+              Top = 126
+              Width = 307
               AutoSize = False
               Caption = 'Here you can assign categories.'
               Font.Color = clNavy
-              Font.Height = -11
+              Font.Height = -12
               Font.Name = 'MS Sans Serif'
               ParentColor = False
               ParentFont = False
               WordWrap = True
             end
             object VLECat: TValueListEditor
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
-              DefaultColWidth = 130
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
+              DefaultColWidth = 146
               FixedCols = 0
               RowCount = 2
               TabOrder = 0
@@ -659,36 +660,36 @@ object FSettings: TFSettings
                 'Category'
               )
               ColWidths = (
-                130
-                136
+                146
+                154
               )
             end
           end
           object TSLTimeCat: TTabSheet
             Caption = 'Time Cat'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             ImageIndex = 4
             object Label13: TLabel
-              Left = 18
-              Height = 26
-              Top = 112
-              Width = 273
+              Left = 20
+              Height = 29
+              Top = 126
+              Width = 307
               AutoSize = False
               Caption = 'Here you can assign time categories.'
               Font.Color = clNavy
-              Font.Height = -11
+              Font.Height = -12
               Font.Name = 'MS Sans Serif'
               ParentColor = False
               ParentFont = False
               WordWrap = True
             end
             object VLETimeCat: TValueListEditor
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
-              DefaultColWidth = 130
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
+              DefaultColWidth = 146
               FixedCols = 0
               RowCount = 2
               TabOrder = 0
@@ -698,36 +699,36 @@ object FSettings: TFSettings
                 'Category'
               )
               ColWidths = (
-                130
-                136
+                146
+                154
               )
             end
           end
           object TSLAccLic: TTabSheet
             Caption = 'Flight logs'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             ImageIndex = 2
             object Label11: TLabel
-              Left = 18
-              Height = 26
-              Top = 112
-              Width = 273
+              Left = 20
+              Height = 29
+              Top = 126
+              Width = 307
               AutoSize = False
               Caption = 'If flights from other flight logs are accepted, then they can be selected here.'
               Font.Color = clNavy
-              Font.Height = -11
+              Font.Height = -12
               Font.Name = 'MS Sans Serif'
               ParentColor = False
               ParentFont = False
               WordWrap = True
             end
             object VLEAccLic: TValueListEditor
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
-              DefaultColWidth = 130
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
+              DefaultColWidth = 146
               FixedCols = 0
               RowCount = 2
               TabOrder = 0
@@ -737,36 +738,36 @@ object FSettings: TFSettings
                 'Flight log'
               )
               ColWidths = (
-                130
-                136
+                146
+                154
               )
             end
           end
           object TSLOptCon: TTabSheet
             Caption = 'Ratings'
-            ClientHeight = 152
-            ClientWidth = 313
+            ClientHeight = 165
+            ClientWidth = 353
             ImageIndex = 3
             object Label18: TLabel
-              Left = 18
-              Height = 26
-              Top = 112
-              Width = 273
+              Left = 20
+              Height = 29
+              Top = 126
+              Width = 307
               AutoSize = False
               Caption = 'Here you can select additional ratings.'
               Font.Color = clNavy
-              Font.Height = -11
+              Font.Height = -12
               Font.Name = 'MS Sans Serif'
               ParentColor = False
               ParentFont = False
               WordWrap = True
             end
             object CLBOptCond: TCheckListBox
-              Left = 20
-              Height = 100
-              Top = 8
-              Width = 270
-              ItemHeight = 0
+              Left = 22
+              Height = 112
+              Top = 9
+              Width = 304
+              ItemHeight = 17
               OnExit = CLBOptCondExit
               TabOrder = 0
               TopIndex = -1
@@ -774,21 +775,21 @@ object FSettings: TFSettings
           end
         end
         object VSTLicFiles: TVirtualStringTree
-          Left = 11
-          Height = 180
-          Top = 7
-          Width = 148
-          DefaultNodeHeight = 16
+          Left = 12
+          Height = 202
+          Top = 8
+          Width = 166
+          DefaultNodeHeight = 19
           Header.AutoSizeIndex = -1
           Header.Columns = <>
           Header.Font.Color = clWindowText
           Header.Font.Height = -11
           Header.Font.Name = 'MS Sans Serif'
-          Header.Height = 20
+          Header.Height = 22
           Header.MainColumn = -1
           Header.Options = [hoColumnResize, hoDrag]
           Header.Style = hsPlates
-          Indent = 10
+          Indent = 11
           Margin = 0
           TabOrder = 1
           TreeOptions.MiscOptions = [toCheckSupport, toFullRepaintOnResize, toInitOnSave, toToggleOnDblClick, toWheelPanning]
@@ -799,28 +800,28 @@ object FSettings: TFSettings
         end
       end
       object GroupBox3: TGroupBox
-        Left = 5
-        Height = 75
+        Left = 6
+        Height = 84
         Top = 0
-        Width = 185
+        Width = 208
         Caption = 'General'
-        ClientHeight = 58
-        ClientWidth = 183
+        ClientHeight = 82
+        ClientWidth = 206
         TabOrder = 0
         object Label6: TLabel
-          Left = 8
-          Height = 16
-          Top = 10
-          Width = 87
+          Left = 9
+          Height = 17
+          Top = 11
+          Width = 96
           Caption = 'Licence received:'
           ParentColor = False
         end
         object GEScheinSeit: TMaskEdit
-          Left = 113
-          Height = 28
+          Left = 127
+          Height = 29
           Hint = 'Date since obtaining your licence'
-          Top = 7
-          Width = 60
+          Top = 8
+          Width = 68
           MaxLength = 10
           TabOrder = 0
           OnExit = GEExit
@@ -832,56 +833,56 @@ object FSettings: TFSettings
     end
     object TabSheetMedicals: TTabSheet
       Caption = 'Medicals'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 6
       object GroupBox10: TGroupBox
-        Left = 8
-        Height = 305
-        Top = 8
-        Width = 489
+        Left = 9
+        Height = 343
+        Top = 9
+        Width = 550
         Caption = 'Medicals'
-        ClientHeight = 288
-        ClientWidth = 487
+        ClientHeight = 320
+        ClientWidth = 548
         TabOrder = 0
         object Label20: TLabel
-          Left = 5
-          Height = 32
-          Top = 250
-          Width = 474
+          Left = 6
+          Height = 36
+          Top = 281
+          Width = 533
           Alignment = taCenter
           AutoSize = False
           Caption = 'Medicals are loaded by selecting a license on the license tab.'
           Font.Color = clNavy
-          Font.Height = -11
+          Font.Height = -12
           Font.Name = 'MS Sans Serif'
           ParentColor = False
           ParentFont = False
           WordWrap = True
         end
         object Bevel9: TBevel
-          Left = 6
-          Height = 9
-          Top = 234
-          Width = 473
+          Left = 7
+          Height = 10
+          Top = 263
+          Width = 532
           Shape = bsTopLine
         end
         object CLBMedicals: TCheckListBox
-          Left = 6
-          Height = 214
-          Top = 5
-          Width = 125
-          ItemHeight = 0
+          Left = 7
+          Height = 241
+          Top = 6
+          Width = 141
+          ItemHeight = 17
           OnClickCheck = CLBMedicalsClickCheck
           TabOrder = 0
           TopIndex = -1
         end
         object VLEMedicals: TValueListEditor
-          Left = 143
-          Height = 214
-          Top = 5
-          Width = 336
-          DefaultColWidth = 120
+          Left = 161
+          Height = 241
+          Top = 6
+          Width = 378
+          DefaultColWidth = 135
           FixedCols = 0
           RowCount = 2
           TabOrder = 1
@@ -892,70 +893,70 @@ object FSettings: TFSettings
             'Date (Valid to)'
           )
           ColWidths = (
-            151
-            183
+            135
+            239
           )
         end
       end
     end
     object TabSheetAutoComplete: TTabSheet
       Caption = 'AutoComplete'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       object GroupBox5: TGroupBox
-        Left = 8
-        Height = 305
-        Top = 8
-        Width = 489
+        Left = 9
+        Height = 343
+        Top = 9
+        Width = 550
         Caption = 'AutoComplete'
-        ClientHeight = 288
-        ClientWidth = 487
+        ClientHeight = 341
+        ClientWidth = 548
         TabOrder = 0
         object LabelAC: TLabel
-          Left = 222
-          Height = 16
-          Top = 185
+          Left = 250
+          Height = 17
+          Top = 208
           Width = 4
           Caption = '-'
           ParentColor = False
         end
         object Label16: TLabel
-          Left = 5
-          Height = 32
-          Top = 250
-          Width = 474
+          Left = 6
+          Height = 36
+          Top = 281
+          Width = 533
           Alignment = taCenter
           AutoSize = False
           Caption = 'AutoComplete helps you by completing a parts of known words'
           Font.Color = clNavy
-          Font.Height = -11
+          Font.Height = -12
           Font.Name = 'MS Sans Serif'
           ParentColor = False
           ParentFont = False
           WordWrap = True
         end
         object Bevel8: TBevel
-          Left = 6
-          Height = 9
-          Top = 234
-          Width = 473
+          Left = 7
+          Height = 10
+          Top = 263
+          Width = 532
           Shape = bsTopLine
         end
         object Bevel5: TBevel
-          Left = 6
-          Height = 9
-          Top = 178
-          Width = 473
+          Left = 7
+          Height = 10
+          Top = 200
+          Width = 532
           Shape = bsTopLine
         end
         object ButtonAdd: TBitBtn
-          Left = 434
-          Height = 21
+          Left = 488
+          Height = 24
           Hint = 'add'
-          Top = 204
-          Width = 21
+          Top = 230
+          Width = 24
           Font.Color = clWindowText
-          Font.Height = -11
+          Font.Height = -12
           Font.Name = 'MS Sans Serif'
           Images = FMain.ImageList
           ImageIndex = 18
@@ -964,13 +965,13 @@ object FSettings: TFSettings
           TabOrder = 4
         end
         object ButtonRem: TBitBtn
-          Left = 458
-          Height = 21
+          Left = 515
+          Height = 24
           Hint = 'remove'
-          Top = 204
-          Width = 21
+          Top = 230
+          Width = 24
           Font.Color = clWindowText
-          Font.Height = -11
+          Font.Height = -12
           Font.Name = 'MS Sans Serif'
           Images = FMain.ImageList
           ImageIndex = 19
@@ -980,34 +981,34 @@ object FSettings: TFSettings
         end
         object PanelFlugz: TPanel
           Left = 3
-          Height = 49
-          Top = 182
-          Width = 204
+          Height = 55
+          Top = 205
+          Width = 230
           BevelOuter = bvNone
-          ClientHeight = 49
-          ClientWidth = 204
+          ClientHeight = 55
+          ClientWidth = 230
           TabOrder = 2
           object LabelTyp: TLabel
             Left = 1
-            Height = 16
+            Height = 17
             Top = 0
-            Width = 66
+            Width = 72
             Caption = 'Aircraft type:'
             ParentColor = False
           end
           object EditTyp: TEdit
             Left = 1
-            Height = 28
-            Top = 20
-            Width = 193
+            Height = 29
+            Top = 22
+            Width = 217
             TabOrder = 0
           end
         end
         object LBKatDetail: TListBox
-          Left = 6
-          Height = 158
-          Top = 5
-          Width = 345
+          Left = 7
+          Height = 178
+          Top = 6
+          Width = 388
           Columns = 2
           ItemHeight = 0
           OnClick = LBKatDetailClick
@@ -1015,45 +1016,46 @@ object FSettings: TFSettings
           TopIndex = -1
         end
         object EditAC: TEdit
-          Left = 222
-          Height = 28
-          Top = 204
-          Width = 193
+          Left = 250
+          Height = 29
+          Top = 230
+          Width = 217
           TabOrder = 3
         end
         object LBKatAC: TListBox
-          Left = 362
-          Height = 158
-          Top = 5
-          Width = 117
+          Left = 407
+          Height = 178
+          Top = 6
+          Width = 132
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -15
           Font.Name = 'MS Sans Serif'
           Items.Strings = (
             'Aircraft'
             'Passenger'
             'Airport'
           )
-          ItemHeight = 22
+          ItemHeight = 0
           OnClick = LBKatACClick
           ParentFont = False
           TabOrder = 1
+          TopIndex = -1
         end
       end
     end
     object TabSheetCat: TTabSheet
       Caption = 'Categories'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 3
       object PageControl1: TPageControl
-        Left = 9
-        Height = 303
-        Top = 10
-        Width = 488
+        Left = 10
+        Height = 341
+        Top = 11
+        Width = 549
         ActivePage = TabSheet1
         Font.Color = clWindowText
-        Font.Height = -11
+        Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
@@ -1061,38 +1063,38 @@ object FSettings: TFSettings
         TabOrder = 0
         object TabSheet1: TTabSheet
           Caption = 'Categories'
-          ClientHeight = 275
-          ClientWidth = 478
+          ClientHeight = 304
+          ClientWidth = 539
           object Bevel3: TBevel
-            Left = 5
-            Height = 266
-            Top = 7
-            Width = 468
+            Left = 6
+            Height = 299
+            Top = 8
+            Width = 526
             Shape = bsFrame
           end
           object Label14: TLabel
-            Left = 10
-            Height = 32
-            Top = 236
-            Width = 455
+            Left = 11
+            Height = 36
+            Top = 266
+            Width = 512
             Alignment = taCenter
             AutoSize = False
             Caption = 'Here you can add categories (e.g. air tow, instruction, student time)'
             Font.Color = clNavy
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             ParentColor = False
             ParentFont = False
             WordWrap = True
           end
           object ButtonKatAdd: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Add category'
-            Top = 88
-            Width = 25
+            Top = 99
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 18
@@ -1101,13 +1103,13 @@ object FSettings: TFSettings
             TabOrder = 1
           end
           object ButtonKatRem: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Remove category'
-            Top = 119
-            Width = 25
+            Top = 134
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 19
@@ -1116,10 +1118,10 @@ object FSettings: TFSettings
             TabOrder = 2
           end
           object CLBKat: TListBox
-            Left = 11
-            Height = 214
-            Top = 11
-            Width = 414
+            Left = 12
+            Height = 241
+            Top = 12
+            Width = 466
             Columns = 2
             ItemHeight = 0
             TabOrder = 0
@@ -1128,39 +1130,39 @@ object FSettings: TFSettings
         end
         object TabSheet2: TTabSheet
           Caption = 'Time categories'
-          ClientHeight = 275
-          ClientWidth = 478
+          ClientHeight = 304
+          ClientWidth = 539
           ImageIndex = 1
           object Bevel2: TBevel
-            Left = 5
-            Height = 266
-            Top = 7
-            Width = 468
+            Left = 6
+            Height = 299
+            Top = 8
+            Width = 526
             Shape = bsFrame
           end
           object Label15: TLabel
-            Left = 83
-            Height = 32
-            Top = 236
-            Width = 315
+            Left = 93
+            Height = 36
+            Top = 266
+            Width = 354
             Alignment = taCenter
             AutoSize = False
             Caption = 'Here you can add time categories (e.g. engine time, IFR, Night). Times can be assigned to these categories in the data entry field.'
             Font.Color = clNavy
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             ParentColor = False
             ParentFont = False
             WordWrap = True
           end
           object ButtonCTiAdd: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Add category'
-            Top = 88
-            Width = 25
+            Top = 99
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 18
@@ -1169,13 +1171,13 @@ object FSettings: TFSettings
             TabOrder = 1
           end
           object ButtonCTiRem: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Remove category'
-            Top = 119
-            Width = 25
+            Top = 134
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 19
@@ -1184,10 +1186,10 @@ object FSettings: TFSettings
             TabOrder = 2
           end
           object LBCTi: TListBox
-            Left = 11
-            Height = 214
-            Top = 11
-            Width = 414
+            Left = 12
+            Height = 241
+            Top = 12
+            Width = 466
             Columns = 2
             ItemHeight = 0
             TabOrder = 0
@@ -1196,39 +1198,39 @@ object FSettings: TFSettings
         end
         object TabSheet3: TTabSheet
           Caption = 'Competition categories'
-          ClientHeight = 275
-          ClientWidth = 478
+          ClientHeight = 304
+          ClientWidth = 539
           ImageIndex = 2
           object Bevel1: TBevel
-            Left = 5
-            Height = 266
-            Top = 7
-            Width = 468
+            Left = 6
+            Height = 299
+            Top = 8
+            Width = 526
             Shape = bsFrame
           end
           object Label17: TLabel
-            Left = 82
-            Height = 32
-            Top = 236
-            Width = 315
+            Left = 92
+            Height = 36
+            Top = 266
+            Width = 354
             Alignment = taCenter
             AutoSize = False
             Caption = 'Here you can add contest categories (e.g. OLC)'
             Font.Color = clNavy
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             ParentColor = False
             ParentFont = False
             WordWrap = True
           end
           object ButtonContestAdd: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Add category'
-            Top = 88
-            Width = 25
+            Top = 99
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 18
@@ -1237,13 +1239,13 @@ object FSettings: TFSettings
             TabOrder = 1
           end
           object ButtonContestRem: TBitBtn
-            Left = 434
-            Height = 25
+            Left = 488
+            Height = 28
             Hint = 'Remove category'
-            Top = 119
-            Width = 25
+            Top = 134
+            Width = 28
             Font.Color = clWindowText
-            Font.Height = -11
+            Font.Height = -12
             Font.Name = 'MS Sans Serif'
             Images = FMain.ImageList
             ImageIndex = 19
@@ -1252,10 +1254,10 @@ object FSettings: TFSettings
             TabOrder = 2
           end
           object LBContest: TListBox
-            Left = 11
-            Height = 214
-            Top = 11
-            Width = 414
+            Left = 12
+            Height = 241
+            Top = 12
+            Width = 466
             Columns = 2
             ItemHeight = 0
             TabOrder = 0
@@ -1266,23 +1268,23 @@ object FSettings: TFSettings
     end
     object TabSheetCosts: TTabSheet
       Caption = 'Aircraft / Costs'
-      ClientHeight = 317
-      ClientWidth = 557
+      ClientHeight = 359
+      ClientWidth = 628
       ImageIndex = 6
       object GroupBox14: TGroupBox
-        Left = 8
-        Height = 305
-        Top = 8
-        Width = 489
+        Left = 9
+        Height = 343
+        Top = 9
+        Width = 550
         Caption = 'Aircraft'
-        ClientHeight = 288
-        ClientWidth = 487
+        ClientHeight = 341
+        ClientWidth = 548
         TabOrder = 0
         object AircraftList: TListBox
-          Left = 6
-          Height = 238
-          Top = 5
-          Width = 121
+          Left = 7
+          Height = 268
+          Top = 6
+          Width = 136
           Columns = 2
           ItemHeight = 0
           OnClick = AircraftListClick
@@ -1291,74 +1293,74 @@ object FSettings: TFSettings
           TopIndex = -1
         end
         object GroupBoxCosts: TGroupBox
-          Left = 142
-          Height = 131
+          Left = 160
+          Height = 147
           Top = 0
-          Width = 281
+          Width = 316
           Caption = 'Costs'
-          ClientHeight = 114
-          ClientWidth = 279
+          ClientHeight = 145
+          ClientWidth = 314
           TabOrder = 1
           object Bevel4: TBevel
-            Left = 6
-            Height = 9
-            Top = 26
-            Width = 265
+            Left = 7
+            Height = 10
+            Top = 29
+            Width = 298
             Shape = bsTopLine
           end
           object CurLabel2: TLabel
-            Left = 262
-            Height = 16
-            Top = 62
+            Left = 295
+            Height = 17
+            Top = 70
             Width = 4
             Caption = '-'
             ParentColor = False
           end
           object CurLabel1: TLabel
-            Left = 262
-            Height = 16
-            Top = 38
+            Left = 295
+            Height = 17
+            Top = 43
             Width = 4
             Caption = '-'
             ParentColor = False
           end
           object Label24: TLabel
-            Left = 6
-            Height = 16
-            Top = 38
-            Width = 51
+            Left = 7
+            Height = 17
+            Top = 43
+            Width = 53
             Caption = 'per Hour:'
             ParentColor = False
           end
           object Label25: TLabel
-            Left = 6
-            Height = 16
-            Top = 62
-            Width = 54
+            Left = 7
+            Height = 17
+            Top = 70
+            Width = 55
             Caption = 'per Flight:'
             ParentColor = False
           end
           object Label10: TLabel
-            Left = 6
-            Height = 16
-            Top = 88
-            Width = 50
+            Left = 7
+            Height = 17
+            Top = 99
+            Width = 54
             Caption = 'Currency:'
             ParentColor = False
           end
           object Label1: TLabel
-            Left = 6
-            Height = 16
+            Left = 7
+            Height = 17
             Top = 3
-            Width = 77
+            Width = 81
             Caption = 'Calculation by:'
             ParentColor = False
           end
           object CalcByBT: TRadioButton
-            Left = 86
+            Left = 97
             Height = 21
             Top = 2
-            Width = 78
+            Width = 82
             Caption = 'Block time'
             Checked = True
             OnExit = AcCostsCalcByExit
@@ -1366,35 +1368,35 @@ object FSettings: TFSettings
             TabStop = True
           end
           object CalcByFT: TRadioButton
-            Left = 182
+            Left = 205
             Height = 21
             Top = 2
-            Width = 80
+            Width = 82
             Caption = 'Flight time'
             OnExit = AcCostsCalcByExit
             TabOrder = 1
           end
           object CpF: TEdit
-            Left = 70
-            Height = 28
-            Top = 58
-            Width = 185
+            Left = 79
+            Height = 29
+            Top = 65
+            Width = 208
             OnExit = AcCostsEditExit
             TabOrder = 3
           end
           object CpH: TEdit
-            Left = 70
-            Height = 28
-            Top = 34
-            Width = 185
+            Left = 79
+            Height = 29
+            Top = 38
+            Width = 208
             OnExit = AcCostsEditExit
             TabOrder = 2
           end
           object GECurrency: TEdit
-            Left = 70
-            Height = 28
-            Top = 84
-            Width = 201
+            Left = 79
+            Height = 29
+            Top = 94
+            Width = 226
             Alignment = taRightJustify
             MaxLength = 2
             OnChange = GECurrencyChange
@@ -1403,59 +1405,59 @@ object FSettings: TFSettings
           end
         end
         object GroupBoxSpez: TGroupBox
-          Left = 142
-          Height = 137
-          Top = 146
-          Width = 281
+          Left = 160
+          Height = 154
+          Top = 164
+          Width = 316
           Caption = 'Spezification (for personal information only)'
-          ClientHeight = 120
-          ClientWidth = 279
+          ClientHeight = 152
+          ClientWidth = 314
           TabOrder = 2
           object Label22: TLabel
-            Left = 6
-            Height = 16
-            Top = 6
-            Width = 51
+            Left = 7
+            Height = 17
+            Top = 7
+            Width = 54
             Caption = 'Category:'
             ParentColor = False
           end
           object Label23: TLabel
-            Left = 6
-            Height = 16
-            Top = 30
-            Width = 29
+            Left = 7
+            Height = 17
+            Top = 34
+            Width = 33
             Caption = 'Class:'
             ParentColor = False
           end
           object Label26: TLabel
-            Left = 6
-            Height = 16
-            Top = 54
-            Width = 39
+            Left = 7
+            Height = 17
+            Top = 61
+            Width = 41
             Caption = 'Engine:'
             ParentColor = False
           end
           object Label27: TLabel
-            Left = 6
-            Height = 16
-            Top = 78
-            Width = 40
+            Left = 7
+            Height = 17
+            Top = 88
+            Width = 42
             Caption = 'Weight:'
             ParentColor = False
           end
           object Label28: TLabel
-            Left = 6
-            Height = 16
-            Top = 102
-            Width = 35
+            Left = 7
+            Height = 17
+            Top = 115
+            Width = 39
             Caption = 'Usage:'
             ParentColor = False
           end
           object Cat: TComboBox
-            Left = 70
-            Height = 28
+            Left = 79
+            Height = 29
             Top = 2
-            Width = 201
+            Width = 226
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1474,10 +1476,10 @@ object FSettings: TFSettings
             Text = 'aircraft (land)'
           end
           object Cls: TComboBox
-            Left = 70
-            Height = 28
-            Top = 26
-            Width = 201
+            Left = 79
+            Height = 29
+            Top = 29
+            Width = 226
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1491,10 +1493,10 @@ object FSettings: TFSettings
             Text = '<not available>'
           end
           object Eng: TComboBox
-            Left = 70
-            Height = 28
-            Top = 50
-            Width = 201
+            Left = 79
+            Height = 29
+            Top = 56
+            Width = 226
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1509,10 +1511,10 @@ object FSettings: TFSettings
             Text = '<not available>'
           end
           object Wgt: TComboBox
-            Left = 70
-            Height = 28
-            Top = 74
-            Width = 201
+            Left = 79
+            Height = 29
+            Top = 83
+            Width = 226
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1528,10 +1530,10 @@ object FSettings: TFSettings
             Text = '< 2 t'
           end
           object Use: TComboBox
-            Left = 70
-            Height = 28
-            Top = 98
-            Width = 201
+            Left = 79
+            Height = 29
+            Top = 110
+            Width = 226
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1547,10 +1549,10 @@ object FSettings: TFSettings
           end
         end
         object ButtonAirCat: TBitBtn
-          Left = 28
-          Height = 25
-          Top = 251
-          Width = 80
+          Left = 32
+          Height = 28
+          Top = 282
+          Width = 90
           Caption = 'Categories'
           Images = FMain.ImageList
           OnClick = ButtonAirCatClick
@@ -1561,40 +1563,39 @@ object FSettings: TFSettings
   end
   object PanelFligtLogs: TPanel
     Left = 0
-    Height = 40
-    Top = 436
-    Width = 567
+    Height = 45
+    Top = 490
+    Width = 638
     Align = alBottom
     BevelInner = bvRaised
     BevelOuter = bvLowered
-    ClientHeight = 40
-    ClientWidth = 567
+    ClientHeight = 45
+    ClientWidth = 638
     TabOrder = 3
     object LBFlu: TListBox
-      Left = 6
-      Height = 27
+      Left = 7
+      Height = 30
       Hint = 'Select flight log'
       Top = 4
-      Width = 551
+      Width = 620
       Anchors = [akTop, akLeft, akRight]
       Color = clBtnFace
       Columns = 2
       Font.Color = clBlack
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
-      ItemHeight = 31
+      ItemHeight = 0
       OnClick = LBFluClick
       OnDrawItem = LBFluDrawItem
       ParentFont = False
-      Style = lbOwnerDrawFixed
       TabOrder = 0
       TopIndex = -1
     end
   end
   object PopupMenu1: TPopupMenu
-    Left = 4
-    Top = 392
+    Left = 5
+    Top = 441
     object CleanXMLdata1: TMenuItem
       Caption = '&Clean XML data'
       OnClick = CleanXMLdata1Click

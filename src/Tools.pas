@@ -926,7 +926,7 @@ begin
    if Extract then Result := ExtractFilePath(Paramstr(0))
    else begin
      if WorkingDir = '' then GetDir(0, WorkingDir); {0 = Current drive / dir}
-     Result := WorkingDir;
+     Result := IncludeTrailingPathDelimiter(WorkingDir);
    end;
 end;
 

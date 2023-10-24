@@ -392,15 +392,16 @@ var
   SearchRec: TSearchRec;
 begin
   { FluPP 1.08 -> 1.09 }
-  if FileExists(GetActualDir(true)+PathDelim+'Eigene Flugplaetze.txt') then
-    RenameFile(PChar(GetActualDir(true)+PathDelim+'Eigene Flugplaetze.txt'), PChar(GetActualDir(true)+'airports'+PathDelim+'airports.txt'));
+  if FileExists(GetActualDir(true)+'Eigene Flugplaetze.txt') then
+    RenameFile(PChar(GetActualDir(true)+'Eigene Flugplaetze.txt'), PChar(GetActualDir(true)+'airports'+PathDelim+'airports.txt'));
 
+  DebugLn(GetActualDir(true)+'airports');
   if (SysUtils.DirectoryExists(GetActualDir(true)+'airports')) then
   begin
-    Found := FindFirst(GetActualDir(true)+PathDelim +'airports'+PathDelim+'airports*.txt', faAnyFile, SearchRec);
+    Found := FindFirst(GetActualDir(true)+'airports'+PathDelim+'airports*.txt', faAnyFile, SearchRec);
     while Found = 0 do
     begin
-      GetData(GetActualDir(true)+PathDelim+'airports'+PathDelim +SearchRec.Name);
+      GetData(GetActualDir(true)+'airports'+PathDelim +SearchRec.Name);
       Found := FindNext(SearchRec);
     end;
     FindClose(SearchRec);
@@ -418,14 +419,14 @@ begin
   FlpTempDir := SysUtils.GetTempDir(false);
   DeleteFile(FlpTempDir);
   CreateDir(FlpTempDir);
-  CreateDir(FlpTempDir+'\Files');
+  CreateDir(FlpTempDir+PathDelim+'Files');
 
+  DebugLn('LoadDefaultGenSettings');
   LoadDefaultGenSettings;
 
   with TFFlightLogs.Create(Application) do
   try
-    ButtonNewClick(Sender);
-    ShowModal;
+    ButtonNewClick(FMain);
   finally
     Release;
   end;
@@ -444,11 +445,13 @@ begin
 end;
 
 // ----------------------------------------------------------------
-// Create new flight log MDI-child
+// Create new flight log
 // ----------------------------------------------------------------
 procedure TFMain.CreateNewFlightLog(Name, GridCols: String);
 begin
+  DebugLn('CreateNewFlightLog');
   CreateNewFlightLog(Name);
+  DebugLn('ReadTStrings(GridCols, ActiveFlightLog.GridCols);');
   ReadTStrings(GridCols, ActiveFlightLog.GridCols);
   ActiveFlightLog.Grid.ColCount := ActiveFlightLog.GridCols.Count;
   ActiveFlightLog.NameCols;
@@ -798,7 +801,7 @@ begin
     GridChild(i).NameCols;
   end;
 
-  MDIChildren[FlightLogList.Count-1].show;
+  //MDIChildren[FlightLogList.Count-1].show;
   ActiveFlightLog.ReCalcGridTime;
 
   UpdateButtonState;
@@ -1086,7 +1089,7 @@ begin
     FInput.Neu(1)
   else
   begin
-    //TODO ActiveFlightLog.Grid.InsertRow(ActiveFlightLog.Grid.RowCount);
+    ActiveFlightLog.Grid.InsertColRow(False, ActiveFlightLog.Grid.RowCount);
     FInput.Neu(ActiveFlightLog.Grid.RowCount-1);
   end;
 end;
@@ -1096,7 +1099,7 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightInsert(Sender: TObject);
 begin
-  //TODO ActiveFlightLog.Grid.InsertRow(ActiveFlightLog.Grid.Row);
+  ActiveFlightLog.Grid.InsertColRow(False, ActiveFlightLog.Grid.Row);
   FInput.Neu(ActiveFlightLog.Grid.Row);
   ActiveFlightLog.ReCalcGridNr;
 end;

@@ -1,14 +1,15 @@
 object FMain: TFMain
-  Left = 27
-  Height = 544
-  Top = 547
-  Width = 1141
+  Left = 473
+  Height = 612
+  Top = 486
+  Width = 1284
   Caption = 'FluPP'
-  ClientHeight = 515
-  ClientWidth = 1141
+  ClientHeight = 580
+  ClientWidth = 1284
   Color = clBtnFace
+  DesignTimePPI = 108
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'MS Sans Serif'
   FormStyle = fsStayOnTop
   KeyPreview = True
@@ -21,11 +22,11 @@ object FMain: TFMain
   Visible = True
   object ActionToolBar: TToolBar
     Left = 0
-    Height = 54
+    Height = 61
     Top = 0
-    Width = 1141
-    ButtonHeight = 30
-    ButtonWidth = 30
+    Width = 1284
+    ButtonHeight = 34
+    ButtonWidth = 34
     Caption = 'Main'
     EdgeBorders = []
     Images = ImageList
@@ -43,7 +44,7 @@ object FMain: TFMain
     end
     object ToolButton3: TToolButton
       Left = 109
-      Height = 30
+      Height = 34
       Top = 0
       Caption = 'ToolButton3'
       Style = tbsSeparator
@@ -54,47 +55,47 @@ object FMain: TFMain
       Action = ActionFileSave
     end
     object ToolButton5: TToolButton
-      Left = 117
+      Left = 118
       Top = 0
       Action = ActionStatistic
     end
   end
   object PanelSButtons: TPanel
-    Left = 567
-    Height = 52
+    Left = 638
+    Height = 58
     Top = 0
-    Width = 61
+    Width = 69
     BevelOuter = bvNone
-    ClientHeight = 52
-    ClientWidth = 61
+    ClientHeight = 58
+    ClientWidth = 69
     TabOrder = 2
     object Panel1: TPanel
-      Left = 8
-      Height = 50
-      Top = 8
-      Width = 170
+      Left = 9
+      Height = 56
+      Top = 9
+      Width = 191
       Caption = 'Panel1'
       TabOrder = 0
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 21
-    Top = 494
-    Width = 1141
+    Height = 24
+    Top = 556
+    Width = 1284
     Panels = <    
       item
         Alignment = taCenter
-        Width = 325
+        Width = 366
       end    
       item
         Alignment = taCenter
-        Width = 325
+        Width = 366
       end    
       item
         Alignment = taCenter
         Bevel = pbNone
-        Width = 10
+        Width = 11
       end    
       item
         Width = 0
@@ -103,29 +104,29 @@ object FMain: TFMain
     UseSystemFont = False
   end
   object PanelScheduler: TPanel
-    Left = 394
-    Height = 48
+    Left = 443
+    Height = 54
     Top = 2
-    Width = 164
+    Width = 184
     BevelOuter = bvNone
-    ClientHeight = 48
-    ClientWidth = 164
+    ClientHeight = 54
+    ClientWidth = 184
     TabOrder = 3
     object GridSched: TStringGrid
       Left = 0
-      Height = 44
+      Height = 50
       Top = 0
-      Width = 160
+      Width = 180
       BorderStyle = bsNone
       Color = clBtnFace
       ColCount = 4
-      DefaultColWidth = 50
+      DefaultColWidth = 56
       DefaultDrawing = False
-      DefaultRowHeight = 11
+      DefaultRowHeight = 12
       FixedCols = 0
       FixedRows = 0
       Font.Color = clWindowText
-      Font.Height = 11
+      Font.Height = 12
       Font.Name = 'Small Fonts'
       GridLineWidth = 0
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
@@ -136,45 +137,39 @@ object FMain: TFMain
       TabOrder = 0
       OnDblClick = SchedulerClick
       OnDrawCell = GridSchedDrawCell
-      ColWidths = (
-        50
-        50
-        71
-        50
-      )
     end
   end
   object PanelFlightLog: TPanel
     Left = 0
-    Height = 440
-    Top = 54
-    Width = 1141
+    Height = 495
+    Top = 61
+    Width = 1284
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
   end
   object OpenDialog: TOpenDialog
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist]
-    Left = 10
-    Top = 65
+    Left = 11
+    Top = 73
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '.flp'
     Options = [ofOverwritePrompt, ofHideReadOnly]
-    Left = 10
-    Top = 97
+    Left = 11
+    Top = 109
   end
   object StartTimer: TTimer
     Enabled = False
     Interval = 100
     OnTimer = StartTimerTimer
-    Left = 9
-    Top = 130
+    Left = 10
+    Top = 146
   end
   object ActionManager: TActionList
     Images = ImageList
-    Left = 128
-    Top = 65
+    Left = 144
+    Top = 73
     object ActionFileNew: TAction
       Category = 'File'
       Caption = 'New...'
@@ -451,8 +446,8 @@ object FMain: TFMain
     end
   end
   object ImageList: TImageList
-    Left = 128
-    Top = 120
+    Left = 144
+    Top = 135
     Bitmap = {
       4C7A220000001000000010000000721A00000000000078DAED9D799C14E599C7
       2731BB0BBBAEC1FD234E5C76D70116327137D9C9B5CEAAFB3193CD6A26318993
@@ -2292,8 +2287,8 @@ object FMain: TFMain
   end
   object MainMenu: TMainMenu
     Images = ImageList
-    Left = 128
-    Top = 184
+    Left = 144
+    Top = 207
     object MenuItem1: TMenuItem
       Caption = 'File'
       object MenuItem2: TMenuItem
@@ -2397,8 +2392,8 @@ object FMain: TFMain
   object PopupMenu: TPopupMenu
     Images = ImageList
     AutoPopup = False
-    Left = 272
-    Top = 65
+    Left = 306
+    Top = 73
     object PUFlightNew: TMenuItem
       Action = ActionFlightNew
     end

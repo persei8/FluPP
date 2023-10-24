@@ -6,7 +6,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, StdCtrls, ExtCtrls, Buttons;
+  Dialogs, ComCtrls, StdCtrls, ExtCtrls, Buttons, LazLogger;
 
 type
   TFFlightLogs = class(TForm)
@@ -154,9 +154,9 @@ end;
 procedure TFFlightLogs.LBFluDrawItem(Control: TWinControl; Index: Integer;
   Rect: TRect; State: TOwnerDrawState);
 begin
-  TListBox(Control).Canvas.FillRect(Rect);
-  InflateRect(Rect, 0, -2);
-  DrawText(LBFlu.Canvas.Handle, PChar(LBFlu.Items[Index]), StrLen(PChar(LBFlu.Items[Index])), Rect,DT_CENTER);
+  //TListBox(Control).Canvas.FillRect(Rect);
+  //InflateRect(Rect, 0, -2);
+  //DrawText(LBFlu.Canvas.Handle, PChar(LBFlu.Items[Index]), StrLen(PChar(LBFlu.Items[Index])), Rect,DT_CENTER);
 end;
 
 end.

@@ -7,7 +7,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   ComCtrls, StdCtrls, Buttons, ExtCtrls, CheckLst, ToolsLicense, DOM, XMLRead,
-  Grids, ValEdit, VirtualTrees,  Menus, MaskEdit;
+  Grids, ValEdit, VirtualTrees,  Menus, MaskEdit, LazLogger;
 
 type
   PTreeData = ^TTreeData;
@@ -17,6 +17,9 @@ type
   end;
 
 type
+
+  { TFSettings }
+
   TFSettings = class(TForm)
     StatusBar1: TStatusBar;
     Panel1: TPanel;
@@ -351,18 +354,21 @@ begin
   VSTLicFiles.Clear;
   VSTLicFiles.NodeDataSize:=SizeOf(TTreeData);
   VSTLicFiles.BeginUpdate;
-  if FindFirst(GetActualDir(true)+'\licenses\*.xml', faAnyFile, SearchRec) = 0 then
+  DebugLn(GetActualDir(true)+'licenses'+PathDelim+'*.xml');
+  if FindFirst(GetActualDir(true)+'licenses'+PathDelim+'*.xml', faAnyFile, SearchRec) = 0 then
   begin
     repeat
-      if LoadXMLLicense(GetActualDir(true)+'\licenses\'+SearchRec.Name, JvSimpleXML) then
-      begin;
-        //if (JvSimpleXML.Root.Name = 'license') then
-        //begin
-        //  CountryStr := JvSimpleXML.Root.Properties.Value('Country');
-        //  TreeData.Caption := JvSimpleXML.Root.Properties.Value('Name');
-        //  TreeData.FileName := SearchRec.Name;
-        //  AddVSTLicense(dgettext('countrycodes', AnsiLowerCase(CountryStr)), TreeData);
-        //end;
+      DebugLn(GetActualDir(true)+'licenses'+PathDelim+SearchRec.Name);
+      if LoadXMLLicense(GetActualDir(true)+'licenses'+PathDelim+SearchRec.Name, JvSimpleXML) then
+      begin
+        DebugLn(JvSimpleXML.DocumentElement.NodeName);
+        if (JvSimpleXML.DocumentElement.NodeName = 'license') then
+        begin
+          CountryStr := JvSimpleXML.DocumentElement.GetAttribute('Country');
+          TreeData.Caption := JvSimpleXML.DocumentElement.GetAttribute('Name');
+          TreeData.FileName := SearchRec.Name;
+          AddVSTLicense(CountryStr, TreeData);
+        end;
       end;
     until FindNext(SearchRec) <> 0;
   end;
@@ -438,9 +444,9 @@ end;
 procedure TFSettings.LBFluDrawItem(Control: TWinControl; Index: Integer;
   Rect: TRect; State: TOwnerDrawState);
 begin
-  LBFlu.Canvas.FillRect(Rect);
-  InflateRect(Rect, 0, -4);
-  DrawText(LBFlu.Canvas.Handle, PChar(LBFlu.Items[Index]), StrLen(PChar(LBFlu.Items[Index])), Rect,DT_CENTER);
+  //LBFlu.Canvas.FillRect(Rect);
+  //InflateRect(Rect, 0, -4);
+  //DrawText(LBFlu.Canvas.Handle, PChar(LBFlu.Items[Index]), StrLen(PChar(LBFlu.Items[Index])), Rect,DT_CENTER);
 end;
 
 // ----------------------------------------------------------------

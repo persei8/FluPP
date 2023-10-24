@@ -1,14 +1,15 @@
 object FCalendarAdd: TFCalendarAdd
-  Left = 3464
-  Height = 220
-  Top = -282
-  Width = 304
+  Left = 2218
+  Height = 248
+  Top = 0
+  Width = 342
   Caption = 'Add Event/Schedule'
-  ClientHeight = 220
-  ClientWidth = 304
+  ClientHeight = 248
+  ClientWidth = 342
   Color = clBtnFace
+  DesignTimePPI = 108
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'MS Sans Serif'
   OnCreate = FormCreate
   OnShow = FormShow
@@ -16,20 +17,20 @@ object FCalendarAdd: TFCalendarAdd
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
-    Height = 41
-    Top = 179
-    Width = 304
+    Height = 46
+    Top = 202
+    Width = 342
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 41
-    ClientWidth = 304
+    ClientHeight = 46
+    ClientWidth = 342
     TabOrder = 0
     object ButtonCancel: TBitBtn
-      Left = 176
-      Height = 25
+      Left = 204
+      Height = 28
       Hint = 'Abort'
-      Top = 6
-      Width = 82
+      Top = 8
+      Width = 92
       Anchors = []
       Cancel = True
       Kind = bkCancel
@@ -38,11 +39,11 @@ object FCalendarAdd: TFCalendarAdd
       TabOrder = 1
     end
     object ButtonOK: TBitBtn
-      Left = 47
-      Height = 25
+      Left = 58
+      Height = 28
       Hint = 'Accept data'
-      Top = 6
-      Width = 77
+      Top = 8
+      Width = 87
       Anchors = []
       Caption = 'OK'
       Default = True
@@ -55,46 +56,46 @@ object FCalendarAdd: TFCalendarAdd
   end
   object PageControl: TPageControl
     Left = 0
-    Height = 179
+    Height = 202
     Top = 0
-    Width = 304
+    Width = 342
     ActivePage = tsEvent
     Align = alClient
     TabIndex = 0
     TabOrder = 1
     object tsEvent: TTabSheet
       Caption = 'Event'
-      ClientHeight = 153
-      ClientWidth = 296
+      ClientHeight = 173
+      ClientWidth = 332
       object Label1: TLabel
-        Left = 8
-        Height = 13
-        Top = 24
-        Width = 23
+        Left = 9
+        Height = 17
+        Top = 27
+        Width = 27
         Caption = 'Date'
         ParentColor = False
       end
       object Label4: TLabel
-        Left = 112
-        Height = 13
-        Top = 8
-        Width = 50
+        Left = 126
+        Height = 17
+        Top = 9
+        Width = 57
         Caption = 'Floght Log'
         ParentColor = False
       end
       object Label5: TLabel
-        Left = 112
-        Height = 13
-        Top = 56
-        Width = 28
+        Left = 126
+        Height = 17
+        Top = 63
+        Width = 31
         Caption = 'Event'
         ParentColor = False
       end
       object DtpEvent: TDateTimePicker
-        Left = 8
-        Height = 21
-        Top = 40
-        Width = 79
+        Left = 9
+        Height = 23
+        Top = 45
+        Width = 87
         CenturyFrom = 1941
         MaxDate = 2958465
         MinDate = -53780
@@ -113,50 +114,50 @@ object FCalendarAdd: TFCalendarAdd
         MonthNames = 'Long'
       end
       object cbFlightLog: TComboBox
-        Left = 112
-        Height = 21
-        Top = 24
-        Width = 120
-        ItemHeight = 13
+        Left = 126
+        Height = 33
+        Top = 27
+        Width = 135
+        ItemHeight = 0
         OnChange = cbFlightLogChange
         Style = csDropDownList
         TabOrder = 1
       end
       object cbEvent: TComboBox
-        Left = 112
-        Height = 21
-        Top = 72
-        Width = 120
-        ItemHeight = 13
+        Left = 126
+        Height = 29
+        Top = 81
+        Width = 135
+        ItemHeight = 0
         TabOrder = 2
       end
     end
     object tsSchedule: TTabSheet
       Caption = 'Schedule'
-      ClientHeight = 153
-      ClientWidth = 296
+      ClientHeight = 173
+      ClientWidth = 332
       ImageIndex = 1
       object Label2: TLabel
-        Left = 8
-        Height = 13
-        Top = 24
-        Width = 23
+        Left = 9
+        Height = 17
+        Top = 27
+        Width = 27
         Caption = 'Date'
         ParentColor = False
       end
       object Label3: TLabel
-        Left = 112
-        Height = 13
-        Top = 24
-        Width = 53
+        Left = 126
+        Height = 17
+        Top = 27
+        Width = 64
         Caption = 'Description'
         ParentColor = False
       end
       object DtpSchedule: TDateTimePicker
-        Left = 8
-        Height = 21
-        Top = 40
-        Width = 79
+        Left = 9
+        Height = 23
+        Top = 45
+        Width = 87
         CenturyFrom = 1941
         MaxDate = 2958465
         MinDate = -53780
@@ -175,10 +176,10 @@ object FCalendarAdd: TFCalendarAdd
         MonthNames = 'Long'
       end
       object EditDesc: TEdit
-        Left = 112
-        Height = 21
-        Top = 40
-        Width = 120
+        Left = 126
+        Height = 29
+        Top = 45
+        Width = 135
         TabOrder = 1
       end
     end

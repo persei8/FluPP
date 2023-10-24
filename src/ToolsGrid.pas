@@ -13,7 +13,7 @@ function GridChild(Flb: Word): TFlightLog;
 function GridActiveChild: TFlightLog;
 function CalcTime(GridIdx: Word; StartTime: String; NrFrom, NrTo: Word; DefaultTime: Byte = 2): String;
 function CalcFlights(GridIdx: Word; Flights: Word; NrFrom: Word; NrTo: Word): Word;
-procedure SortGridByCols(ColOrder: array of Integer; Grid: TStringGrid);
+procedure SortGridByCols(ColOrder: array of integer; Grid: TStringGrid); overload;
 procedure DrawColorbands(Grid: TStringGrid; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState; Alignment: TAlignment);
 function SearchInGrid(Grid: TStringGrid; Str: String): Boolean; overload;
 function SearchInGrid(Grid: TStringGrid; Str: String; out aRow: Integer): Boolean; overload;

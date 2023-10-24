@@ -1,15 +1,16 @@
 object FPrint: TFPrint
-  Left = 2904
-  Height = 284
-  Top = -313
-  Width = 603
+  Left = 1882
+  Height = 320
+  Top = 0
+  Width = 678
   BorderStyle = bsDialog
   Caption = 'Print'
-  ClientHeight = 284
-  ClientWidth = 603
+  ClientHeight = 320
+  ClientWidth = 678
   Color = clBtnFace
+  DesignTimePPI = 108
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'MS Sans Serif'
   OnClose = FormClose
   OnCreate = FormCreate
@@ -17,133 +18,133 @@ object FPrint: TFPrint
   Position = poMainFormCenter
   LCLVersion = '2.2.6.0'
   object Label1: TLabel
-    Left = 5
-    Height = 13
-    Top = 159
-    Width = 43
+    Left = 6
+    Height = 17
+    Top = 179
+    Width = 46
     Caption = 'Format:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Bevel3: TBevel
-    Left = 8
-    Height = 9
-    Top = 111
-    Width = 587
+    Left = 9
+    Height = 10
+    Top = 125
+    Width = 660
     Shape = bsTopLine
   end
   object Bevel1: TBevel
-    Left = 148
-    Height = 224
+    Left = 166
+    Height = 252
     Top = 1
-    Width = 9
+    Width = 10
     Shape = bsLeftLine
   end
   object Label23: TLabel
-    Left = 158
-    Height = 13
-    Top = 9
+    Left = 178
+    Height = 17
+    Top = 10
     Width = 93
     Caption = 'Choose data by:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Label37: TLabel
-    Left = 7
-    Height = 13
-    Top = 9
-    Width = 57
+    Left = 8
+    Height = 17
+    Top = 10
+    Width = 61
     Caption = 'Flight log:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 268
-    Height = 13
-    Top = 71
+    Left = 302
+    Height = 17
+    Top = 80
     Width = 16
     Caption = 'To:'
     ParentColor = False
   end
   object Label3: TLabel
-    Left = 263
-    Height = 13
-    Top = 39
-    Width = 26
+    Left = 296
+    Height = 17
+    Top = 44
+    Width = 32
     Caption = 'From:'
     ParentColor = False
   end
   object Bevel18: TBevel
-    Left = 253
-    Height = 67
-    Top = 32
-    Width = 8
+    Left = 285
+    Height = 75
+    Top = 36
+    Width = 9
     Shape = bsLeftLine
   end
   object Label5: TLabel
-    Left = 158
-    Height = 13
-    Top = 117
+    Left = 178
+    Height = 17
+    Top = 132
     Width = 32
     Caption = 'View:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 246
-    Height = 13
-    Top = 117
-    Width = 45
+    Left = 277
+    Height = 17
+    Top = 132
+    Width = 48
     Caption = 'Colums:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Label16: TLabel
-    Left = 387
-    Height = 13
-    Top = 9
-    Width = 55
+    Left = 435
+    Height = 17
+    Top = 10
+    Width = 57
     Caption = 'Category:'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Label24: TLabel
-    Left = 557
-    Height = 13
-    Top = 7
-    Width = 24
+    Left = 627
+    Height = 17
+    Top = 8
+    Width = 28
     Caption = '= not'
     ParentColor = False
   end
   object Image1: TImage
-    Left = 541
-    Height = 11
-    Top = 9
-    Width = 11
+    Left = 609
+    Height = 12
+    Top = 10
+    Width = 12
     Picture.Data = {
       07544269746D6170CE000000424DCE0000000000000076000000280000000B00
       00000B000000010004000000000058000000230B0000230B0000100000001000
@@ -155,111 +156,113 @@ object FPrint: TFPrint
     }
   end
   object Bevel4: TBevel
-    Left = 372
-    Height = 110
+    Left = 418
+    Height = 124
     Top = 2
-    Width = 9
+    Width = 10
     Shape = bsLeftLine
   end
   object Label7: TLabel
-    Left = 5
-    Height = 13
-    Top = 117
-    Width = 47
+    Left = 6
+    Height = 17
+    Top = 132
+    Width = 50
     Caption = 'Settings'
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object Bevel5: TBevel
-    Left = 241
-    Height = 86
-    Top = 133
-    Width = 8
+    Left = 271
+    Height = 97
+    Top = 150
+    Width = 9
     Shape = bsLeftLine
   end
   object Bevel2: TBevel
-    Left = 425
-    Height = 86
-    Top = 133
-    Width = 5
+    Left = 478
+    Height = 97
+    Top = 150
+    Width = 6
     Shape = bsLeftLine
   end
   object Label8: TLabel
     Left = 3
-    Height = 27
-    Top = 198
-    Width = 142
+    Height = 30
+    Top = 223
+    Width = 160
     Alignment = taCenter
     AutoSize = False
     Caption = 'Change column width in "PrinterSettings.Ini"'
     Font.Color = clGray
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     ParentColor = False
     ParentFont = False
     WordWrap = True
   end
   object ButtonSpeichern: TBitBtn
-    Left = 120
-    Height = 23
+    Left = 135
+    Height = 26
     Hint = 'Save'
-    Top = 135
-    Width = 23
+    Top = 152
+    Width = 26
     Images = FMain.ImageList
     ImageIndex = 2
     OnClick = ButtonSpeichernClick
     TabOrder = 29
   end
   object ConCheckListBox: TCheckListBox
-    Left = 435
-    Height = 82
-    Top = 138
-    Width = 142
+    Left = 489
+    Height = 92
+    Top = 155
+    Width = 160
     Columns = 1
     ItemHeight = 0
     TabOrder = 30
+    TopIndex = -1
   end
   object CTiCheckListBox: TCheckListBox
-    Left = 435
-    Height = 82
+    Left = 489
+    Height = 92
     Hint = 'Choose categories'
-    Top = 138
-    Width = 142
+    Top = 155
+    Width = 160
     Columns = 1
     ItemHeight = 0
     TabOrder = 25
+    TopIndex = -1
   end
   object PanelSchein: TPanel
-    Left = 258
-    Height = 76
-    Top = 35
-    Width = 113
+    Left = 290
+    Height = 86
+    Top = 39
+    Width = 127
     BevelOuter = bvNone
     ParentBackground = False
     TabOrder = 2
     Visible = False
   end
   object PanelDatum: TPanel
-    Left = 291
-    Height = 76
-    Top = 35
-    Width = 77
+    Left = 327
+    Height = 86
+    Top = 39
+    Width = 87
     BevelOuter = bvNone
-    ClientHeight = 76
-    ClientWidth = 77
+    ClientHeight = 86
+    ClientWidth = 87
     TabOrder = 3
     Visible = False
     object CBDateFrom: TMaskEdit
       Left = 0
-      Height = 21
+      Height = 29
       Top = 0
-      Width = 62
+      Width = 70
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       MaxLength = 10
       ParentFont = False
@@ -270,11 +273,11 @@ object FPrint: TFPrint
     end
     object CBDateTo: TMaskEdit
       Left = 0
-      Height = 21
-      Top = 30
-      Width = 62
+      Height = 29
+      Top = 34
+      Width = 70
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       MaxLength = 10
       ParentFont = False
@@ -285,45 +288,45 @@ object FPrint: TFPrint
     end
   end
   object PanelStarts: TPanel
-    Left = 291
-    Height = 76
-    Top = 35
-    Width = 77
+    Left = 327
+    Height = 86
+    Top = 39
+    Width = 87
     BevelOuter = bvNone
-    ClientHeight = 76
-    ClientWidth = 77
+    ClientHeight = 86
+    ClientWidth = 87
     TabOrder = 4
     Visible = False
     object CBStFrom: TEdit
       Left = 0
-      Height = 21
+      Height = 29
       Top = 0
-      Width = 73
+      Width = 82
       TabOrder = 0
     end
     object CBStTo: TEdit
       Left = 0
-      Height = 21
-      Top = 30
-      Width = 73
+      Height = 29
+      Top = 34
+      Width = 82
       TabOrder = 1
     end
   end
   object PanelJahre: TPanel
-    Left = 291
-    Height = 76
-    Top = 35
-    Width = 75
+    Left = 327
+    Height = 86
+    Top = 39
+    Width = 84
     BevelOuter = bvNone
-    ClientHeight = 76
-    ClientWidth = 75
+    ClientHeight = 86
+    ClientWidth = 84
     TabOrder = 5
     object CBJFrom: TComboBox
       Left = 0
-      Height = 21
+      Height = 29
       Top = 0
-      Width = 72
-      ItemHeight = 13
+      Width = 81
+      ItemHeight = 0
       Items.Strings = (
         'Beginning'
       )
@@ -332,10 +335,10 @@ object FPrint: TFPrint
     end
     object CBJTo: TComboBox
       Left = 0
-      Height = 21
-      Top = 30
-      Width = 72
-      ItemHeight = 13
+      Height = 29
+      Top = 34
+      Width = 81
+      ItemHeight = 0
       Items.Strings = (
         'End'
       )
@@ -344,9 +347,9 @@ object FPrint: TFPrint
     end
     object Kummulieren: TCheckBox
       Left = 0
-      Height = 19
-      Top = 54
-      Width = 65
+      Height = 21
+      Top = 61
+      Width = 80
       Caption = 'Carryover'
       Checked = True
       State = cbChecked
@@ -355,19 +358,19 @@ object FPrint: TFPrint
   end
   object Panel1: TPanel
     Left = 0
-    Height = 40
-    Top = 221
-    Width = 603
+    Height = 45
+    Top = 251
+    Width = 678
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 40
-    ClientWidth = 603
+    ClientHeight = 45
+    ClientWidth = 678
     TabOrder = 0
     object BitBtn1: TBitBtn
-      Left = 336
-      Height = 25
-      Top = 6
-      Width = 89
+      Left = 378
+      Height = 28
+      Top = 7
+      Width = 100
       Caption = 'Exit'
       Kind = bkAbort
       ModalResult = 3
@@ -375,10 +378,10 @@ object FPrint: TFPrint
       TabOrder = 0
     end
     object ButtonVorschau: TBitBtn
-      Left = 238
-      Height = 25
-      Top = 6
-      Width = 75
+      Left = 268
+      Height = 28
+      Top = 7
+      Width = 84
       Caption = 'Preview'
       Images = FMain.ImageList
       ImageIndex = 26
@@ -386,10 +389,10 @@ object FPrint: TFPrint
       TabOrder = 1
     end
     object ButtonPrint: TBitBtn
-      Left = 158
-      Height = 25
-      Top = 6
-      Width = 75
+      Left = 178
+      Height = 28
+      Top = 7
+      Width = 84
       Caption = 'Print'
       Default = True
       Images = FMain.ImageList
@@ -400,31 +403,31 @@ object FPrint: TFPrint
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 261
-    Width = 603
+    Height = 24
+    Top = 296
+    Width = 678
     Panels = <    
       item
         Alignment = taCenter
         Bevel = pbNone
-        Width = 50
+        Width = 56
       end>
     SimplePanel = False
   end
   object PrintFormatCB: TComboBox
-    Left = 11
-    Height = 21
-    Top = 175
-    Width = 105
-    ItemHeight = 13
+    Left = 12
+    Height = 33
+    Top = 197
+    Width = 118
+    ItemHeight = 0
     Style = csDropDownList
     TabOrder = 1
   end
   object RBJahre: TRadioButton
-    Left = 162
-    Height = 19
-    Top = 30
-    Width = 47
+    Left = 182
+    Height = 21
+    Top = 34
+    Width = 55
     Caption = 'Years'
     Checked = True
     OnClick = RBClick
@@ -432,205 +435,207 @@ object FPrint: TFPrint
     TabStop = True
   end
   object RBStarts: TRadioButton
-    Left = 162
-    Height = 19
-    Top = 50
-    Width = 47
+    Left = 182
+    Height = 21
+    Top = 56
+    Width = 57
     Caption = 'Starts'
     OnClick = RBClick
     TabOrder = 7
   end
   object RBSchein: TRadioButton
-    Left = 162
-    Height = 19
-    Top = 90
-    Width = 84
+    Left = 182
+    Height = 21
+    Top = 101
+    Width = 96
     Caption = 'Since licence'
     OnClick = RBClick
     TabOrder = 8
   end
   object RBDatum: TRadioButton
-    Left = 162
-    Height = 19
-    Top = 70
-    Width = 43
+    Left = 182
+    Height = 21
+    Top = 79
+    Width = 51
     Caption = 'Date'
     OnClick = RBClick
     TabOrder = 9
   end
   object LBFlu: TListBox
-    Left = 12
-    Height = 65
+    Left = 14
+    Height = 73
     Hint = 'Select licence. Hold ''CTRL'' for multiple selection'
-    Top = 24
-    Width = 126
+    Top = 27
+    Width = 142
     Font.Color = clBlack
-    Font.Height = -15
+    Font.Height = -17
     Font.Name = 'MS Sans Serif'
     ItemHeight = 0
     MultiSelect = True
     OnClick = LBFluClick
     ParentFont = False
     TabOrder = 10
+    TopIndex = -1
   end
   object CBPageNumber: TCheckBox
-    Left = 162
-    Height = 19
-    Top = 158
-    Width = 72
+    Left = 182
+    Height = 21
+    Top = 178
+    Width = 83
     Caption = 'Pagecount'
     TabOrder = 11
   end
   object CBFileName: TCheckBox
-    Left = 162
-    Height = 19
-    Top = 178
-    Width = 62
+    Left = 182
+    Height = 21
+    Top = 200
+    Width = 75
     Caption = 'Filename'
     TabOrder = 12
   end
   object CBHeadLine: TCheckBox
-    Left = 162
-    Height = 19
-    Top = 138
-    Width = 55
+    Left = 182
+    Height = 21
+    Top = 155
+    Width = 66
     Caption = 'Header'
     Checked = True
     State = cbChecked
     TabOrder = 13
   end
   object CBPrintNr: TCheckBox
-    Left = 250
-    Height = 19
-    Top = 138
-    Width = 34
+    Left = 281
+    Height = 21
+    Top = 155
+    Width = 39
     Caption = 'Nr.'
     Checked = True
     State = cbChecked
     TabOrder = 14
   end
   object CBPrintArt: TCheckBox
-    Left = 250
-    Height = 19
-    Top = 158
-    Width = 41
+    Left = 281
+    Height = 21
+    Top = 178
+    Width = 48
     Caption = 'Kind'
     TabOrder = 15
   end
   object CBPrintFlights: TCheckBox
-    Left = 250
-    Height = 19
-    Top = 178
-    Width = 58
+    Left = 281
+    Height = 21
+    Top = 200
+    Width = 68
     Caption = 'Landing'
     Checked = True
     State = cbChecked
     TabOrder = 16
   end
   object CLBKat: TCheckListBox
-    Left = 381
-    Height = 82
+    Left = 429
+    Height = 92
     Hint = 'Filter category'
-    Top = 26
-    Width = 208
+    Top = 29
+    Width = 234
     AllowGrayed = True
     Columns = 2
     ItemHeight = 0
     OnClickCheck = CLBKatClickCheck
     Sorted = True
     TabOrder = 17
+    TopIndex = -1
   end
   object Panel4: TPanel
-    Left = 450
-    Height = 19
-    Top = 6
-    Width = 86
+    Left = 506
+    Height = 21
+    Top = 7
+    Width = 97
     BevelInner = bvRaised
     BevelOuter = bvLowered
-    ClientHeight = 19
-    ClientWidth = 86
+    ClientHeight = 21
+    ClientWidth = 97
     TabOrder = 18
     object RBKatAnd: TRadioButton
       Left = 0
-      Height = 19
+      Height = 21
       Hint = '[Cat1] and [Cat2] and...'
       Top = 0
-      Width = 38
+      Width = 45
       Caption = 'and'
       Checked = True
       TabOrder = 0
       TabStop = True
     end
     object RBKatOr: TRadioButton
-      Left = 40
-      Height = 19
+      Left = 45
+      Height = 21
       Hint = '[Cat1] or [Cat2] or...'
       Top = 0
-      Width = 29
+      Width = 36
       Caption = 'or'
       TabOrder = 1
     end
   end
   object CBPrintKat: TCheckBox
-    Left = 336
-    Height = 19
-    Top = 138
-    Width = 62
+    Left = 378
+    Height = 21
+    Top = 155
+    Width = 75
     Caption = 'Category'
     TabOrder = 19
   end
   object CBPrintBem: TCheckBox
-    Left = 250
-    Height = 19
-    Top = 198
-    Width = 64
+    Left = 281
+    Height = 21
+    Top = 223
+    Width = 79
     Caption = 'Comment'
     Checked = True
     State = cbChecked
     TabOrder = 20
   end
   object CBPrintVia: TCheckBox
-    Left = 336
-    Height = 19
-    Top = 158
-    Width = 35
+    Left = 378
+    Height = 21
+    Top = 178
+    Width = 41
     Caption = 'Via'
     TabOrder = 21
   end
   object CBPrintCTi: TCheckBox
-    Left = 336
-    Height = 19
-    Top = 178
-    Width = 87
+    Left = 378
+    Height = 21
+    Top = 200
+    Width = 104
     Caption = 'Time category'
     TabOrder = 22
   end
   object PrintSettingsCB: TComboBox
-    Left = 11
-    Height = 21
-    Top = 135
-    Width = 105
-    ItemHeight = 13
+    Left = 12
+    Height = 33
+    Top = 152
+    Width = 118
+    ItemHeight = 0
     OnChange = PrintSettingsCBChange
     Style = csDropDownList
     TabOrder = 23
   end
   object CBPrintCon: TCheckBox
-    Left = 336
-    Height = 19
-    Top = 198
-    Width = 75
+    Left = 378
+    Height = 21
+    Top = 223
+    Width = 92
     Caption = 'Competition'
     TabOrder = 24
   end
   object CTiUpButton: TBitBtn
-    Left = 578
-    Height = 22
+    Left = 650
+    Height = 25
     Hint = 'move up'
-    Top = 153
-    Width = 22
+    Top = 172
+    Width = 25
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Images = FMain.ImageList
     ImageIndex = 20
@@ -639,13 +644,13 @@ object FPrint: TFPrint
     TabOrder = 26
   end
   object CTiDownButton: TBitBtn
-    Left = 578
-    Height = 22
+    Left = 650
+    Height = 25
     Hint = 'move down'
-    Top = 185
-    Width = 22
+    Top = 208
+    Width = 25
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Images = FMain.ImageList
     ImageIndex = 21
@@ -654,21 +659,21 @@ object FPrint: TFPrint
     TabOrder = 27
   end
   object KatSelPanel: TPanel
-    Left = 437
-    Height = 19
-    Top = 115
-    Width = 84
+    Left = 492
+    Height = 21
+    Top = 129
+    Width = 94
     BevelInner = bvRaised
     BevelOuter = bvLowered
-    ClientHeight = 19
-    ClientWidth = 84
+    ClientHeight = 21
+    ClientWidth = 94
     TabOrder = 28
     object KatSelCTiRB: TRadioButton
       Left = 0
-      Height = 19
+      Height = 21
       Hint = 'Time category'
       Top = 0
-      Width = 33
+      Width = 36
       Caption = 'Tc'
       Checked = True
       OnClick = KatSelCTiRBClick
@@ -676,37 +681,37 @@ object FPrint: TFPrint
       TabStop = True
     end
     object KatSelConRB: TRadioButton
-      Left = 39
-      Height = 19
+      Left = 44
+      Height = 21
       Hint = 'Competition category'
       Top = 0
-      Width = 37
+      Width = 42
       Caption = 'Wb'
       OnClick = KatSelConRBClick
       TabOrder = 1
     end
   end
   object CBPrintStr: TCheckBox
-    Left = 336
-    Height = 19
-    Top = 119
-    Width = 62
+    Left = 378
+    Height = 21
+    Top = 134
+    Width = 73
     Caption = 'Distance'
     TabOrder = 31
   end
   object CBDateTime: TCheckBox
-    Left = 162
-    Height = 19
-    Top = 198
-    Width = 72
+    Left = 182
+    Height = 21
+    Top = 223
+    Width = 87
     Caption = 'Date&&Time'
     TabOrder = 33
   end
   object PICOnly: TCheckBox
-    Left = 12
-    Height = 19
-    Top = 92
-    Width = 95
+    Left = 14
+    Height = 21
+    Top = 104
+    Width = 114
     Caption = 'Only PIC-entries'
     Checked = True
     State = cbChecked

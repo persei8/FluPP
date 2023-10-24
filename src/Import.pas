@@ -351,7 +351,7 @@ begin
 
     until Eof(aFile); // Licenses
 
-    GridActiveChild.Grid.FixedCols := 1;
+    //GridActiveChild.Grid.FixedCols := 1;
     GridActiveChild.Grid.Row := GridActiveChild.Grid.RowCount-1;
   finally
     CloseFile(aFile);
@@ -362,13 +362,13 @@ begin
   for i := 0 to FMain.FlightLogList.Count-1 do
   begin
     GridChild(i).ReCalcGridNr;
-    GridChild(i).Grid.FixedCols := 1;
+    //GridChild(i).Grid.FixedCols := 1;
     GridChild(i).Grid.Row := GridChild(i).Grid.RowCount-1;
     GridChild(i).Grid.ColCount := GridChild(i).GridCols.Count;
     GridChild(i).NameCols;
   end;
 
-  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
+  //FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   GridActiveChild.ReCalcGridTime;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
@@ -447,7 +447,7 @@ var
     begin
       GridActiveChild.NameCols;
       GridActiveChild.Grid.RowCount := Row;
-      GridActiveChild.Grid.FixedCols := 1;
+      //GridActiveChild.Grid.FixedCols := 1;
       GridActiveChild.Grid.Row := GridActiveChild.Grid.RowCount-1;
     end;
     FMain.CreateNewFlightLog(copy(RowText,2,pos(';',RowText)-2));
@@ -568,13 +568,13 @@ begin
   until Eof(AFile); // Licenses
 
   GridActiveChild.Grid.RowCount := Row;
-  GridActiveChild.Grid.FixedCols := 1;
+  //GridActiveChild.Grid.FixedCols := 1;
   GridActiveChild.Grid.Row := GridActiveChild.Grid.RowCount-1;
   CloseFile(AFile);
   GridActiveChild.NameCols;
   GridActiveChild.ReCalcGridTime;
   GridActiveChild.ReCalcGridNr;
-  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
+  //FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
 
@@ -834,7 +834,7 @@ begin
 
   GridActiveChild.ReCalcGridTime;
   GridActiveChild.ReCalcGridNr;
-  FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
+  //FMain.MDIChildren[FMain.FlightLogList.Count-1].show;
   FMain.UpdateButtonState;
   FMain.CreateSButtons;
 

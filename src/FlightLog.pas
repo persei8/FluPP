@@ -111,7 +111,6 @@ Met: Meteo-Information
 constructor TFlightLog.Create;
 begin
   Inherited;
-  //TranslateComponent(Self);
 
   ACAircrafts := TStringList.Create;
   ACPilots := TStringList.Create;
@@ -204,10 +203,10 @@ procedure TFlightLog.GridMouseDown(Sender: TObject; Button: TMouseButton;
 var
   Col,Row: Integer;
 begin
-  Grid.MouseToCell(X,Y,Col,Row);
-
-  if (Row > 0) and (data['Num',1] <> '') and (ssDouble in Shift) then
-    if (FInput.CanEdit(true)) then FInput.Change(Grid.Row);
+  //Grid.MouseToCell(X,Y,Col,Row);
+  //
+  //if (Row > 0) and (data['Num',1] <> '') and (ssDouble in Shift) then
+  //  if (FInput.CanEdit(true)) then FInput.Change(Grid.Row);
 end;
 
 // ----------------------------------------------------------------
@@ -261,7 +260,7 @@ var
   TempStr: String;
 begin
   GridREct := Grid.Selection;
-  Grid.MouseToCell(X,Y,Col,Row);
+  //Grid.MouseToCell(X,Y,Col,Row);
   if (Row = 0) and (Button = mbRight) then
   begin
     GridColsPopup;
@@ -404,7 +403,7 @@ begin
 end;
 
 // ----------------------------------------------------------------
-// MDI child activate
+// Form activate
 // ----------------------------------------------------------------
 procedure TFlightLog.FormActivate(Sender: TObject);
 begin
@@ -457,7 +456,7 @@ begin
       Grid.Cells[i, Grid.Row] := Grid.Cells[i, Grid.Row];
   end else begin
     if Grid.RowCount > 2 then
-      //TODO Grid.RemoveRow(Grid.Row)
+      Grid.DeleteRow(Grid.Row)
     else
       for i := 0 to Grid.ColCount-1 do
         Grid.Cells[i,1] := '';
@@ -483,8 +482,8 @@ begin
       Grid.Cells[i, StrToInt(Undo[0])] := Grid.Cells[i, StrToInt(Undo[0])];
   end
   else begin
-    //if TFlightLog(FMain.ActiveMDIChild).Data['Num',1] <> '' then
-    //TODO Grid.InsertRow(StrToInt(Undo[0]));
+    if FMain.ActiveFlightLog.Data['Num',1] <> '' then
+    Grid.InsertColRow(False, StrToInt(Undo[0]));
 
     for i := 0 to Grid.ColCount-1 do
       Grid.Cells[i,StrToInt(Undo[0])] := Undo[i];

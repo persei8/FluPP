@@ -535,7 +535,7 @@ begin
   SGDetailRow := 1;
   SGDetailSelectCell(self, 1, 1, canSelect);
 
-  SortGridByCols([1],SGDetail);
+  //SortGridByCols([1], SGDetail);
 end;
 
 function TFStatistics.FindInKat(var Kat: TKat; Value: String):Word;

@@ -254,7 +254,7 @@ procedure TFAirports.ButtonDeleteClick(Sender: TObject);
 var i: word;
 begin
   if GridOwnFlp.RowCount > 2 then
-//    GridOwnFlp.RemoveRow(GridOwnFlp.Row)
+    GridOwnFlp.DeleteRow(GridOwnFlp.Row)
   else
     for i := 0 to 3 do GridOwnFlp.Cells[i,1] := '';
 end;

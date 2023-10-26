@@ -37,7 +37,7 @@ jobs:
       with:
         name: FluPP-windows
         path: |
-          bin\x86_64-win64\release\FluPP.exe
+          bin\x86_64-win64-win32\release\FluPP.exe
 
     - name: Build the Main Application (Ubuntu)
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
@@ -64,7 +64,7 @@ jobs:
       with:
         name: FluPP-linux-qt
         path: |
-          bin/x86_64-linux-qt/release/FluPP
+          bin/x86_64-linux-qt5/release/FluPP
 
     - name: Build the Main Application (macOS)
       if: ${{ matrix.operating-system == 'macos-latest' }}
@@ -76,7 +76,7 @@ jobs:
       with:
         name: FluPP-macos
         path: |
-           bin/x86_64-darwin/release/FluPP
+           bin/x86_64-darwin-cocoa/release/FluPP
   
   package-release:
     if: contains(github.ref, '/tags/')

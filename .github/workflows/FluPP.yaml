@@ -5,6 +5,7 @@ on:
   push:
     paths-ignore: [ "README.md" ]
     branches: [ "main", "releases/*" ]
+    tags: [ "*" ]
 
 jobs:
   build:
@@ -34,7 +35,7 @@ jobs:
       if: ${{ matrix.operating-system == 'windows-latest' }}
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Windows Binary
+        name: FluPP-windows
         path: |
           bin\x86_64-win64\release\FluPP.exe
 
@@ -53,7 +54,7 @@ jobs:
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Linux Binary
+        name: FLuPP-linux-gtk
         path: |
           bin/x86_64-linux-gtk2/release/FluPP
 
@@ -61,7 +62,7 @@ jobs:
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Linux Binary
+        name: FluPP-linux-qt
         path: |
           bin/x86_64-linux-qt/release/FluPP
 
@@ -73,9 +74,64 @@ jobs:
       if: ${{ matrix.operating-system == 'macos-latest' }}
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Mac OS Binary
+        name: FluPP-macos
         path: |
            bin/x86_64-darwin/release/FluPP
+  
+  package-release:
+    if: contains(github.ref, '/tags/')
 
+    name: Package and create GitHub Release
+    runs-on: ubuntu-latest
+    needs: build
 
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set output
+      id: vars
+      run: echo "tag=${GITHUB_REF#refs/*/}" >> ${GITHUB_OUTPUT}
+
+    - name: Download the Release binary
+      uses: actions/download-artifact@v2
+
+    - name: List files
+      run: |
+          ls -al
+          ls -al FluPP-windows
+          ls -al FluPP-linux-gtk
+          ls -al FluPP-linux-qt
+          ls -al FluPP-macos
+
+    - name: Package Windows
+      run: |
+          cp FluPP-windows/FluPP.exe .
+          tag=${{ github.event.ref }}
+          tag=${tag#"refs/tags/"}
+          zip FluPP-${tag}-x86-win.zip FluPP.exe
+    - name: Package Ubuntu latest
+      run: |
+          cp FluPP-linux-gtk/FluPP .
+          tag=${{ github.event.ref }}
+          tag=${tag#"refs/tags/"}
+          chmod +x FluPP
+          tar -zcvf FluPP-${tag}-x86_64-linux-qt.tgz FluPP
+          zip -r FluPP-${tag}-x86_64-linux-qt.zip FluPP
+    - name: Package Ubuntu latest
+      run: |
+          cp FluPP-linux-qt/FluPP .
+          tag=${{ github.event.ref }}
+          tag=${tag#"refs/tags/"}
+          chmod +x FluPP
+          tar -zcvf FluPP-${tag}-x86_64-linux-gtk.tgz FluPP
+          zip -r FluPP-${tag}-x86_64-linux-gtk.zip FluPP    
+    - name: Upload Release
+      uses: softprops/action-gh-release@v1
+      with:
+          files: |
+            FluPP-*.zip
+            FluPP-*.tgz
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

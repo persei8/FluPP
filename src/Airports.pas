@@ -86,45 +86,8 @@ end;
 // ----------------------------------------------------------------
 procedure TFAirports.FormShow(Sender: TObject);
 var
-  Datei: TextFile;
-  stream, zelle: String;
   l,i,n,Zeile: Word;
-  Found: Word;
-  SearchRec: TSearchRec;
-
-  procedure GetData(FileName: String);
-  begin
-    { Load database }
-    AssignFile(Datei,FileName);
-    Reset(Datei);
-    try
-      while not Eof(Datei) do
-      begin
-        Readln(Datei,stream);
-        n := 0;
-        i := 1;
-        l := length(stream);
-        while i < l do
-        begin
-          zelle := '';
-          begin
-            while (stream[i] <> ';') and (i < length(stream)) do
-            begin
-              zelle := zelle + stream[i];
-              inc(i);
-            end;
-            GridFlp.Cells[n,Zeile] := zelle;
-            inc(n);
-            inc(i);
-          end;
-        end;
-        inc(Zeile);
-      end;
-    finally
-      CloseFile(Datei);
-    end;
-  end;
-
+  Airport: TAirport;
 begin
   Application.OnHint := onHint;
   with GridOwnFlp  do
@@ -157,13 +120,10 @@ begin
   end;
   Zeile := 1;
 
-  Found := FindFirst(GetActualDir(true)+'\airports\airports*.txt', faAnyFile, SearchRec);
-  while Found = 0 do
+  for Airport in FMain.AirportData do
   begin
-    GetData(GetActualDir(true)+'\airports\'+SearchRec.Name);
-    Found := FindNext(SearchRec);
+
   end;
-  FindClose(SearchRec);
 
   if Zeile > 1 then GridFlp.RowCount := Zeile
   else GridFlp.RowCount := 2;

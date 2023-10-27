@@ -9,9 +9,9 @@ object FTrainBaro: TFTrainBaro
   ClientWidth = 569
   Color = clBtnFace
   DesignTimePPI = 108
-  Font.Color = clWindowText
+  
   Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -60,9 +60,9 @@ object FTrainBaro: TFTrainBaro
     Top = 8
     Width = 135
     Caption = 'In the last 6 month:'
-    Font.Color = clWindowText
+    
     Font.Height = -15
-    Font.Name = 'MS Sans Serif'
+    
     ParentColor = False
     ParentFont = False
   end
@@ -73,9 +73,9 @@ object FTrainBaro: TFTrainBaro
     Width = 289
     Alignment = taRightJustify
     Caption = 'Source: Office for aviation safety, German Aeroclub '
-    Font.Color = clWindowText
+    
     Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    
     ParentColor = False
     ParentFont = False
   end
@@ -85,9 +85,9 @@ object FTrainBaro: TFTrainBaro
     Top = 108
     Width = 358
     AutoSize = False
-    Font.Color = clWindowText
+    
     Font.Height = -15
-    Font.Name = 'MS Sans Serif'
+    
     ParentColor = False
     ParentFont = False
     WordWrap = True
@@ -137,8 +137,8 @@ object FTrainBaro: TFTrainBaro
       Columns = 2
       Font.Color = clBlack
       Font.Height = -17
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
+      
+      
       ItemHeight = 35
       OnClick = LBFluClick
       OnDrawItem = LBFluDrawItem

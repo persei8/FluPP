@@ -1,17 +1,14 @@
 object FFlightLogs: TFFlightLogs
   Left = 1273
-  Height = 251
+  Height = 223
   Top = 772
-  Width = 238
+  Width = 212
   BorderStyle = bsDialog
   Caption = 'Manage flight logs'
-  ClientHeight = 251
-  ClientWidth = 238
+  ClientHeight = 223
+  ClientWidth = 212
   Color = clBtnFace
-  DesignTimePPI = 108
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -11
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -19,36 +16,36 @@ object FFlightLogs: TFFlightLogs
   LCLVersion = '2.2.6.0'
   object Label12: TLabel
     Left = 0
-    Height = 32
-    Top = 174
-    Width = 238
+    Height = 28
+    Top = 155
+    Width = 212
     Align = alBottom
     Alignment = taCenter
     AutoSize = False
     Caption = 'You can add or remove fllight logs here.'
     Font.Color = clNavy
-    Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -11
     ParentColor = False
     ParentFont = False
     WordWrap = True
   end
   object Panel1: TPanel
     Left = 0
-    Height = 45
-    Top = 206
-    Width = 238
+    Height = 40
+    Top = 183
+    Width = 212
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 45
-    ClientWidth = 238
+    ClientHeight = 40
+    ClientWidth = 212
     TabOrder = 0
     object ButtonOK: TBitBtn
-      Left = 78
-      Height = 28
-      Top = 8
-      Width = 89
+      Left = 65
+      Height = 25
+      Top = 7
+      Width = 79
       Anchors = [akTop]
+      Caption = 'OK'
       Default = True
       Kind = bkOK
       ModalResult = 1
@@ -58,33 +55,33 @@ object FFlightLogs: TFFlightLogs
     end
   end
   object ButtonNew: TBitBtn
-    Left = 75
-    Height = 28
+    Left = 67
+    Height = 25
     Hint = 'add'
-    Top = 142
-    Width = 28
+    Top = 126
+    Width = 25
     Images = FMain.ImageList
     ImageIndex = 18
     OnClick = ButtonNewClick
     TabOrder = 1
   end
   object ButtonDelete: TBitBtn
-    Left = 106
-    Height = 28
+    Left = 94
+    Height = 25
     Hint = 'remove'
-    Top = 142
-    Width = 28
+    Top = 126
+    Width = 25
     Images = FMain.ImageList
     ImageIndex = 19
     OnClick = ButtonDeleteClick
     TabOrder = 2
   end
   object ButtonEdit: TBitBtn
-    Left = 136
-    Height = 28
+    Left = 121
+    Height = 25
     Hint = 'edit'
-    Top = 142
-    Width = 28
+    Top = 126
+    Width = 25
     Images = FMain.ImageList
     ImageIndex = 14
     OnClick = ButtonEditClick
@@ -92,19 +89,16 @@ object FFlightLogs: TFFlightLogs
   end
   object LBFlu: TListBox
     Left = 0
-    Height = 135
+    Height = 120
     Hint = 'Select flight log'
     Top = 0
-    Width = 238
+    Width = 212
     Align = alTop
     Font.Color = clBlack
-    Font.Height = -15
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
+    Font.Height = -13
     ItemHeight = 0
     OnDrawItem = LBFluDrawItem
     ParentFont = False
     TabOrder = 4
-    TopIndex = -1
   end
 end

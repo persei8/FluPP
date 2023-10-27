@@ -6,7 +6,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, Buttons, ExtCtrls, Grids, DateUtils;
+  Dialogs, StdCtrls, ComCtrls, Buttons, ExtCtrls, Grids, ButtonPanel, DateUtils;
 
 type
   TNinetyDays = array of record
@@ -14,10 +14,12 @@ type
     Starts: Word;
     Date: String;
   end;
+
+  { TFNinetyDays }
+
   TFNinetyDays = class(TForm)
+    ButtonPanel1: TButtonPanel;
     GridNinetyDaysFlz: TStringGrid;
-    Panel1: TPanel;
-    BitBtn1: TBitBtn;
     StatusBar1: TStatusBar;
     Label1: TLabel;
     GridNinetyDaysLic: TStringGrid;

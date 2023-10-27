@@ -12,9 +12,9 @@ object FInfo: TFInfo
   ClientWidth = 497
   Color = 9868950
   DesignTimePPI = 108
-  Font.Color = clWindowText
+  
   Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
@@ -31,7 +31,7 @@ object FInfo: TFInfo
     Caption = 'Please report bugs here'
     Font.Color = clWhite
     Font.Height = -15
-    Font.Name = 'Arial'
+    
     Font.Style = [fsUnderline]
     ParentColor = False
     ParentFont = False
@@ -49,7 +49,7 @@ object FInfo: TFInfo
     Caption = 'Date'
     Font.Color = clWhite
     Font.Height = -18
-    Font.Name = 'Arial'
+    
     ParentColor = False
     ParentFont = False
   end
@@ -63,7 +63,7 @@ object FInfo: TFInfo
     Caption = 'FluPP is Open Source and is licenced under the GNU-GPL'
     Font.Color = clWhite
     Font.Height = -14
-    Font.Name = 'Arial'
+    
     ParentColor = False
     ParentFont = False
     WordWrap = True
@@ -78,7 +78,7 @@ object FInfo: TFInfo
     Caption = 'http://flupp.sourceforge.net'
     Font.Color = clWhite
     Font.Height = -15
-    Font.Name = 'Arial'
+    
     Font.Style = [fsUnderline]
     ParentColor = False
     ParentFont = False
@@ -97,7 +97,7 @@ object FInfo: TFInfo
     Caption = 'Please report feature requests here'
     Font.Color = clWhite
     Font.Height = -15
-    Font.Name = 'Arial'
+    
     Font.Style = [fsUnderline]
     ParentColor = False
     ParentFont = False
@@ -115,7 +115,7 @@ object FInfo: TFInfo
     Caption = 'Version'
     Font.Color = clWhite
     Font.Height = -21
-    Font.Name = 'Arial'
+    
     ParentColor = False
     ParentFont = False
   end
@@ -128,7 +128,7 @@ object FInfo: TFInfo
     Caption = 'FluPP'
     Font.Color = clWhite
     Font.Height = -105
-    Font.Name = 'Arial'
+    
     ParentColor = False
     ParentFont = False
   end
@@ -141,7 +141,7 @@ object FInfo: TFInfo
     Caption = 'Exit'
     Font.Color = clBtnText
     Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    
     ModalResult = 1
     ImageIndex = 8
     ParentFont = False
@@ -157,9 +157,9 @@ object FInfo: TFInfo
     ClientHeight = 152
     ClientWidth = 336
     Color = 9868950
-    Font.Color = clWindowText
+    
     Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    
     ParentColor = False
     ParentFont = False
     TabOrder = 1
@@ -171,7 +171,7 @@ object FInfo: TFInfo
       Caption = '-'
       Font.Color = clWhite
       Font.Height = 18
-      Font.Name = 'MS Sans Serif'
+      
       ParentColor = False
       ParentFont = False
     end

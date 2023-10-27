@@ -42,6 +42,6 @@ begin
   Application.HelpFile := '';
   Application.CreateForm(TFMain, FMain);
   Application.CreateForm(TFStat_Graph, FStat_Graph);
-  Application.CreateForm(TFInput, FInput);
+  //Application.CreateForm(TFInput, FInput);
   Application.Run;
 end.

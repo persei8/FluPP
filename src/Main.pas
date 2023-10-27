@@ -22,6 +22,7 @@ type
 
   TFMain = class(TForm)
     ActionManager: TActionList;
+    GridSched: TStringGrid;
     KatAdd: TMenuItem;
     KatRem: TMenuItem;
     MainMenu: TMainMenu;
@@ -48,8 +49,9 @@ type
     MenuItem29: TMenuItem;
     N1: TMenuItem;
     N5: TMenuItem;
-    Panel1: TPanel;
+    Panel2: TPanel;
     PanelFlightLog: TPanel;
+    PanelSButtons: TPanel;
     PopupMenu: TPopupMenu;
     PUFiles: TMenuItem;
     PUFlightEdit: TMenuItem;
@@ -90,7 +92,6 @@ type
     LF3: TAction;
     LF4: TAction;
     LF5: TAction;
-    PanelSButtons: TPanel;
     ActionFlightNew: TAction;
     ActionFlightEdit: TAction;
     ActionFlightInsert: TAction;
@@ -118,7 +119,6 @@ type
     ActionHPRFE: TAction;
     ActionHPSupport: TAction;
     PanelScheduler: TPanel;
-    GridSched: TStringGrid;
     ActionFileExport: TAction;
     ActionExportGoogleMap: TAction;
     ActionExportGoogleEarth: TAction;
@@ -178,6 +178,7 @@ type
   public
     FlightLogList: TFlightLogList;
     ActiveFlightLog: TFlightLog;
+    AirportData: TAirports;
     procedure CreateNewFlightLog(Name, GridCols: String); overload;
     procedure CreateNewFlightLog(Name: String); overload;
     function SpeichernAbfrage: Boolean;
@@ -195,7 +196,7 @@ type
 var
   FMain: TFMain;
   DataChanged: Boolean;
-  AirportData: TAirportList;
+
   GenSettings: TStringList;
   Medicals: TStringList;
   Schedules: TStringList;
@@ -254,10 +255,11 @@ begin
   Medicals := TStringList.Create;
   Schedules := TStringList.Create;
   SchedValidity := TStringList.Create;
-  AirportData := TAirportList.Create;
+  AirportData := TAirports.Create;
 
   FlightLogList := TFlightLogList.create;
 
+  DebugLn('create GridSched');
   with GridSched do
   begin
     ColWidths[0] := 47;
@@ -266,6 +268,7 @@ begin
   end;
 
   PanelSButtons.Width := 0;
+  DebugLn('UpdateButtonState');
   UpdateButtonState;
 
   //TranslateComponent(Self);
@@ -284,7 +287,8 @@ begin
     FluFileName := ParamStr(1);
     StartTimer.Enabled := True;
   end;
-  ReadAirportData;
+  DebugLn('ReadAirportData');
+  AirportData.ReadAirportData(GetActualDir(true)+'iata-icao.csv');
 end;
 
 // ----------------------------------------------------------------
@@ -401,11 +405,13 @@ begin
     Found := FindFirst(GetActualDir(true)+'airports'+PathDelim+'airports*.txt', faAnyFile, SearchRec);
     while Found = 0 do
     begin
+      DebugLn(GetActualDir(true)+'airports'+PathDelim +SearchRec.Name);
       GetData(GetActualDir(true)+'airports'+PathDelim +SearchRec.Name);
       Found := FindNext(SearchRec);
     end;
     FindClose(SearchRec);
   end;
+  DebugLn('Exit ReadAirportData');
 end;
 
 // ----------------------------------------------------------------
@@ -1085,12 +1091,16 @@ end;
 // ----------------------------------------------------------------
 procedure TFMain.FlightNew(Sender: TObject);
 begin
-  if ActiveFlightLog.Grid.Cells[0,1] = '' then
-    FInput.Neu(1)
-  else
-  begin
-    ActiveFlightLog.Grid.InsertColRow(False, ActiveFlightLog.Grid.RowCount);
-    FInput.Neu(ActiveFlightLog.Grid.RowCount-1);
+  with TFInput.Create(Application) do
+  try
+    if ActiveFlightLog.Grid.Cells[0,1] = '' then
+      Neu(1)
+    else
+    begin
+      ActiveFlightLog.Grid.InsertColRow(False, ActiveFlightLog.Grid.RowCount);
+      Neu(ActiveFlightLog.Grid.RowCount-1);
+    end;
+  finally
   end;
 end;
 
@@ -1289,6 +1299,7 @@ end;
 procedure TFMain.GridSchedDrawCell(Sender: TObject; ACol, ARow: Integer;
   Rect: TRect; State: TGridDrawState);
 begin
+  Exit;
   Rect.Top := Rect.Top -1 ;
   with TStringGrid(Sender) do
   begin

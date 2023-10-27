@@ -9,9 +9,9 @@ object FCalendarView: TFCalendarView
   ClientWidth = 666
   Color = clBtnFace
   DesignTimePPI = 108
-  Font.Color = clWindowText
+  
   Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -74,9 +74,9 @@ object FCalendarView: TFCalendarView
     DefaultColWidth = 56
     DefaultRowHeight = 19
     FixedCols = 0
-    Font.Color = clWindowText
+    
     Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
     ParentFont = False
     ParentShowHint = False
@@ -123,9 +123,9 @@ object FCalendarView: TFCalendarView
     Width = 93
     Caption = 'Schedules'
     Checked = True
-    Font.Color = clWindowText
+    
     Font.Height = -15
-    Font.Name = 'MS Sans Serif'
+    
     OnClick = CBViewClick
     ParentFont = False
     State = cbChecked
@@ -138,9 +138,9 @@ object FCalendarView: TFCalendarView
     Width = 69
     Caption = 'Events'
     Checked = True
-    Font.Color = clWindowText
+    
     Font.Height = -15
-    Font.Name = 'MS Sans Serif'
+    
     OnClick = CBViewClick
     ParentFont = False
     State = cbChecked

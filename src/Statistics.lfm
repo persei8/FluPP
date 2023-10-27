@@ -10,9 +10,9 @@ object FStatistics: TFStatistics
   ClientWidth = 1040
   Color = clBtnFace
   DesignTimePPI = 108
-  Font.Color = clWindowText
+  
   Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -61,9 +61,9 @@ object FStatistics: TFStatistics
     Width = 1040
     ActivePage = TabSheet1
     Align = alClient
-    Font.Color = clWindowText
+    
     Font.Height = -12
-    Font.Name = 'MS Sans Serif'
+    
     ParentFont = False
     TabIndex = 2
     TabOrder = 2
@@ -100,9 +100,9 @@ object FStatistics: TFStatistics
           Top = 4
           Width = 74
           Caption = 'Found flights:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -112,9 +112,9 @@ object FStatistics: TFStatistics
           Top = 22
           Width = 27
           Caption = 'First:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -125,9 +125,9 @@ object FStatistics: TFStatistics
           Width = 4
           Alignment = taRightJustify
           Caption = '-'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -137,9 +137,9 @@ object FStatistics: TFStatistics
           Top = 40
           Width = 26
           Caption = 'Last:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -150,9 +150,9 @@ object FStatistics: TFStatistics
           Width = 4
           Alignment = taRightJustify
           Caption = '-'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -162,9 +162,9 @@ object FStatistics: TFStatistics
           Top = 4
           Width = 4
           Caption = '-'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -175,9 +175,9 @@ object FStatistics: TFStatistics
           Width = 64
           AutoSize = False
           Caption = 'LabelCalcTime'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -187,9 +187,9 @@ object FStatistics: TFStatistics
           Top = 4
           Width = 13
           Caption = 'in:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -212,7 +212,7 @@ object FStatistics: TFStatistics
         ClientWidth = 88
         Font.Color = clBlack
         Font.Height = -12
-        Font.Name = 'MS Sans Serif'
+        
         ItemIndex = 0
         Items.Strings = (
           'km'
@@ -240,7 +240,7 @@ object FStatistics: TFStatistics
         ClientWidth = 89
         Font.Color = clBlack
         Font.Height = -12
-        Font.Name = 'MS Sans Serif'
+        
         ItemIndex = 0
         Items.Strings = (
           'Block'
@@ -266,7 +266,7 @@ object FStatistics: TFStatistics
           Width = 192
           Font.Color = clBlack
           Font.Height = -17
-          Font.Name = 'MS Sans Serif'
+          
           ItemHeight = 0
           MultiSelect = True
           OnClick = LBFluClick
@@ -598,10 +598,10 @@ object FStatistics: TFStatistics
           Top = 99
           Width = 32
           Caption = 'Total:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -613,9 +613,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '0:00'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -646,9 +646,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '(0:00)'
-          Font.Color = clWindowText
+          
           Font.Height = -9
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -758,10 +758,10 @@ object FStatistics: TFStatistics
           Top = 105
           Width = 45
           Caption = 'Flights:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -773,9 +773,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '0'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -788,9 +788,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '(0)'
-          Font.Color = clWindowText
+          
           Font.Height = -9
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -846,9 +846,9 @@ object FStatistics: TFStatistics
           Hint = 'Choose category'
           Top = 4
           Width = 259
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
@@ -874,9 +874,9 @@ object FStatistics: TFStatistics
           DefaultRowHeight = 19
           FixedCols = 0
           FixedRows = 0
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           GridLineWidth = 0
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
           ParentFont = False
@@ -902,10 +902,10 @@ object FStatistics: TFStatistics
           Top = 81
           Width = 32
           Caption = 'Total:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -950,9 +950,9 @@ object FStatistics: TFStatistics
           AutoSize = False
           Caption = '0'
           Color = clBtnFace
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
           Transparent = False
@@ -1013,10 +1013,10 @@ object FStatistics: TFStatistics
           Top = 64
           Width = 55
           Caption = 'Distance:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1028,9 +1028,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '0 km'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1058,10 +1058,10 @@ object FStatistics: TFStatistics
           Top = 10
           Width = 71
           Caption = 'Passengers:'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1073,9 +1073,9 @@ object FStatistics: TFStatistics
           Alignment = taRightJustify
           AutoSize = False
           Caption = '0'
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1163,9 +1163,9 @@ object FStatistics: TFStatistics
           Hint = 'Choose category'
           Top = 10
           Width = 97
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
@@ -1195,9 +1195,9 @@ object FStatistics: TFStatistics
           Hint = 'Choose category'
           Top = 4
           Width = 206
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
@@ -1225,9 +1225,9 @@ object FStatistics: TFStatistics
           DefaultRowHeight = 19
           FixedCols = 0
           FixedRows = 0
-          Font.Color = clWindowText
+          
           Font.Height = -12
-          Font.Name = 'MS Sans Serif'
+          
           GridLineWidth = 0
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
           ParentFont = False
@@ -1317,10 +1317,10 @@ object FStatistics: TFStatistics
           Top = 4
           Width = 111
           Caption = 'Details for:'
-          Font.Color = clWindowText
+          
           Font.Height = -21
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1332,8 +1332,8 @@ object FStatistics: TFStatistics
           Caption = '-'
           Font.Color = clNavy
           Font.Height = -21
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          
+          
           ParentColor = False
           ParentFont = False
         end
@@ -1402,9 +1402,9 @@ object FStatistics: TFStatistics
             Hint = 'Choose category'
             Top = 10
             Width = 97
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1673,9 +1673,9 @@ object FStatistics: TFStatistics
             AutoSize = False
             Caption = '0'
             Color = clBtnFace
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             ParentColor = False
             ParentFont = False
             Transparent = False
@@ -1686,10 +1686,10 @@ object FStatistics: TFStatistics
             Top = 81
             Width = 67
             Caption = 'Total Costs:'
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
-            Font.Style = [fsBold]
+            
+            
             ParentColor = False
             ParentFont = False
           end
@@ -1783,10 +1783,10 @@ object FStatistics: TFStatistics
             Alignment = taRightJustify
             AutoSize = False
             Caption = 'Last Start'
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
-            Font.Style = [fsBold]
+            
+            
             ParentColor = False
             ParentFont = False
           end
@@ -1806,9 +1806,9 @@ object FStatistics: TFStatistics
             Hint = 'Choose category'
             Top = 4
             Width = 259
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1835,9 +1835,9 @@ object FStatistics: TFStatistics
             DefaultRowHeight = 19
             FixedCols = 0
             FixedRows = 0
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             GridLineWidth = 0
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
             ParentFont = False
@@ -1863,9 +1863,9 @@ object FStatistics: TFStatistics
             Hint = 'Choose category'
             Top = 4
             Width = 206
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             ItemHeight = 0
             ItemIndex = 0
             Items.Strings = (
@@ -1893,9 +1893,9 @@ object FStatistics: TFStatistics
             DefaultRowHeight = 19
             FixedCols = 0
             FixedRows = 0
-            Font.Color = clWindowText
+            
             Font.Height = -12
-            Font.Name = 'MS Sans Serif'
+            
             GridLineWidth = 0
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goThumbTracking]
             ParentFont = False

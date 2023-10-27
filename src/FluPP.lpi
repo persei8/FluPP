@@ -241,6 +241,10 @@
         <Filename Value="FlightLog.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="../iata-icao.csv"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -263,9 +267,6 @@
         <StackChecks Value="True"/>
       </Checks>
       <VerifyObjMethodCallValidity Value="True"/>
-      <Optimizations>
-        <OptimizationLevel Value="0"/>
-      </Optimizations>
     </CodeGeneration>
     <Linking>
       <Debugging>
@@ -278,7 +279,7 @@
     <Other>
       <ExecuteAfter>
         <Command Value="cp -R $(ProjSrcPath)../licenses/ $(ProjSrcPath)../bin/$(TargetCPU)-$(TargetOS)-$(LCLWidgetType)/debug/"/>
-        <CompileReasons Compile="False" Build="False"/>
+        <CompileReasons Compile="False" Build="False" Run="False"/>
       </ExecuteAfter>
     </Other>
   </CompilerOptions>

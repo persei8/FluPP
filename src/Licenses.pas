@@ -26,9 +26,12 @@ type
   end;
 
 type
+
+  { TFLicenses }
+
   TFLicenses = class(TForm)
+    ButtonExit: TButton;
     Panel1: TPanel;
-    ButtonExit: TBitBtn;
     StatusBar1: TStatusBar;
     VST: TVirtualStringTree;
     ImageListLicenses: TImageList;

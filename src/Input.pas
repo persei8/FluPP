@@ -13,15 +13,18 @@ uses
   Grids, MaskEdit, DateTimePicker;
 
 type
+
+  { TFInput }
+
   TFInput = class(TForm)
     Panel1: TPanel;
-    ButtonCancel: TBitBtn;
-    ButtonOK: TBitBtn;
+    ButtonCancel: TButton;
+    ButtonOK: TButton;
     StatusBar1: TStatusBar;
     Panel3: TPanel;
     Label1: TLabel;
     LabelFlugNr: TLabel;
-    ButtonNext: TBitBtn;
+    ButtonNext: TButton;
     TabControl: TPageControl;
     TSFlugdaten: TTabSheet;
     TSStreckenflug: TTabSheet;

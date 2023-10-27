@@ -1,17 +1,14 @@
 object FLicenses: TFLicenses
-  Left = 1958
-  Height = 601
-  Top = 0
-  Width = 602
+  Left = 492
+  Height = 534
+  Top = 169
+  Width = 535
   BorderStyle = bsDialog
   Caption = 'Licence extension'
-  ClientHeight = 601
-  ClientWidth = 602
+  ClientHeight = 534
+  ClientWidth = 535
   Color = clBtnFace
-  DesignTimePPI = 108
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -11
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -21,71 +18,65 @@ object FLicenses: TFLicenses
     Cursor = crVSplit
     Left = 0
     Height = 4
-    Top = 430
-    Width = 602
+    Top = 382
+    Width = 535
     Align = alTop
     ResizeAnchor = akTop
   end
   object Panel1: TPanel
     Left = 0
-    Height = 45
-    Top = 532
-    Width = 602
+    Height = 40
+    Top = 471
+    Width = 535
     Align = alBottom
     BevelInner = bvLowered
-    ClientHeight = 45
-    ClientWidth = 602
+    ClientHeight = 40
+    ClientWidth = 535
     TabOrder = 0
-    object ButtonExit: TBitBtn
-      Left = 314
-      Height = 28
-      Top = 7
-      Width = 84
-      Cancel = True
-      Caption = 'Exit'
-      ModalResult = 3
-      Images = FMain.ImageList
-      ImageIndex = 8
-      TabOrder = 0
-    end
     object ButtonSettings: TBitBtn
-      Left = 199
-      Height = 28
-      Top = 7
-      Width = 105
+      Left = 177
+      Height = 25
+      Top = 6
+      Width = 93
       Caption = 'Settings'
       ModalResult = 3
       Images = FMain.ImageList
       ImageIndex = 26
       OnClick = ButtonSettingsClick
+      TabOrder = 0
+    end
+    object ButtonExit: TButton
+      Left = 279
+      Height = 25
+      Top = 6
+      Width = 75
+      Cancel = True
+      Caption = 'Exit'
+      ModalResult = 3
       TabOrder = 1
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 24
-    Top = 577
-    Width = 602
+    Height = 23
+    Top = 511
+    Width = 535
     Panels = <    
       item
         Alignment = taCenter
         Bevel = pbNone
-        Width = 56
+        Width = 50
       end>
     SimplePanel = False
   end
   object VST: TVirtualStringTree
     Left = 0
-    Height = 430
+    Height = 382
     Top = 0
-    Width = 602
+    Width = 535
     Align = alTop
     Header.AutoSizeIndex = 0
     Header.Columns = <>
-    Header.Font.Color = clWindowText
-    Header.Font.Height = -11
-    Header.Font.Name = 'MS Sans Serif'
-    Header.Height = 22
     Header.MainColumn = -1
     Header.Options = [hoColumnResize, hoDrag, hoVisible]
     Header.Style = hsPlates
@@ -101,20 +92,18 @@ object FLicenses: TFLicenses
   end
   object MemoDesc: TMemo
     Left = 0
-    Height = 98
-    Top = 434
-    Width = 602
+    Height = 85
+    Top = 386
+    Width = 535
     Align = alClient
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -13
     ParentFont = False
     ReadOnly = True
     TabOrder = 3
   end
   object ImageListLicenses: TImageList
-    Left = 459
-    Top = 540
+    Left = 408
+    Top = 480
     Bitmap = {
       4C7A030000001000000010000000E10000000000000078DAD595310EC3200C45
       39BC8FC0C87918B946474646DA5025A5048CBF69D436929348E6FD8F0D24C6FC

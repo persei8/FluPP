@@ -10,9 +10,9 @@ object FInputBox: TFInputBox
   Color = clBtnFace
   Constraints.MinWidth = 225
   DesignTimePPI = 108
-  Font.Color = clWindowText
+  
   Font.Height = -12
-  Font.Name = 'MS Sans Serif'
+  
   Position = poMainFormCenter
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel

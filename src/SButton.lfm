@@ -36,10 +36,10 @@ object FSButton: TFSButton
       Alignment = taCenter
       AutoSize = False
       Caption = 'LabelHeading'
-      Font.Color = clWindowText
+      
       Font.Height = -13
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
+      
+      
       ParentColor = False
       ParentFont = False
       OnMouseDown = MouseDown

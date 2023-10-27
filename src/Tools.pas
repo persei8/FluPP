@@ -4,26 +4,34 @@ unit Tools;
 
 interface
 
-uses SysUtils, Math, StrUtils, DateUtils, Classes, LCLIntf, LCLType, Dialogs, Grids, CheckLst, StdCtrls;
+uses SysUtils, Math, StrUtils, DateUtils, Classes, LCLIntf, LCLType, Dialogs,
+  Grids, CheckLst, StdCtrls, LazFileUtils, csvdocument, fgl;
 
 type
-  TAirport = record
+  TAirport = class
+  public
     AirportName: String;
     ICAO: String;
+    Country: String;
     Lat: String;
     Lon: String;
   end;
 
-  TAirportList = class(TObject)
+  type
+    TAirportList = TFPGObjectList<TAirport>;
+
+  TAirports = class
   private
-    Airports: Array of TAirport;
+    AirportList: TAirportList;
     function Get(Index: Integer): TAirport;
     procedure Put(Index: Integer; const Airport: TAirport);
     function GetCount: Integer;
   public
+    constructor Create;
     property Airport[Index: Integer]: TAirport read Get write Put; default;
     function Add(const Airport: TAirport): Integer;
     property Count: Integer read GetCount;
+    function ReadAirportData(FilePath: String): Boolean;
     function Find(AirportName: String; var Airport: TAirport): Boolean;
     function Distance(AirportName1: String; AirportName2: String; DistUnit: String): Real;
   end;
@@ -78,44 +86,78 @@ implementation
 
 {--\/-- TAirportList --\/--}
 
-procedure TAirportList.Put(Index: Integer; const Airport: TAirport);
+constructor TAirports.Create;
 begin
-  Airports[Index] := Airport;
+  Inherited;
+
+  AirportList := TAirportList.create;
 end;
 
-function TAirportList.Get(Index: Integer): TAirport;
+procedure TAirports.Put(Index: Integer; const Airport: TAirport);
 begin
-  Result := Airports[Index];
+  AirportList[Index] := Airport;
 end;
 
-function TAirportList.Add(const Airport: TAirport): Integer;
+function TAirports.Get(Index: Integer): TAirport;
 begin
-  SetLength(Airports, length(Airports)+ 1);
-  Airports[high(Airports)] := Airport;
-  Result := length(Airports);
+  Result := AirportList[Index];
 end;
 
-function TAirportList.GetCount: Integer;
+function TAirports.Add(const Airport: TAirport): Integer;
 begin
-  Result := length(Airports);
+  Result := AirportList.Add(Airport);
+end;
+
+function TAirports.GetCount: Integer;
+begin
+  Result := AirportList.Count;
+end;
+
+// ----------------------------------------------------------------
+// Read csv airport data
+// "country_code","region_name","iata","icao","airport","latitude","longitude"
+// ----------------------------------------------------------------
+function TAirports.ReadAirportData(FilePath: String): Boolean;
+var
+  CSVDoc: TCSVDocument;
+  row: Integer;
+  TmpAirport: TAirport;
+begin
+  ReadAirportData := False;
+  CSVDoc := TCSVDocument.Create;
+  if not(FileExistsUTF8(FilePath)) then exit;
+
+  CSVDoc.Delimiter:=',';
+  CSVDoc.QuoteChar:='"';
+  CSVDoc.LoadFromFile(FilePath);
+  TmpAirport := TAirport.create;
+  for row := 1 to CSVDoc.RowCount-1 do
+  begin
+    TmpAirport.AirportName := CSVDoc.Cells[4, row];
+    TmpAirport.ICAO := CSVDoc.Cells[3, row];
+    TmpAirport.Country := CSVDoc.Cells[0, row];
+    TmpAirport.Lat := CSVDoc.Cells[5, row];
+    TmpAirport.Lon := CSVDoc.Cells[6, row];
+    AirportList.Add(TmpAirport);
+  end;
 end;
 
 // ----------------------------------------------------------------
 // Search aiport in database
 // ----------------------------------------------------------------
-function TAirportList.Find(AirportName: String; var Airport: TAirport): Boolean;
+function TAirports.Find(AirportName: String; var Airport: TAirport): Boolean;
 var
   i: integer;
 begin
   Result := False;
   if AirportName = '' then Exit;
-  for i := 0 to length(Airports)-1 do
+  for i := 0 to AirportList.Count-1 do
   begin
-    if (Uppercase(Airports[i].ICAO) = Uppercase(AirportName)) or
-     (Uppercase(Airports[i].AirportName) = Uppercase(AirportName)) then
+    if (Uppercase(AirportList[i].ICAO) = Uppercase(AirportName)) or
+     (Uppercase(AirportList[i].AirportName) = Uppercase(AirportName)) then
     begin
       Result := True;
-      Airport := Airports[i];
+      Airport := AirportList[i];
       Break;
     end;
   end;
@@ -124,7 +166,7 @@ end;
 // ----------------------------------------------------------------
 // Calc distance between airports
 // ----------------------------------------------------------------
-function TAirportList.Distance(AirportName1: String; AirportName2: String; DistUnit: String): Real;
+function TAirports.Distance(AirportName1: String; AirportName2: String; DistUnit: String): Real;
 var
   BreitTotStO, LaengTotStO, BreitTotLaO, LaengTotLaO: Real;
   Airport1, Airport2: TAirport;

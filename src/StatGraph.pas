@@ -66,7 +66,6 @@ begin
     Parent := FStat_Graph;
     Align := alClient;
   end;
-
 end;
 
 // ----------------------------------------------------------------
